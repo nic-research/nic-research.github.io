@@ -1,0 +1,98 @@
+#+TITLE: Handy command syntaxes and emacs sequences
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+* General
+** rgrep syntax
+: rgrep "search pattern" [directory to search]
+
+** Macros
+- Here is how to define a keyboard macro:
+: `C-x (’ – start defining a keyboard macro
+: `C-x )’ – stop defining the keyboard macro
+
+- And here is how to execute a keyboard macro you’ve defined:
+: ‘C-x e’ – execute the keyboard macro
+
+- Here’s how to execute the macro 37 times (you use ‘C-u’ to provide the 37):
+: ‘C-u 37 C-x e’
+
+* Org mode
+** Motion
+- The following commands jump to other headlines in the buffer.
+: C-c C-n     (outline-next-visible-heading)
+- Next heading. 
+: C-c C-p     (outline-previous-visible-heading)
+- Previous heading. 
+: C-c C-f     (org-forward-same-level)
+- Next heading same level. 
+: C-c C-b     (org-backward-same-level)
+- Previous heading same level. 
+: C-c C-u     (outline-up-heading)
+- Backward to higher level heading. 
+
+** Agenda
+: "C-c ." insert active date from calendar
+: "C-c !" insert inactive date from calendar
+: "C-c C-d" insert deadline stamp from calendar
+: "C-u C-c ." insert timestamp
+: "S-left/right" move cursor in calendar buffer
+: "f/b, n/p" navigate weeks/days in agenda mode
+
+** Links
+: "C-c l" store link
+: "C-c C-l" insert link (use with above)
+: "C-u C-c C-l" insert link (filename completion)
+: "C-c C-o" open link (or click)
+
+** Export
+: "C-c C-e h" export to HTML ("b" to open in browser)
+: "C-c C-e p" export to pdf ("d" to open pdf)
+
+
+    
+** Tags
+http://orgmode.org/manual/Setting-tags.html#Setting-tags
+: C-c C-q     (org-set-tags-command)
+* Git
+** General
+"git config --global alias.co checkout" - example alias: checkout->co
+** Initialisation
+"git init" - Initialise a local repository in current directory
+** Tracking and staging files
+"git add <file>" - tracks a file with git, stages changes
+"git add -u" - stages changes in modified files
+"git add -A" - tracks and stages all files (even previously unadded)
+"git reset HEAD <file>" - unstages a change
+"git checkout -- <file>" - unmodify file (based on latest snapshot)
+** Committing locally
+"git commit -m "<message>" - commit staged changes with supplied
+message
+"git commit --amend" - amend the previous commit (with e.g. a newley
+staged file)
+"git log" - shows commit history
+** Remote repositories
+"git clone [url]" - Set up a new repository based on the one at url
+"git remote add [shortname] [url]" - Add a repository at url
+"git fetch [shortname]" - Get the changes from that repo
+"git pull [shortname]" - Get the changes and automatically merge with
+local repo
+"git remote show [shortname]" - info on remote repo
+"git remote rename [old] [new]" - rename repo
+"git remote rm [name]" - remove remote repo
+** Committing remotely
+"git push origin master" - push to remote server
+"git push -u origin --all" - same as above?
+** Tags
+"git tag -a v[X.X] -m 'my version X.X'" - tag the latest commit with
+version and message (-a is for annotated tag)
+"git tag -a v[X.Y] -m 'my version X.Y' [commit hash]" - Tags a
+previous commit denoted by its hash
+"git push [repo name] [tagname]" - push tag to repo (normal push
+does not do this by default)
+"git push [repo name] --tags - push all tags to repo

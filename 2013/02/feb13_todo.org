@@ -1,0 +1,337 @@
+#+Title: To do: February 2013
+#+AUTHOR: N. Seymour-Smith
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL
+#Export options here:
+#+OPTIONS: toc:3
+#+LaTeX_HEADER: \usepackage{fullpage}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks}
+#+LaTeX_HEADER: \usepackage[mathletters]{ucs}
+#+LaTeX_HEADER: \usepackage[utf8x]{inputenc}
+
+* To do, Molecular Lab Experiments
+
+** DONE Beam-line preparation					  :Nic:Kevin:
+*** CNCL Second TMP installation
+- <2012-12-04 Tue>
+Data in previous headline indicates there's not enough pumping power
+and the ion trap region in the beamline chamber. It's time to consider
+adding a turbo to pump alongside the ion pump to maintain a good
+pressure differential between the beamline and the trapping region. 
+- <2013-01-03 Thu>
+Matthias has ordered the parts, but we are trying a setup that may not
+require them first (see entry on preliminary N2 chamber)
+- <2013-02-18 Mon>
+We're going ahead without this, just using a prechamber as described
+in January's notes.
+
+*** DONE Take apart beamline
+- <2013-02-13 Wed> Alan needs the 5-way cross
+- <2013-02-18 Mon> Alan now has the second skimmer built, and I've
+  taken the 5-way cross out for him and handed it over.
+*** DONE Check for all the parts
+- <2013-02-18 Mon>
+Need 6 CF60 (?) gasketts and an adapter from CF60 to DN63.
+*** Hand over the rest to Kevin
+** TODO [#A] Dipole force laser setup					:Nic:
+*** DONE AM setup
+*** DONE New laser
+- <2013-02-18 Mon>
+Set up and lasing at correct wavelength. Power is lower than the 100 mW
+it is rated at with an external cavity, but we are not exactly at the
+emission peak of the bare diode (took a lot of tuning away from the
+place with easiest optical feedback). Further, the bare diode is rated
+at 200 mA, but I'm not sure how high I can run it with an external
+cavity. 
+ 
+λ = 787.475 nm,
+
+I_{th} ~ 45 mA,
+
+T = 25.36^{\circ} C,
+
+I = 77.54 mA,
+
+V_{PZT} = 107 V,
+
+P ~ 10 mW, 
+
+*** TODO [#A] Single-pass AOM and optical fibre
+- <2013-02-21 Thu> Set up on the test table.
+*** TODO Feedback setup
+
+** DONE Time-varying B-field ion simulation			  :Nic:Kevin:
+*** DONE Matthias' code
+- <2013-02-13 Wed> Compare Matthias' approach with my own
+- <2013-02-20 Wed> Virtually identical apart from the solver, which is
+  the correct, time-dependent approach.
+*** DONE Modifications
+- <2013-02-20 Wed> Frequencies around Γ show a dropoff, but that's
+  much higher than what we see. Need new ideas as to the source of the
+  attenuation. 
+** TODO [#C] Work on DACs for the new SCL			  :Nic:Kevin:
+*** TODO Building boards
+- <2013-01-25 Fri> Matthias has the plans:
+Pester him for them.
+- <2013-01-31 Thu> Received:
+Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+- <2013-02-04 Mon> Matthias is making the boards:
+Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+- <2013-02-04 Mon> Pins used:
+Check with Matthias that his design has incorporated these pins as
+I/Os:
++ Port D: RD8 (peak detect input), RD5 (CN_interrupt)
++ U2RX pins, unless he's already designed these away
+*** TODO Programming
+**** TODO Write SPI library for PIC comms with computer
+**** TODO Write SPI library for PIC comms with DAC
+
+** TODO [#C] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO Contact FAST ComTec
+About the issue with having to communicate with the card via the
+server. 
+
+*** TODO Fix datasocket bug
+*** TODO Flow chart for experimental sequence
+** TODO Look up literature for PI of N2				    :Amy:Nic:
+- Wavelength and I_{sat}
+
+
+* To do, General
+
+** DONE "Gantt Project" for project planning
+- <2013-02-15 Fri> Installed.
+** DONE Fix up Stephen's Toptica PID
+- <2013-02-13 Wed> More unstable that I remember, tune up.
+- <2013-02-18 Mon> I gave a go to tuning it up but no luck. Might need
+  a closer look, but will ask Matthias to have a gander first.
+** TODO [#B] Fix Laura's pulsed-trapping box
+** TODO [#C] Check for tantalum for ovens
+** TODO [#C] Look into programming Laura's multiscaler for mass detection
+** Purchase list
+*** RS/Farnell
+*** Thorlabs
+- [X] Bits for new lasers (N2 state-detection | Delivered <2013-02-01 Fri>
+
+*** Sci-tech stores
+*** Miscellaneous
+*** Returns
+
+** Find submissions for ITCM-Sussex.com
+- <2012-11-13 Tue>
+Matthias has reminded us to look through the old website for these.
+
+- <2012-11-20 Tue> 
+I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+
+- <2012-11-26 Mon>
+Rev. Sci. Instrum. 81, 075109 2010:
+
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(http://www.microchip.com/). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+
+- <2013-01-04 Fri> Comments on current webpage:
+1. There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+2. Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+3. Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+
+** Ask Hiroki for a look at the code for cavity mode prop.
+- <2012-11-06 Tue>  
+Asked Hiroki, but he hasn't finished it yet. 
+
+** Oxford group proposal research
+- <2012-12-05 Wed>
+  * Drewsen group BBR assisted cooling
+  * Previous ammonia research
+  * Ammonia level structure for state-detection
+- <2012-12-10 Mon>
+  * Drewsen and Schiller both have papers on BBR according to the proposal.
+  * Drewsen proposal uses Raman transitions, requiring narrow/stable
+    lasers - does this apply to our system?
+- <2012-12-17 Mon>
+E-mail Brianna to assess the status of the Stark decelerator.
+- <2013-01-03 Thu> General:
+Look closer at the reactions that are proposed to investigate in the
+proposal, and make sure that there are going to be setups for those
+experiments, or ones to do with our research here, at Oxford.
+
+- Reactions -> Deuterium fractionation:
+Reactions involving H atom transfer to ionic species e.g.:
+: Ca^+ + HD0 -> CaH^+(CaD^+) + OD(H)
+: Nd_3^+ + HDO -> ND_4^+(ND_3H^+) + OH(OD)
+
+Addition reactions with H atom elimination (e.g. in [[file:~/Documents/literature/proposals/ProjectDescription.pdf][proposal]]), and
+Near-thermoneutral charge transfer reactions (e.g. at link).
+
+- Experimental:
+In-situ measurement of masses and numbers of reactants and
+products -> Monitor sequential isotopic exchange.
+
+Quantum-state selected reactants from stark decelerator (neutrals) and
+REMPI (ions). Thermal redistribution of ions monitored by
+non-destructive state-detection.
+
+Control internal states using BBR assisted schemes (see [[file:~/Documents/literature/papers/Molecular%20physics/nphys1604.pdf][nphys1604]] and
+[[file:~/Documents/literature/papers/Molecular%20physics/nphys1605.pdf][nphys1605]]).
+
+
+* Journal & Theory club
+
+** Club papers
+- <2012-11-09 Fri> Amy presenting:
+   PHYSICAL REVIEW A 76, 023413 ͑2007͒
+   Blackbody thermometry with cold molecular ions and application
+   to ion-based frequency standards
+   J. C. J. Koelemeij, B. Roth, and S. Schiller
+- <2012-11-23 Fri> Hiroki presenting:
+  Stute et al. - 2012 - Toward an ion–photon quantum interface in an
+  optical cavity 
+  (Innsbruck group)
+
+** Papers to look at
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+
+*** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+** General papers
+*** DONE J.D. Siverns et. al. 2011
+- <2013-02-13 Wed> Michael did this one last Friday
+** Theory subjects
+*** DONE Density matrix lectures
+- <2013-02-13 Wed> Stephen and I handled most of this text (except
+  last section) over the last few weeks.
+*** TODO Applications for data analysis and simulation
+
+** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+
+* Addresses and contacts
+** Return to:
+FAO N. Seymour-Smith
+JMS Stores
+University of Sussex
+Falmer
+Brighton
+BN1 9QG
+
+** BSP
+BSP Engineering Services (UK) Ltd,
+Maitland Road,
+Needham Market, 
+Ipswich,
+IP6 8NZ
+
+** Erodatools Ltd
+Unit 4 
+Lawrence Works,
+Sheffield Road,
+Penistone,
+Sheffield,
+S36 6HF
+
+
+* To do, non-work :noexport:
+
+** TODO Learn git
+- <2012-10-22 Mon>
+  + [[http://sixrevisions.com/resources/git-tutorials-beginners/][git tutorial links 2]]
+  + [[http://git-scm.com/documentation][git tutorial links 1]]
+
+** TODO Purchase textbooks
+- [X] QM
+- Atomic physics
+- Thermodynamics
+- Quantum optics
+
+** TODO Other books
+- [ ] Weights
+** TODO Dekatron
+- [ ] 555 timer input
+** Bus ticket dates
+- Next renewal <2013-02-20 Wed>.
+
+
+* Handy command syntaxes and emacs sequences :noexport:
+** General
+*** rgrep syntax
+: rgrep "search pattern" [directory to search]
+
+*** Macros
+Here is how to define a keyboard macro:
+`C-x (’ – start defining a keyboard macro
+`C-x )’ – stop defining the keyboard macro
+
+And here is how to execute a keyboard macro you’ve defined:
+‘C-x e’ – execute the keyboard macro
+
+Here’s how to execute the macro 37 times (you use ‘C-u’ to provide the 37):
+‘C-u 37 C-x e’
+
+** Org mode
+*** Motion
+- The following commands jump to other headlines in the buffer.
+: C-c C-n     (outline-next-visible-heading)
+- Next heading. 
+: C-c C-p     (outline-previous-visible-heading)
+- Previous heading. 
+: C-c C-f     (org-forward-same-level)
+- Next heading same level. 
+: C-c C-b     (org-backward-same-level)
+- Previous heading same level. 
+: C-c C-u     (outline-up-heading)
+- Backward to higher level heading. 
+
+*** Agenda
+- "C-c ." insert active date from calendar
+- "C-c !" insert inactive date from calendar
+- "C-c C-d" insert deadline stamp from calendar
+- "C-u C-c ." insert timestamp
+- "S-left/right" move cursor in calendar buffer
+- "f/b, n/p" navigate weeks/days in agenda mode
+
+*** Links
+- "C-c l" store link
+- "C-c C-l" insert link (use with above)
+- "C-u C-c C-l" insert link (filename completion)
+- "C-c C-o" open link (or click)
+
+*** Export
+- "C-c C-e h" export to HTML ("b" to open in browser)
+- "C-c C-e p" export to pdf ("d" to open pdf)
+
+
+    

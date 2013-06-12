@@ -1,0 +1,436 @@
+-October 2012- \\
+#Export options here: \\
+#+OPTIONS: toc:1
+
+* To do, General
+
+** DONE [05-10-2012] Finish application for COST reimbursement
+
+** DONE [05-10-2012] Send off Lizzie's card
+- [08-10-2012] address awaiting confirmation:
+  143 Hollingdean Terrace
+  BN1 7HF
+- [08-10-2012] Confirmed by Andrew
+- [09-10-2012] Addressed and stamped -> send it!
+- [09-10-2012] Sent
+
+** DONE [05-10-2012] Put in an order for APC IR fibres with Hiroki
+[08-10-2012] Hiroki will put in the order on Matthias' grant code
+** DONE [05-10-2012] E-mail Tom Armour for ballista accounts for the rest of the group
+*** DONE Add:
+Stephen
+Michael
+amy
+Markus
+Jack
+
+*** Delete:
+Alex
+Anders
+Lizzie
+Peter
+Andrew (wait)
+
+** DONE [05-10-2012] Order re-entrant window parts
+- PW-S-00788, 60mm diameter, 9.5mm thickness, BK7 (for protection from 240nm pulse laser).
+- Quote requested from Laseroptik
+- jebert@laseroptik.de
+- BK7 will take 6 weeks [08-10-2012]
+- Waiting for lead time and quote on fused silica
+- Fused silica x1 E250 Quotation No. A12-0997 [09-10-2012]
+- [10-10-2012] Quote has gone to Gill so she can pay with credit card
+- [11-10-2012] Haven't heard back from Gill or LaserOptik, chase up
+- [15-10-2012] Part arrived. In optics drawers in the molecule lab
+
+** DONE <2012-10-05 Fri> Look for info on Duke University's high NA custom lens
+- PI Jungsang Kim
+- No information in first glance over theses [08-10-2012]
+- <2012-10-31 Wed> Closing - no info easily available in theses.
+** DONE [05-10-2012] Make sure everyone knows about Ballista and the google account
+- [08-10-2012] Testing out google groups for making announcements
+- [09-10-2012] Announced in group meeting 
+
+** DONE [09-10-2012] Confirm everyone is added to itcmsussex mailing list
+- [09-10-2012] Sent invitations to undergraduate students, re-sent to Kevin
+- [10-10-2012] Everyone except undergraduates
+** DONE [05-10-2012] Set weekly time for journal club
+- [10-10-2012] Preliminary 2pm Fridays, ask Hiroki
+- [11-10-2012] All agreed 2pm Friday, fortnightly
+** DONE [08-10-2012] Chase up Thorlabs order
+- Missing mirror mount
+- Purchase order: 8010103
+- [08-10-2012] Coming tomorrow
+- [09-10-2012] Not arrived, chase up tomorrow!
+- [10-10-2012] Arrived, Alan will do the job next week, hand over to Stephen
+
+** DONE [08-10-2012] Get everyone to submit to the ITCMsussex calendar
+- [10-10-2012] Everyone except UG have updated
+
+** DONE [09-10-2012] Make everyone aware of iPython notebook!
+- Put forward as a replacement for Matlab
+- Hiroki will have details on windows installations
+- Matthias suggest we spend a theory session on applications for data analysis
+
+** DONE [09-10-2012] Ask about an article manager for papers
+- Mendeley (Hiroki) [09-10-2012]
+- Evernote (Andrew) [09-10-2012]
+  
+** DONE [10-10-2012] Buy toner for Kevin's printer
+- The printer is: HP LaserJet P1505
+- Current toner cartridge is: HP 36A (CB436A)
+- Requisition number 9011399
+
+** DONE [10-10-2012] Organise papers with Mendeley
+- [09-10-2012] Installed, imported all papers, needs organising
+- <2012-10-23 Tue> Organised loosely into folders. Would prefer a
+  `tag' method of organisation... will look into that.
+
+** DONE [16-10-2012] Get new notebook from home
+** TODO <2012-10-23 Tue> Order new notebooks
+- Can I get these on the grant? Probably not. Maybe wait `til payday
+  <2012-10-30 Tue>
+- <2012-10-31 Wed> Money not through yet. Putting an agenda entry in
+  for Monday to remind me <2012-11-05 Mon>
+** DONE [16-10-2012] Get whiteboard and projector for journal club
+- Whiteboard from MPhys lab, portable projector from Sally
+
+** DONE [18-10-2012] Give Kevin feedback on his thesis chapter
+- Finished reading, needs another iteration or two
+- [22-10-2012] Feedback given last Friday, sent back for another iteration
+
+** DONE <2012-10-23 Tue> Make RS order
+- Bulbs (743-858)
+- ICD3 programmer (660-1264) [X]
+- ADCs (when Dave chooses them) 
+- N type to BNC adaptor (761-9939)
+- RAM for Stephen, i946PL/GZ, DDR2-333 2x1GB, PC25300-u (333MHz 667
+  Mb/s/pin)  [X]
+- RS don't stock that RAM ^
+- <2012-10-29 Mon> Order saved on RS website need purchase order from
+  agresso.
+- <2012-10-30 Tue> Order made and sent out
+** TODO <2012-10-29 Mon> order RAM for stephen
+- RAM for Stephen, i946PL/GZ, DDR2-333 2x1GB, PC25300-u (333MHz 667
+  Mb/s/pin)  [X]
+- RS don't stock that RAM ^
+- <2012-10-30 Tue> I will order the RAM if Stephen can find it
+** DONE [X] <2012-10-23 Tue> Find/order a second PIC programmer
+- MPLAB ICD3 [X] We already have a second one.
+
+** DONE <2012-10-30 Tue> Test APC in-couplers from BSP
+- Kevin's taken on this job
+  
+
+* To do, Molecular Lab Experiments
+
+** DONE [05-10-2012] Contact Parker about valve driver
+"Iota One" -> compatible with series 9 pulsed valve?
+Valve made by:
+Pressure and Flow ltd: 01788 560426
+Example part number: 009-1668-900
+
+Iota One Pulse Valve Driver
+----------------------------------------------------
+Hello Nicholas,
+ 
+Please find the requested data attached.
+ 
+The 060-0001-900 are £3220.45 each. Delivery: 9 weeks.
+ 
+NOTE: This product is NOT CE marked and thus a written concesion is required when ordering!
+ 
+If you need further information or assistance, please do not hesitate to contact me.
+ 
+Best Regards,
+ 
+Nick Argyle
+Sales Engineer
+UK & Ireland
+Tel.: +44 (0) 1788 560426 / Fax: +44 (0) 1788 561228
+E-Mail: uk@sensortechnics.com
+
+Sensortechnics Ltd (a First Sensor Company)
+Aspect Business Centre, 66C Somers Road, Rugby, Warks. CV22 7DH
+Internet: www.sensortechnics.com
+
+** DONE [09-10-2012] Inquire at Oxford about getting a pulsed valve driver made
+- [10-10-2012] E-mail sent to Chris Rennick
+- [10-10-2012] Chris might be able to send us one of their old
+  controllers, different only in that it has an external HV supply
+- Needs model resistance and inductance in case their circuit needs to
+  be re-tuned to drive our valve
+- The model we have is the 12 Watts/20VDC/594mA/33ohm one, no data on
+  inductance, Amy might have measured it at 80mH. I'm measuring, using
+  the LCR meter, 5.8 mH.
+- Above data sent to Chris
+- [11-10-2012] Chris checking details of our valve, and whether their
+  spare will be needed soon
+- [2012-10-22] No word from Chris since I heard from Laura that he was
+  looking for it. Perhaps it's not to be found. The old pulsed valve
+  circuit is nearly rebuilt, and Matthias has some designs from the
+  Willitsch group in Basel for a different kind of piezo
+  valve. Therefore I'm shelving this entry.
+- <2012-10-23 Tue> *Update: Chris will send us his, and a spare pcb for us
+  to make our own replacement
+
+** DONE <2012-10-05 Fri> Test the PZT valve using leak-detector
+*** DONE [05-10-2012] Test with PZT amplifier
+- Opens and closes fully. 
+- Voltages required not totally predictable, but if
+  closed enough manually, and voltage high enough, then should be
+  reliable. 
+- PZT amplifier can't open and close fast enough to test
+  dynamically. Must repair fast electronics
+*** DONE [08-10-2012] Order MOSFETs and driver
+- Mosfet
+  Farnell: 9935584
+  STP 20NM60FP: MOSFET N
+- Driver
+  Farnell: 1216117
+  EL7104CN
+- [08-10-2012] Ordered, Purchase order no. MPS/8010609 next day
+  delivery 
+
+*** DONE [08-10-2012] Repair electronics
+- Replace MOSFET and driver
+- [09-10-2012] MOSFETs and driver have arrived
+- Make new circuit board?
+- [18-10-2012] New circuit board made
+- Not working. Debug time.
+- [22-10-2012] Still debugging, something wrong with wiring
+  (transistors all functioning fine)
+- Main board electronics are all functioning. Need to repair the
+  MOSFET driver.
+- <2012-10-23 Tue> We are getting a solenoid valve controller from Oxford,
+  but I will finish this up anyway as a backup, in case performance
+  from that controller/valve is not sufficient
+- <2012-10-23 Tue> Valve electronics fixed, and will be shelved as a
+  backup for the solenoid valve
+
+*** DONE [2012-10-23] Test pulsing w/ leak-detector
+- Might as well double-check it while we wait for the solenoid-valve
+  controller.
+- <2012-10-24 Wed> Behaviour is difficult to characterise. Running the
+  pulsing at moderate voltages (>50V) tends to see the system change
+  its behaviour altogether as the needle/PZT configuration shifts.
+- Regardless the behaviour I've seen is:
+  * If the valve is closed loosely by hand, so that the pressure
+    reading on the leak detector is *just* as low as it goes (3E-2
+    mbar) when the voltage is high (140V, electronically closed), then
+    difference between leak rates with the valve electronically open
+    and closed can be up to two orders of magnitude (1E-4 ->
+    1E-6). However when we slowly ramp up the voltage whilst pulsing,
+    the change in pressure only gets down to one order of magnitude
+    less, before the force from the pulsing starts to cause the valve
+    to open out again. This happens typically around 50 to 60 volts.
+  * If the valve is closed tightly, so that when electronically open
+    (0V), the pressure is 3E-2 mbar,the rate difference is marginally
+    larger for pulsing, up to almost two orders of magnitude at 70V,
+    but the absolute rate is low (7E-4 mbarl/s open, 1E-5 mbarl/s
+    closed). Higher voltages also start to change the settling point
+    of the needle, as in the case above.
+  * In either case, moderate voltages cause re-settling of the needle
+    at 0V, making any experiments pretty difficult to reproduce. As
+    such this may not be a practical system in the end.
+- <2012-10-25 Thu> Going to try a different washer configuration. Less
+  stiffness might give us better behaviour when pulsing, since the
+  pressure doesn't seem to change much right now before the system
+  starts to `deform'. I believe the current configuration is 4 washers
+  placed as such: >><< . I'm going to try moving to >><
+  configuration.
+- Here's the thing. As I observed in the test setup with the laser
+  blocking, the electronics seem to stop behaving properly at around
+  60 V when pulsed. Any higher and the behaviour of the pulsed valve
+  is worse, and it also seems to cause deformation of the
+  configuration, so that results are not reproducible. This means that
+  all pulsing must be at or below 60V. The problem with this is that
+  even using static voltages to open and close the valve, the `dynamic
+  range' of the valve is only one hundred at best e.g. leak rate of
+  5E-4 mbarl/s to 5E-6 mbarl/s. Is the needle really opening out far
+  enough? Is it closed enough? I suppose the next useful test is to
+  see what the dynamic range is for different rates at `closing'
+  voltage of 60V.
+- NB 200us appears to be the optimal opening time for the valve (at
+  10Hz). The electronics struggles with 100us so that we get higher
+  leak rates (despite being `closed' for longer), and 300us clearly
+  just gives us too long an opening time.
+- Tested the dynamic range for different needle positions by manually
+  closing down the valve in as small increments as possible. I managed
+  to get a dynamic range of 10^4, and as long as I kept the voltage
+  low (below 40V) this seemed reproducible - I got the same leak rates
+  while open and while pulsed at 40V after three cycles of pulsing for
+  a minute and turning off and opening the valve electronically.
+- The result above would be sufficient for our system. But its a
+  question whether or not I could get the same behaviour again, after
+  the valve has been taken away to be welded onto a cf66 flange, and
+  how often it would need to be re-adjusted, given its propensity to
+  change behaviour at higher voltages. On top of this the optimal
+  pulse time is 200us, which isn't even any faster than the solenoid
+  valve we are getting a controller for soon. All-in-all, for the
+  amount of effort put into it, it's perhaps not an effective or
+  practical system, and it's going to be shelved until we have no
+  other choices. Other choices currently are the solenoid valve, and
+  the PZT valve design from the Basel group.
+*** [x] [05-10-2012] Weld the valve into CF66 flange
+- <2012-10-23 Tue> Shelved as a backup to the solenoid valve
+
+** DONE <2012-10-23 Tue>  [X] Test the solenoid valve on the beam line
+- <2012-10-23 Tue> Oxford valve controller is on its way, test
+  immediately using pressure gauge? Discuss tests and trap
+  incorporation at today's meeting
+** TODO <2012-10-05 Fri> Code an automation program for experiments
+- [[file:~/Documents/molecule_trap/automation/automation_project.org][project org file]]
+- [05-10-2012] experiment:
+  * Load Ca+
+  * Load N2+
+  * Apply dipole force
+  * Configuration change check and re-arrange
+  * Reload experiment
+- [11-10-2012] Taking stock of hardware and software configs to lay out a plan of
+  action.
+- [16-10-2012] Figuring out how to read direct from memory
+- <2012-10-23 Tue> Probably going to settle, to start with, with fixed
+  measurement times and analysing complete files, just to get the
+  infrastructure up.
+- Hiroki wrote communication vi's to send commands to the p7888. It's
+  not a difficult process anyway. All communication done with DDE vis
+  (inbuilt) and the commands that need to be sent are in the p7888
+  manual. 
+
+** TODO <2012-10-05 Fri> Write simulation of 8-level atom for experiments
+*** TODO Dark resonance spectroscopy/amplification
+- [16-10-2012] Matthias has a reference (paper or lecture course) that
+  shows a way in which we can account for laser linewidth in
+  simulations. Chase up.
+- <2012-10-23 Tue> Easiest thing right now is incorporate Wolfgang's
+  matlab simulation into mine
+*** Single ion-heat engine
+
+** DONE [16-10-2012] Make sure 16-bit SCL is robust enough for Kevin's expt.
+- [22-10-2012] Tested on Friday. Robust enough if locking point is
+  fixed (no scan). There's either some issue with scanning up above R
+  = 0.5, or some issue with locking altogether at those ratios.
+- N.B. dsPic did a weird thing. When it was first started after having
+  not been used for a while (maybe two weeks?), it didn't work
+  properly. Communication to the chip from labVIEW worked fine, but it
+  was not sending the confirmation echo back. The solution ended up
+  being to reprogram the chip, which is not something we want to do
+  often. The board was left on for the two weeks as far as I can
+  tell, so that should be something to avoid and might help with this
+  kind of problem. In likelihood one of the random power spikes that
+  happens caused some partial wipe of the ROM. People should be warned
+  about this
+
+** TODO <2012-10-30 Tue> Test Oxford valve controller
+- Matthias has a power supply we can use. It doesn't need to be high
+  current since the current is supplied from a charged capacitor.
+- <2012-10-31 Wed> No input for the power supply, have they sent us a
+  different model than they meant to?
+- Current testing is on an inductor coil chosen to roughly match that
+  of the valve. A previous entry states that I measured the inductance
+  to be roughly 5.8 mH recently. Lab notes from February suggest an
+  inductance of 18 mH. Either way the closest inductor we have is 100
+  mH, with 75 Ohm resistance. Given that the valve is 1 Ohm, are these
+  similar enough to test, or different enough to have damaged the
+  circuit?
+** <2012-10-05 Fri> Construct/test molecular beamline
+
+** <2012-10-05 Fri> Photoionisation of N2
+Matthias, Jack after fibre-shooting
+
+** <2012-10-05 Fri> N2+ spectroscopy
+Will, inductively coupled RF discharge spectroscopy
+
+** <2012-10-05 Fri> Install re-entrant window
+
+** <2012-10-05 Fri> Walking wave setup
+*** Investigate other labs techniques
+**** Meschede
+Two separate beam lines with individual AOMs (our likely choice)
+**** Rempe
+**** Wineland
+**** Schiller
+
+*** Test offline
+
+** <2012-10-05 Fri> Frequency doubled 397 for SCL
+-> April
+
+** <2012-10-05 Fri> Fix up parallel DAC on SCL
+
+** <2012-10-05 Fri> Migrate SCL to 32-bit dsPIC
+
+
+* Journal & Theory club
+
+** Journal club papers
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+
+** General papers
+*** TODO J.D. Siverns et. al. 2011
+
+** Theory subjects
+*** TODO Applications for data analysis and simulation
+
+** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+
+* To do, non-work
+
+** DONE [05-10-2012] October LETS technology meeting
+- [08-10-2012] Withdrawn
+
+** DONE [05-10-2012] November LETS AGM
+- [08-10-2012] Withdrawn
+
+** DONE [08-10-2012] Contact lens meeting Friday 12 9:00
+** DONE [08-10-2012] tidy.io feedback
+- Clicking on "archive it" should not take you to the archive tab
+- Make a way to select multiple folders
+- Is there a way to indicate which files (with a date) have already been archived?
+- [08-10-2012] Given!
+
+** DONE [16-10-2012] Contact lens followup <2012-10-25 Thu>
+** DONE [16-10-2012] Dara o Briain, Wed 17 20:00
+
+** TODO <2012-10-22 Mon> Learn git
+- [[http://git-scm.com/documentation][git tutorial links 1]]
+- [[http://sixrevisions.com/resources/git-tutorials-beginners/][git tutorial links 2]]
+
+** TODO <2012-11-07 Wed> New curtain solution for bedroom
+
+* Handy org-mode sequences
+** Motion
+The following commands jump to other headlines in the buffer.
+C-c C-n     (outline-next-visible-heading)
+Next heading. 
+C-c C-p     (outline-previous-visible-heading)
+Previous heading. 
+C-c C-f     (org-forward-same-level)
+Next heading same level. 
+C-c C-b     (org-backward-same-level)
+Previous heading same level. 
+C-c C-u     (outline-up-heading)
+Backward to higher level heading. 
+
+** Agenda
+- "C-c ." insert active date from calendar
+- "C-c !" insert inactive date from calendar
+- "C-c C-d" insert deadline stamp from calendar
+- "C-u C-c ." insert timestamp
+- "S-left/right" move cursor in calndar buffer
+
+** Links
+- "C-c l" store link
+- "C-c C-l" insert link (use with above)
+- "C-u C-c C-l" insert link (filename completion)
+- "C-c C-o" open link (or click)
+
+** Export
+- "C-c C-e h" export to HTML
+
+

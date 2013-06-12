@@ -1,0 +1,25 @@
+#+TITLE: Consumables references
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+* RS/Farnell
+- Liquid superglue, 473-455
+- Dymo label tape (large), 449-3939
+- Dual monostable multivibrators, 652-140
+- M4x8 screws, Socket head cap screw, 467-9852
+- Dymo label tape (b&w, 12mm - TZe-231), 157-2253 
+- Brother label tape (b&w, 6mm - S0720780), 208-6668
+
+* Thorlabs
+- Fibre collimating lenses - C110TME-B 
+- Fibre collimating lenses - A220TM-B 
+
+* Sci-tech stores
+* Miscellaneous
+- RF Switch model: zxswa-2-50dr 
+

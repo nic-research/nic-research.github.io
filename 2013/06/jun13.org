@@ -1,0 +1,370 @@
+#+TITLE: Research notes: June 2013
+#+AUTHOR: N. Seymour-Smith
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL HOLD
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+* Tuesday 11th
+** N2 Photionisation
+*** 16:16 Scan preparations						:Log:
+I couldn't go ahead with the scans yesterday because the N2 canister
+was empty. I don't know how it was emptied, but perhaps its due to one
+of the many connections it has being leaky. Before the experiment I
+will re-attach the output so that it is only going to the PI
+experiment. 
+
+Further, while I was waiting, I have set up the autotracker and found
+that it can scan the full range that we are expecting to see lines
+over (473.95 nm \to 474.30 nm) without significantly changing power.
+
+Mike Hardiman says he's looking about for a pre-amplifier that he used
+to use for the same channeltrons, and that should help us to get rid
+of discriminator drift. If that's not here by tomorrow morning I will
+go ahead and make a scan anyway.
+
+* Monday 10th
+** N2 Photionisation
+*** 11:07 Laser optimisation					       :Log:
+The laser has been attended by a technician and is running at
+approximately the same power as during the last scans. At around
+T(q-switch) = (150 \to 180) us, the pulse energy of the laser is (1.3
+\to 1.5) mJ. The beam-profile looks marginally better. I am told that
+we have ordered replacement prisms (used to separate the fundamental
+from the frequency doubled light), which should increase the output
+power to around 2.5 mJ. As mentioned previously, since the
+photoionisation is a third-order process, the gains from these
+improvements should be substantial. 
+
+I'm going to try taking scans with the current setup. Again ignoring
+the auto-tracker and instead adjusting the doubling-crystal angle
+manually approximately every 0.05 nm.
+
+(N.B. It seemed to me, from the behaviour of previous scans, that we
+could do with improving the stability of the channeltron output signal
+by adding a preamplifier before the discriminator, but I'm going to
+hold off on that for the moment just in case the increase in signal
+that we will see from the above improvements is enough to make this
+irrelevant.)
+
+* Friday 7th
+** N2 Photoionisation
+*** 11:50 Laser optimisation					 :Log:
+The laser is now being seen to by a technician to try and get it up to
+its original power (~4 mJ/pulse). This should give us a much bigger
+signal; since we have a three-photon process the efficiency scales
+with E^3.
+*** 11:17 Spectrum data 					       :Data:
+I've cleaned up the spectra taken shown in the entry of the 31st of
+May. The image below shows the relevant data:
+
+#+CAPTION: Figure 1. 
+#+CAPTION: Spectrum of N2 photoionisation, and power of the laser
+#+CAPTION: as the scan was being taken. 
+#+LABEL: fig:N2-PI-spectrum
+[[file:img/N2PI_spec.png][file:img/N2PI_spec.png]]
+
+The main difference here is that I have taken away another junk scan
+that had slipped in, and excluded all count-rate data for which the
+power on the meter was less than 10 units (on the scale in the
+plots). This cutoff was necessary because it was distorting spectra
+significantly as can be seen at the end of the first iteration of the
+diagram. 
+
+Using the paper ([[file:2013/06/img/n2pi.pdf][N2PI]]) as a guide, we have been able to positively
+identify lines from the /P/, /Q/ and /R/ branch and can speculate that
+the line that is not shown in the paper (out of scan range) is from
+the /O/ branch. The terminology in the paper however is fairly tricky,
+and I'm not sure we've figured out a correct interpretation yet. It's
+essential that we know exactly what lines we are looking at however,
+so I have been trying to investigate.
+
+*** 14:00 Comparison with paper, and terminology 		   :Analysis:
+It seems that the convention is that the symbols represent change in
+/total/ angular momentum including the angular momentum of the
+electron: 
+
+K = \Lambda_{electron} + N_{rot}
+
+In this case we would expect that the /R_0/ line represents the `bare'
+electronic transition frequency, with no adjustments for rotational
+energy: 
+
+N_{X} = 0, \\
+\Delta K = +1, \\
+\Delta \Lambda = +1, \\
+\to N_{a} = 0.
+
+Where /X/ and /a/ subscripts refer to the ground and excited states
+respectively. The additional rotational energy of these states is
+given by:
+
+#+LABEL: eqn:rotational-splitting
+\Delta E_i = B_i \cdot N(N+1), [eqn.1]\\
+(i = X, a)
+
+Given these relations we would expect that the spacing of the lines in
+the R-branch (/R_0/, /R_1/, /R_2/ etc.), would increase quadratically in
+accordance with the difference of the rotational constants /B_X/ and
+/B_a/. We also expect that the rotational constant for the excited state
+should be smaller than that of the ground state, given that the
+wavefunction is more spread out and therefore has a larger moment of
+inertia. This should give lines with quadratic spacing, succesively
+reducing in energy (or increasing in wavelength).
+
+The characteristic of the R-branch in the paper, however, is not like
+this. Instead the energy spacing first increases, before reaching a
+turning point between /R_2/ and /R_3/ and then going on to decrease
+quadratically. By similar arguments to the above, this is the
+characteristic of a branch of transitions where the rotational number
+increases by 1 (which, in this terminology and for this transition
+would be an S-branch). 
+
+The paper's Q-branch in fact behaves in the way we would expect the
+R-branch to behave, or as a Q-branch would behave for an excited state
+with no electron angular momentum. It doesn't seem likely that the
+notation is wrong however, since the fact that /Q/ subscripts start at 1
+and /P/ subscripts start at 2 are another indication of correct
+interpretation of the terminology. 
+
+*** 16:13 Fitting						   :Analysis:
+Taking a heuristic approach, we fit the data to a model that takes
+into account rotational splittings of the two levels according to
+equation 1 (\ref{eqn:rotational-splitting}). We can then start with
+either assumption that R-branch or the Q-branch is the /\Delta N = 0/
+transition, and see which model fits best.
+
+- /Follows an explanation of fitting using the Q-branch (short answer:
+  it didn't work):/ 
+
+Assuming the Q-branch is /\Delta N = 0/, and taking the literature value
+of the ground state rotational constant (~1.9) we find an excited
+state rotational constant of ~1.75. Since the Q-branch in the paper
+only starts at 1 we can either assume that /Q_{0}/ is disallowed and
+extrapolate where it would be, or that /Q_{1}/ is the fundamental
+transition. Either way we can fit the Q-branch easily to the paper,
+but then using the calculated value of /B_{a}/, we get no agreement with
+any of the other lines in the paper or our spectrum.
+
+- /And using the R-branch (short answer: it kind-of works):/
+
+#+CAPTION: Figure 2.
+#+CAPTION: Fit to the N_2 photionisation data for low values of /K (K < 3)/.
+#+CAPTION: Higher values give a bad fit. The stars represent observed spectral lines. 
+#+LABEL: fig:low-k-fit
+[[file:img/low_k_fit.png][file:img/low_k_fit.png]]
+
+Using the /R_0/ line as the fundamental electronic transition, we can
+calculate /B_X/ from the energy difference:
+
+\Delta E = E(R_0) - E(Q_1) \\
+\Delta E = 2B_X.
+
+This gives us a value of /B_X/ of ~0.9, which disagrees with the
+literature value fairly significantly (approx. a factor of
+2). Regardless this fits the paper data well for the lines that we
+have that are only determined by /R_0/ and /B_X/ (/R_0/, /Q_1/ and
+/P_2/).
+
+Similarly, we can calculate a value of /B_a/ from the energy
+difference of the /S_0/ and /R_0/ branches. This gives us a value of
+/B_a/ of ~1.9, which clearly goes against the expectation that /B_a <
+B_X/. Again disregarding the discrepancy, we find that we get a good
+fit to the /S_0/ line (dependent only on /B_a/), and additionally
+it gives us a good fit for lines ending in /K=2/ of the upper
+state. Beyond this both the characteristic and the fit is far off.
+
+This fit is shown in Fig. 2 (\ref{fig:low-k-fit}). There are several
+fitted lines that match the data, and their allocations also match
+those of the paper. The lines that have no corresponding data-points
+do have corresponding lines or allocations in the paper. The data
+points that don't have corresponding lines have corresponding
+allocations in the paper, and come from transitions to the excited
+state with /K>2/.
+
+* To do
+** Molecular Lab Experiments
+*** TODO [#A] Photoionisation of N2				    :Nic:Amy:
+**** TODO [#A] Identify appropriate gnd-state transition
+- <2013-05-08 Wed>
+Jack has done most of the work here. Just a case of optimising power
+etc. 
+- <2013-05-14 Tue> 
+Jack has had to move on to fibre shooting after some trouble with
+getting a spectrum around the gnd-state transition. I'm going to take
+over generally, once Matthias has reoptimised the laser and finished
+baking the chamber (having just replaced the channeltron).
+- <2013-05-31 Fri>
+I managed to get a full spectrum on Wednesday and analyse it today. I
+think we've got the whole series of lines, and I've handed it over to
+Matthias to see if he can identify the ground state transition from
+it.
+- <2013-06-07 Fri>
+Depending on interpretation of the paper we're using ([[file:2013/06/img/n2pi.pdf][N2PI]]), we either
+have the lines we need or they are a little further to the low energy
+end of the scale than we currently have. Need help interpreting paper,
+and will take another longer scan just in case, once the laser is
+optimised. 
+
+*** HOLD Work on DACs for the new SCL				  :Nic:Kevin:
+**** HOLD Building boards
+- <2013-01-25 Fri> Matthias has the plans:
+Pester him for them.
+- <2013-01-31 Thu> Received:
+Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+- <2013-02-04 Mon> Matthias is making the boards:
+Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+- <2013-02-04 Mon> Pins used:
+Check with Matthias that his design has incorporated these pins as
+I/Os:
++ Port D: RD8 (peak detect input), RD5 (CN_interrupt)
++ U2RX pins, unless he's already designed these away
+**** HOLD Programming
+***** TODO Write SPI library for PIC comms with computer
+***** TODO Write SPI library for PIC comms with DAC
+
+*** TODO [#C] Code an automation program for experiments	  :Nic:Kevin:
+**** TODO [#C] Fast autocorrelation calculation
+- <2013-04-09 Tue>
+[ ] Try using CUDA for a fast autocorrelation calculation |
+- <2013-04-09 Tue>
+Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+**** HOLD [#C] Plan out experiment process
+- <2013-05-30 Thu>
+Waiting on Keving to collect some data on `phonon-laser' type
+amplification of the dipole force before we can decide on the exact
+experimental procedure. 
+**** HOLD [#C] Describe phonon laser trick in notes
+- <2013-05-15 Wed>
+Check if I already have.
+- <2013-06-10 Mon>
+Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+*** TODO [#B] Simulations						:Nic:
+**** TODO [#B] Hanle dip/b-field map simulation
+***** TODO Fluorescence as a function of B-field for different light pol.
+***** TODO Sanity check: modulation sensitivity reduce at higher B-field?
+***** TODO B-field modulation frequency response (reduce laser Rabi f.)
+**** TODO [#C] Single ion `heat-engine' effect
+- <2013-05-30 Thu>
+Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+**** HOLD [#C] One or two calcium ions
+- <2013-03-22 Fri>
+Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+- <2013-05-28 Tue>
+This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+
+** General
+*** TODO [#B] Job application research				   :noexport:
+**** Drewsen group
+**** Innsbruck group
+**** Munich group
+*** HOLD Pseudopotential calculations for Oxford
+- <2013-06-07 Fri>
+Sent to Laura, awaiting feedback on usage.
+*** HOLD Find submissions for ITCM-Sussex.com
+- <2012-11-13 Tue>
+Matthias has reminded us to look through the old website for these.
+
+- <2012-11-20 Tue> 
+I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+
+- <2012-11-26 Mon>
+Rev. Sci. Instrum. 81, 075109 2010:
+
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(http://www.microchip.com/). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+
+- <2013-01-04 Fri> Comments on current webpage:
+1. There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+2. Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+3. Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+
+*** HOLD Ask Hiroki for a look at the code for cavity mode prop.
+- <2012-11-06 Tue>  
+Asked Hiroki, but he hasn't finished it yet. 
+
+** Meetings							   :noexport:
+** Journal & Theory club					   :noexport:
+*** Rota
+- Nic
+- Stephen
+- Amy
+- Hiroki
+- Jack
+- Michael
+- Kevin
+- Markus
+Theory club is offset by +4.
+*** Papers to look at
+**** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+**** TODO Brian Odom's manuscript
+**** TODO Koehl's Dipole trap + ion trap
+**** TODO Wielitsch's MOT + ion trap
+**** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+*** General papers
+*** Theory subjects
+**** TODO Applications for data analysis and simulation
+*** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+** To do, non-work						   :noexport:
+*** TODO Learn CSS/Jekyll
+- <2013-05-24 Fri>
+*** TODO Illustrate hydrogen wavefunctions in POV-ray
+- <2013-05-24 Fri>
+*** TODO Move ISA
+- <2013-04-24 Wed>
+Check Guardian article on cooperative banks
+*** TODO Purchase 
+- Scarf
+- Atomic physics text book
+- Thermodynamics text book
+- Quantum optics text book
+- Backup-drive replacement
+*** TODO Dekatron
+- [ ] 555 timer input
+
+* Appendix

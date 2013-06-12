@@ -1,0 +1,1842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Research notes: April 2013</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Research notes: April 2013"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-06-12 14:00:39 BST"/>
+<meta name="author" content="N. Seymour-Smith"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Research notes: April 2013</h1>
+
+
+<hr>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1"></a>
+<ul>
+<li><a href="#sec-1-1">Automation programming</a>
+<ul>
+<li><a href="#sec-1-1-1">13:31</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2"></a>
+<ul>
+<li><a href="#sec-2-1">Automation programming</a>
+<ul>
+<li><a href="#sec-2-1-1">09:56</a></li>
+<li><a href="#sec-2-1-2">13:29</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3"></a>
+<ul>
+<li><a href="#sec-3-1">NB</a></li>
+<li><a href="#sec-3-2">Automation programming</a>
+<ul>
+<li><a href="#sec-3-2-1">15:52</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4"></a>
+<ul>
+<li><a href="#sec-4-1">Automation programming</a>
+<ul>
+<li><a href="#sec-4-1-1">09:29</a></li>
+<li><a href="#sec-4-1-2">13:41</a></li>
+<li><a href="#sec-4-1-3">13:50</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5"></a>
+<ul>
+<li><a href="#sec-5-1">Automation programming</a>
+<ul>
+<li><a href="#sec-5-1-1">10:12</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-6"></a>
+<ul>
+<li><a href="#sec-6-1">Automation programming</a>
+<ul>
+<li><a href="#sec-6-1-1">13:29</a></li>
+<li><a href="#sec-6-1-2">16:06</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-7"></a>
+<ul>
+<li><a href="#sec-7-1">Automation programming</a>
+<ul>
+<li><a href="#sec-7-1-1">13:32</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8"></a>
+<ul>
+<li><a href="#sec-8-1">Dipole force detection schemes</a>
+<ul>
+<li><a href="#sec-8-1-1">11:50</a></li>
+<li><a href="#sec-8-1-2">12:02</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-9"></a>
+<ul>
+<li><a href="#sec-9-1">Photo-ionisation laser</a>
+<ul>
+<li><a href="#sec-9-1-1">11:52</a></li>
+</ul>
+</li>
+<li><a href="#sec-9-2">Automation/simulation software</a>
+<ul>
+<li><a href="#sec-9-2-1">12:02</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-10"></a>
+<ul>
+<li><a href="#sec-10-1">Measurement automation</a>
+<ul>
+<li><a href="#sec-10-1-1">10:18</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-2">Photo-ionisation laser</a>
+<ul>
+<li><a href="#sec-10-2-1">10:25</a></li>
+<li><a href="#sec-10-2-2">15:22</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-11"></a>
+<ul>
+<li><a href="#sec-11-1">Interferometer electronics</a>
+<ul>
+<li><a href="#sec-11-1-1">09:46</a></li>
+</ul>
+</li>
+<li><a href="#sec-11-2">Interferometer setup</a>
+<ul>
+<li><a href="#sec-11-2-1">09:57</a></li>
+</ul>
+</li>
+<li><a href="#sec-11-3">Simulations</a>
+<ul>
+<li><a href="#sec-11-3-1">11:00</a></li>
+<li><a href="#sec-11-3-2">11:46</a></li>
+<li><a href="#sec-11-3-3">13:27</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-12"></a>
+<ul>
+<li><a href="#sec-12-1">Interferometer electronics</a>
+<ul>
+<li><a href="#sec-12-1-1">09:30</a></li>
+<li><a href="#sec-12-1-2">15:28</a></li>
+</ul>
+</li>
+<li><a href="#sec-12-2">Interferometer setup</a>
+<ul>
+<li><a href="#sec-12-2-1">13:30</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-13"></a>
+<ul>
+<li><a href="#sec-13-1">Dipole force interferometer</a></li>
+<li><a href="#sec-13-2">Interferometer electronics</a></li>
+</ul>
+</li>
+<li><a href="#sec-14"></a>
+<ul>
+<li><a href="#sec-14-1">Dipole force interferometer</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">To do</a>
+<ul>
+<li><a href="#sec-15-1">To do, Molecular Lab Experiments</a>
+<ul>
+<li><a href="#sec-15-1-1">Photoionisation of N2</a></li>
+<li><a href="#sec-15-1-2">Dipole force laser setup</a></li>
+<li><a href="#sec-15-1-3">Work on DACs for the new SCL</a></li>
+<li><a href="#sec-15-1-4">Code an automation program for experiments</a></li>
+<li><a href="#sec-15-1-5">Simulations</a></li>
+</ul>
+</li>
+<li><a href="#sec-15-2">To do, General</a>
+<ul>
+<li><a href="#sec-15-2-1">Check for tantalum for ovens</a></li>
+<li><a href="#sec-15-2-2">Find submissions for ITCM-Sussex.com</a></li>
+<li><a href="#sec-15-2-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+<li><a href="#sec-15-2-4">Oxford group proposal research</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-16">Appendix</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-30 Tue</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Automation programming</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">13:31</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>I've done nothing except UI cleanups and usability improvements since
+yesterday. The client has been changed a little so that it can run
+without starting the p7888 automatically. That means that the user can
+change settings `offline' so to speak, before running a measurement
+and taking data.
+</p>
+<p>
+In fact that's just given me an idea. The client need not really be
+just a PMT if we use this idea. Essentially it can just be a total
+client interface with all the functionality of the p7888: Before
+running a measurement the user can set up everything as he pleases
+using the settings of the p7888 and the client. That means we can
+build in all functionality, such as live-rate checking (PMT-mode) or
+data spectrum-taking, and let the user decide which functionality he
+wants on a case-by-case basis. 
+</p>
+<p>
+I wonder if this is the right approach, or having separate vis is
+better. On the one hand we have "do one thing well",XC and on the other
+hand we have repeated work and re-learning. In any case it's not
+difficult to build the all-in-one unit, so I might see how far I can
+get on that. 
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-29 Mon</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Automation programming</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">09:56</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>Settings-writing has been fixed. The DDE module takes one command at a
+time, so the client must send an array of strings with the settings
+options to the server, and the server loops over that array to write
+the settings. Right now the UI is just a textbox, but that can change
+some time further down the line.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">13:29</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<p>The last known major issue in the software has been settled. This was
+a timing issue, where the client would issue a datasocket request for
+settings/data, and try and read it before the returning datasocket
+write could be published. The obvious answer was to add a small timing
+delay after the request, and everything works fine now.
+</p>
+<p>
+I'm going to do a little bit of cleaning up, test the client as being
+used remotely (have been running client and server on the same
+computer up until now), and then add the whole thing to Hiroki's SVN
+repository for use on other computers.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-26 Fri</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">NB</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>Lost a few days notes by messing up my backup routine. That's
+life. Will try and summarise below.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Automation programming</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">15:52</h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<p>In brief, I wrote a module on the server to extract data from the
+p7888, and it works fine. The client asks for the data, the server
+asks the card what the spectrum size is and returns the data to the
+client. 
+</p>
+<p>
+However this highlighted a bug in the settings-writing module where
+the spectrum length is set. The value given to the card by the server
+is not being written at all. Interestingly the server doesn't realise
+this, as it receives back from the card that it has been written -
+only on the card itself the value hasn't changed. I believe this is an
+issue with the order of the data in the labview cluster and the
+structure of the acqSetting struct in the dll. I haven't managed to
+resolve this and so am instead changing tack. 
+</p>
+<p>
+In place of this module I'm going to use the provided labVIEW DDE
+modules for communicating with the card. These are likely to be slow,
+and don't provide all of the functionality of the dll, but that is
+okay if it's only being used to write settings at the start of
+operation.
+</p>
+<p>
+I've finished a first draft of the server-side module, and just need
+to build an input into the client.
+</p>
+<p>
+One more thing to note is that there's a small sync issue with the
+client and server. It seems that the data that the client receives
+from the server is always one step behind what is being asked i.e. I
+must ask the server for the current settings twice in order to see any
+changes that I made before the first call. I'll tackle this problem
+once I have the basic functionality down.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-23 Tue</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Automation programming</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">09:29</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<p>It seems I haven't reported having got a basic version of the software
+running in the end. Paring the system down to one that only starts the
+card, reads the status and stops the card (no settings writing or
+reading), I managed to get a reading of the output of a function
+generator hooked up to the Manati (cavity lab computer) p7888 card. 
+</p>
+<p>
+The reason why there was no update on previous versions was probably
+that I was pointing to the wrong dll. On both Manati and Marvin the
+correct one is 
+</p>
+<pre class="example">
+C:\Windows\System32\DP7888.dll
+</pre>
+
+
+<p>
+Still now, there's an issue when I run the full PMT software, that
+writes the settings at start and when they change, and reads the
+settings every timeout loop. Not sure what the issue is just yet, but
+it causes both lv and the server to crash. Potentially it's an issue
+with volume of commands?
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2">13:41</h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<p>It was, in fact, an issue with the volume of commands. I wrote a small
+vi that checks the number of commands in the function buffer, and
+just loops until it is empty. This was then built in to all of the
+low-level, function-calling vis that make up the client. It now works
+fine, if a little slowly. The slowness can't much be helped without
+some serious rewrites and a solution to the double-server problem (my
+LV vi is a server for the P7888 server).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3">13:50</h4>
+<div class="outline-text-4" id="text-4-1-3">
+
+<p>The next step is to write a vi that extracts a spectrum from the
+data. I need to look back over my notes for how I did this in the past
+with C.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-18 Thu</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">Automation programming</h3>
+<div class="outline-text-3" id="text-5-1">
+
+
+</div>
+
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1">10:12</h4>
+<div class="outline-text-4" id="text-5-1-1">
+
+<p>I didn't have any immediate luck adding client-side buffering to the
+system yesterday. It's difficult to tell what was going wrong, but the
+status of the card was not updating on the server or client properly
+(i.e. tracking the amount of time the measurement had been on etc.). I
+think there's likely some issues in synchronisation further up the
+line, that is between the LV server and the P7888 server, which I
+can't do anything about. 
+</p>
+<p>
+I can try and make the buffering more robust though, by asking the
+server to check the buffer length, and to execute commands as long as
+the buffer is not empty. 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-17 Wed</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1">Automation programming</h3>
+<div class="outline-text-3" id="text-6-1">
+
+
+</div>
+
+<div id="outline-container-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1">13:29</h4>
+<div class="outline-text-4" id="text-6-1-1">
+
+<p>The quick fix mentioned above isn't quite enough to get things running
+properly. There are many situations where client-side, we would like
+to call a series of functions in succession. Since the server updates
+independently of the client, there is not guarantee that functions
+calls have been read by the server before the next function call is
+written by the client. 
+</p>
+<p>
+For this reason we need to have a ready/received flag set by the
+server. Now every time the client loads a vi that calls a function, it
+must first wait for the server flag to be set before sending the
+function. The server sets the ready flag&hellip;
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2">16:06</h4>
+<div class="outline-text-4" id="text-6-1-2">
+
+<p>Got caught in the middle of an entry there. Probably a good thing
+though, since having thought it over, the application of this kind of
+synchronisation is going to be more complicated than the track I
+started off with above. It will essentially need two variables, a
+ready and a received. The client then only sends when it reads ready,
+and only moves on when it reads received. I suppose the same could be
+accomplished with one variable, and detecting a change of state of
+that, but anyway this is all rather complicated, when there appears to
+be an easier solution: client-side data buffering. 
+</p>
+<p>
+Using client-side data-buffering, we can make sure that the server
+receives each command in turn, and as long as it refreshes at the same
+rate or faster than the client, we can probably be sure of never
+filling the buffer or missing a command. We should do some work to
+make the server run as fast as possible in order to give this method
+good responsiveness, but it's by far the easiest approach to this
+problem at the moment.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-16 Tue</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1">Automation programming</h3>
+<div class="outline-text-3" id="text-7-1">
+
+
+</div>
+
+<div id="outline-container-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1">13:32</h4>
+<div class="outline-text-4" id="text-7-1-1">
+
+<p>I finally debugged the error on my labview p7888 server. I was getting
+a non-specific datasocket error that would crash it, when trying to
+communicate using the client on another computer. It turns out that
+the error was not in fact a datasocket error, but rather a programming
+error. 
+</p>
+<p>
+The problem was that the server would read the `function id' variable
+to check if it was non-zero and if it was, then it would execute that
+function. However the function id variable was not being reset
+client-side (it cannot be reset server side because of
+write-restrictions). I'm not 100% sure how, but this messed up the
+datasocket protocol and gave me the error I was seeing. Perhaps it had
+something to do with functions being repeatedly called. 
+</p>
+<p>
+The quick-fix was to change the server code so that it would look for
+a <i>change</i> in the `function id' before executing it. As long as the
+function id is initialised as none, this has the same effect and is
+robust against the issue I was having. 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-15 Mon</span></span></h2>
+<div class="outline-text-2" id="text-8">
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1">Dipole force detection schemes</h3>
+<div class="outline-text-3" id="text-8-1">
+
+
+</div>
+
+<div id="outline-container-8-1-1" class="outline-4">
+<h4 id="sec-8-1-1">11:50</h4>
+<div class="outline-text-4" id="text-8-1-1">
+
+<p>During a previous meeting, Matthias proposed that we use a technique
+similar to the one shown here:
+<a href="http://www.nature.com/nphys/journal/v5/n9/full/nphys1367.html">http://www.nature.com/nphys/journal/v5/n9/full/nphys1367.html</a>, instead
+of the standard sequential amplification and cooling scheme we
+initially planned.
+</p>
+<p>
+The basic outline is that we use the dipole force to seed an
+oscillation, amplify it using the blue detuned laser, and then
+<i>stabilise</i> that oscillation by simultaneously increasing the power of
+a red detuned cooling laser. Ideally then we would be able to maintain
+a stable oscillation, seeded by a single shot of the dipole force, for
+long enough to measure the oscillation frequency. This means we only
+need a single shot per measurement, instead of many
+dipole force -&gt; amplification -&gt; cooling sequences. This potentially
+decreases the amount of time we need to have the molecule exposed to
+the dipole laser, and thereby suppresses unwanted spontaneous
+emission.
+</p>
+<p>
+The problem I see with this at the moment is that the oscillation seen
+in the paper above is self-seeded. Thus for a single experiment we
+cannot distinguish an oscillation seeded by the dipole force from an
+self-seeded one. One way around this is to use multiple shots, and
+then phase information can be extracted from the correlations - but
+then we are back to multiple shots, but with a more complicated setup
+(lasers need to be more stable to maintain oscillations). 
+</p>
+<p>
+I wonder if another possibility is to mix the photon signal with the
+driving voltage, to pick out the part at the correct phase. There is
+still a danger, I fear, of false positives in the event that the
+random self-seeded phase happens to match that of the driving
+force. The likelihood greatly diminishes if we add just a second shot
+of the experiment however i.e. this could have better scaling with the
+number of shots than other methods. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8-1-2" class="outline-4">
+<h4 id="sec-8-1-2">12:02</h4>
+<div class="outline-text-4" id="text-8-1-2">
+
+<p>It was my initial understanding of this method (before any of this
+write-up) that helped to push us towards investigating this method in
+Kevin's trap. Having thought over it since, I'm thinking that that
+understanding was flawed. Here's the though process:
+</p>
+<p>
+We cool the ion in the trap, and expose it to both a red and a blue
+detuned laser on the cooling transition. The power ratio of these
+lasers is tuned so as to sit just below the threshold of oscillation
+(see the paper above). If the molecule is in the ground state, then
+when the dipole force is applied, this kicks the oscillation into
+motion and keeps it maintained. If the molecule is in another state,
+nothing else happens.
+</p>
+<p>
+I think this reasoning is flawed because the oscillation threshold is
+fixed only by the power ratio, and not by the size of the
+oscillation. Although increasing the amplitude of oscillation of the
+ion the trap will increase the amplitude of the force acting on it
+from the blue detuned laser, it will also increase the amplitude of
+the force acting on it from the <i>red</i> laser, and thus the ratio of
+amplitudes is maintained and no oscillation occurs.
+</p>
+<p>
+So yeah, just thought I'd write that down so that I don't make the
+same mistake again. 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span></h2>
+<div class="outline-text-2" id="text-9">
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1">Photo-ionisation laser</h3>
+<div class="outline-text-3" id="text-9-1">
+
+
+</div>
+
+<div id="outline-container-9-1-1" class="outline-4">
+<h4 id="sec-9-1-1">11:52</h4>
+<div class="outline-text-4" id="text-9-1-1">
+
+<p>Jack is still working on optimising the laser. The power rails are
+still down, but Matthias is contacting the electrician to get it all
+done as soon as possible. Then I will be pumping down the test chamber
+and looking for PI.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2">Automation/simulation software</h3>
+<div class="outline-text-3" id="text-9-2">
+
+
+</div>
+
+<div id="outline-container-9-2-1" class="outline-4">
+<h4 id="sec-9-2-1">12:02</h4>
+<div class="outline-text-4" id="text-9-2-1">
+
+<p>For fast processing of the data we're receiving from the experiment we
+need a quick autocorrelation algorithm. I think Wolfgang's code is
+likely to be as fast as possible without using parallel processing,
+yet is still somewhat slow for large datasets. Therefore I've been
+looking into using parallel processing with GPUs. NVidia have released
+a programming interface for general processing with their GPUs called
+CUDA, and there is also an open source approach, which can use
+non-nVidia GPUs, called `opencl'.
+</p>
+<p>
+Currently setting up a good programming environment to work with (Git
+and BitBucket repo), while I wait for ITS to install windows on my
+main computer. This will probably be necessary for coding CUDA so that
+it will work on our lab computers.
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-08 Mon</span></span></h2>
+<div class="outline-text-2" id="text-10">
+
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1">Measurement automation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+
+
+</div>
+
+<div id="outline-container-10-1-1" class="outline-4">
+<h4 id="sec-10-1-1">10:18</h4>
+<div class="outline-text-4" id="text-10-1-1">
+
+<p>Handing this over to Kevin to work on. I've shown him the
+server/client LV program I wrote, and he's going to try and crack the
+datasocket problem I was having. First off he's working on an
+interesting idea Matthias had on amplifying the dipole force motion:
+If we illuminate the ions with a red and blue laser simultaneously,
+then perhaps, by tuning the powers of the two lasers in the same way
+as in the matter-laser paper (Udem), we can stabilise the oscillation
+and keep it going `indefinitely'. This would mean that we would
+require only a single dipole force excitation, and could follow this
+up with just a single measurement period. This would be ideal for
+minimising the probablity of spontaneous decay.
+</p>
+<p>
+The next point is that I've realised that I never thought of a method
+for extracting a live list-file (timestamps of photon arrivals) from
+the p7888. That's alright however, because this is functionally
+equivalent to extracting a live spectrum from the machine, with it
+measuring in `continuous' mode. We can get the same time-resolution by
+setting bin-widths to 1, and we extract times by multiplying bin-width
+by channel. This is in fact better than timestamps, because it's
+already in a useful format for calculating auto-correlations. 
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10-2" class="outline-3">
+<h3 id="sec-10-2">Photo-ionisation laser &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-10-2">
+
+
+</div>
+
+<div id="outline-container-10-2-1" class="outline-4">
+<h4 id="sec-10-2-1">10:25</h4>
+<div class="outline-text-4" id="text-10-2-1">
+
+<p>With the interferometer more or less done (until it gets moved over to
+the main table), I've been tasked with getting the photoionisation up
+and running. The dye laser has just been serviced and should be
+putting out a lot more power than before, and hopefully enough to
+ionise N2.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10-2-2" class="outline-4">
+<h4 id="sec-10-2-2">15:22</h4>
+<div class="outline-text-4" id="text-10-2-2">
+
+<p>Jack has been working on optimising the output of the dye laser during
+the morning. The power rail for that side of the table is still down,
+so Amy hasn't chased up the workshop about a backing pump that will be
+used for pumping down the test-chamber. 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-05 Fri</span></span></h2>
+<div class="outline-text-2" id="text-11">
+
+
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1">Interferometer electronics</h3>
+<div class="outline-text-3" id="text-11-1">
+
+
+</div>
+
+<div id="outline-container-11-1-1" class="outline-4">
+<h4 id="sec-11-1-1">09:46</h4>
+<div class="outline-text-4" id="text-11-1-1">
+
+<p>I've ended up going with C = 290 nF and R = 50 Ohm. This in principle
+gives us a cutof of 11 kHz, which is quite low, but very likely to be
+above the resonance of the PZT-mirror assembly.
+</p>
+<p>
+With this configurations, there is very little of the modulation
+visible on the feedback signal, and it is certainly smaller than the
+other dominant noise sources being compensated.
+</p>
+<p>
+We still have to work out where 250 Hz noise is coming from (it
+doesn't seem to be any of the light sources), since that is still the
+dominant source of noise, but otherwise the system seems to be working
+fine. 
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11-2" class="outline-3">
+<h3 id="sec-11-2">Interferometer setup</h3>
+<div class="outline-text-3" id="text-11-2">
+
+
+</div>
+
+<div id="outline-container-11-2-1" class="outline-4">
+<h4 id="sec-11-2-1">09:57</h4>
+<div class="outline-text-4" id="text-11-2-1">
+
+<p>Now that the electronics are up, the test-setup is more or less
+done. What's left is to collect together the parts for the real
+setup. 
+</p>
+<p>
+The main difference will be that the main-arm's PZT-mirror assembly
+must allow for optical access of a 397 nm cooling laser for axial
+cooling (see fig. <a href="#fig-dipole_int_trap">dipole<sub>int</sub><sub>trap</sub></a>). Additionally, the fibre
+outcoupling lens for the 787 and the first focussing lens (L1) will be
+achromatic doublets. This will allow us to overlap the dipole-force
+laser with the ions by passing 866 through the path and using it to
+repump/illuminate ions. Once aligned this is turned off, and repumping
+is done from the radial direction, in order that the 866 light does
+not interfere with the interferometer. 
+</p>
+
+<div id="fig-dipole_int_trap" class="figure">
+<p><img src="img/dipole_interferometer_trap.png"  alt="img/dipole_interferometer_trap.png" /></p>
+<p>Schematic of the dipole-force laser interferometer setup as it will be at the trap</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11-3" class="outline-3">
+<h3 id="sec-11-3">Simulations</h3>
+<div class="outline-text-3" id="text-11-3">
+
+
+</div>
+
+<div id="outline-container-11-3-1" class="outline-4">
+<h4 id="sec-11-3-1">11:00</h4>
+<div class="outline-text-4" id="text-11-3-1">
+
+<p>At a previous meeting I raised the idea that, at least for the first
+experiments into detecting the dipole force, we might have two Ca ions
+in the trap with the N2+, rather than just one. On the one hand this
+will reduce the acceleration from the dipole force due to the
+increased mass of the crystal, but on the other hand it will increase
+the signal-to-noise ratio of the doppler velocimetry. Just from a
+hand-wavey perspective I'd expect the gains to be higher than the loss
+(maybe double signal to noise vs one-third reduction in translation of
+force to movement?).
+</p>
+<p>
+In order to get a better idea of this trade-off in reality, I can
+build a simulation based on the molecular dynamics sims I've been
+using so far. There is a whole other level of complexity involved when
+we introduce multiple bodies to the system, but it's a generally
+useful simulation, and perhaps one that can be generalised for large
+numbers (e.g. 3-d ion crystals). Furthermore it might become a good
+excuse for looking at coding using CUDA, which is a toolset for
+parallel programming using 3-d graphics cards.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11-3-2" class="outline-4">
+<h4 id="sec-11-3-2">11:46</h4>
+<div class="outline-text-4" id="text-11-3-2">
+
+<p>It looks like the graphics card on my n10j laptop is CUDA supported,
+and that's around four years old, so I'm guessing there's support for
+my main computer (still waiting on ITS to install windows on
+it). Accessing the CUDA functions from MATLAB requires the "Parallel
+computing toolbox" from Mathworks, so I guess I need to ask whether
+the university owns a copy of this. 
+</p>
+<p>
+The alternative is to use C or python. Ideally we would be using a
+quantum optics toolbox, which would rule out C in the ideal case. Also
+I believe it's not possible to run Python's QO toolbox on windows, so
+maybe that's ruled out too. On the other hand, we can revert to
+non-qo toolbox calculations of the dynamics (3 level or 2 level
+systems), in order to be able to utilise C or Python and CUDA, if the
+the parallel computing toolbox is not accessible. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11-3-3" class="outline-4">
+<h4 id="sec-11-3-3">13:27</h4>
+<div class="outline-text-4" id="text-11-3-3">
+
+<p>According to this link:
+<a href="http://qutip.googlecode.com/svn/doc/2.2.0/html/installation.html#installation-on-windows">http://qutip.googlecode.com/svn/doc/2.2.0/html/installation.html#installation-on-windows</a>
+it's possible to install QuTIP in windows as long as the initial
+python distribution is python(x,y):
+<a href="https://code.google.com/p/pythonxy/">https://code.google.com/p/pythonxy/</a>. Follow the instructions in the
+first link for the full details. This is another alternative to MATLAB
+with the Parallel computing toolbox. 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-04 Thu</span></span></h2>
+<div class="outline-text-2" id="text-12">
+
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1">Interferometer electronics</h3>
+<div class="outline-text-3" id="text-12-1">
+
+
+</div>
+
+<div id="outline-container-12-1-1" class="outline-4">
+<h4 id="sec-12-1-1">09:30</h4>
+<div class="outline-text-4" id="text-12-1-1">
+
+<p>Interferometer was succesfully locked yesterday. I used one of the old
+modular, rack-mounted lock-boxes for PI feedback. The locking signal
+has one major source of noise at 250 Hz, with an amplitude of 0.2
+V. The complete fringe amplitude is 8 V pk-pk. Beneath the 250 Hz
+noise, the signal is much cleaner at roughly 50 mV noise amplitude or
+less. These amplitudes correspond roughly to &gt; 10 nm and &gt; 2.5 nm (
+the "&gt;" coming from the non-linearity of the sinusoid).
+</p>
+<p>
+Points of note:
+a) The full range of the amplifier (160 V) is just under
+one wavelength on the secondary PZT. This is less than expected, but
+possibly not a terrible thing, as it makes us robust to electronic
+noise in that arm. It may however cause problems in obtaining the best
+locking signal for a specific overlap of the standing wave with the
+ion. 
+</p>
+<p>
+b) The feedback signal does not change drastically over time,
+indicating that there is not a large amount of drift in either of the
+PZTs extension. What drift there is, I would imagine would be much
+more likely to come from the longer, less stiff PZT on the main
+arm. There's no real way to test this in the current setup of course,
+so maybe I should keep that in mind.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12-1-2" class="outline-4">
+<h4 id="sec-12-1-2">15:28</h4>
+<div class="outline-text-4" id="text-12-1-2">
+
+<p>Low pass filter design:
+</p>
+<p>
+\\\\ \(f_c = 1/(2\pi RC)\)
+\\<br/>
+</p>
+<p>
+With 6 dB per octave for a first order filter, we can probably set the
+cutoff at 50 kHz and be fairly happy that frequencies 100 kHz and up
+are sufficiently attenuated. So:
+</p>
+<p>
+\\\\ \(f_c = 50~kHz, R = 1~k\Omega\)
+\\ \(C = 3~nF\)
+\\<br/>
+</p>
+<p>
+Alternatively 60 nF for 50 Ohm.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12-2" class="outline-3">
+<h3 id="sec-12-2">Interferometer setup</h3>
+<div class="outline-text-3" id="text-12-2">
+
+
+</div>
+
+<div id="outline-container-12-2-1" class="outline-4">
+<h4 id="sec-12-2-1">13:30</h4>
+<div class="outline-text-4" id="text-12-2-1">
+
+<p>The dipole force laser must come in through the trap axis in order for
+us to look at the axial secular motion (least noisy). We also need
+cooling lasers in this direction, so I need to replace the
+retro-reflecting mirror on the main arm with a dichroic mirror
+(transparent for 397 nm) in order to get the cooling beam in. There
+must also be a a dichroic mirror for picking off the cooling beam
+before it hits the interferometer diode. 
+</p>
+<p>
+There will likely be some issues with overlapping the dipole force
+with the ions. One suggestion is to couple an 866 to the same fibre
+that the 787 comes from, and using achromatic optics, to overlap the
+beams by looking for ion fluorescence from repumping. The achromatic
+optics are necessary to overcome issues with dispersion between the
+different wavelengths. 
+</p>
+<p>
+For fine adjustment, once overlap is achieved, there is some
+consideration of installing a thick glass plate on an adjustment
+stage, which would allow us to displace the overlapped beams by a
+small amount. 
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-03 Wed</span></span></h2>
+<div class="outline-text-2" id="text-13">
+
+
+</div>
+
+<div id="outline-container-13-1" class="outline-3">
+<h3 id="sec-13-1">Dipole force interferometer</h3>
+<div class="outline-text-3" id="text-13-1">
+
+<p>The photodiode size ended up not being the real issue. More important
+was that the diode was being saturated when pointed at regions of
+highest contrast. Regions where the intensity were smaller were
+naturally lower contrast (overlap is worse in the wings), and so the
+contrast ratio was low. I found a less sensitive photodiode that can
+look directly at the beam, and have found a roughly 88% contrast
+ratio, which will do the job for now.
+</p>
+<ul>
+<li>N.B. - 
+</li>
+</ul>
+
+<p>An issue to bear in mind is that, just because the interferometer arms
+are overlapped at the output, there is no guarantee that the beam is
+overlapped with itself in the main arm (the dipole force arm). Some
+thought has to be put into how we will deal with this come the main
+experiment. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-13-2" class="outline-3">
+<h3 id="sec-13-2">Interferometer electronics</h3>
+<div class="outline-text-3" id="text-13-2">
+
+<p>The electronics for the interferometer should at first iteration be
+fairly simple. All we need is a low pass filter to filter out the AM
+at ~ 1 MHz, and a simple PID to feedback to the main arm's PZT for
+compensation of acoustic noise. The control for this arm must also
+have a variable offset.
+</p>
+<p>
+The second arm's PZT must be hooked up to a PZT-amp as well, but
+there's not a lot of testing we can do as far as that's
+concerned. This will allow us to fix the phase at the interferometer
+output when we are required to change the offset of the PZT on the
+main arm to overlap the standing wave with the ion.
+</p>
+<p>
+We might need to scavenge/buy another PZT amplifier to get all of this
+functionality. Stealing from the SCL/Cs laser is a short-term
+solution.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="timestamp-wrapper"> <span class="timestamp">2013-04-02 Tue</span></span></h2>
+<div class="outline-text-2" id="text-14">
+
+
+</div>
+
+<div id="outline-container-14-1" class="outline-3">
+<h3 id="sec-14-1">Dipole force interferometer</h3>
+<div class="outline-text-3" id="text-14-1">
+
+<p>Checked the polarisation of the beam coming out of the PM fibre. It
+was so scrambled as to be impossible to optimise on the
+polarimeter. One contribution to this was the fact that I was using a
+waveplate for 794 nm (not 787 nm). But once that was fixed, and the
+input to the fibre was confirmed to be purely polarised, the fibre
+itself was found to be very bad at PM, with the best attenuation I
+could manage at 8 deg (maximum ellipticity 20 deg). 
+</p>
+<p>
+I swapped that fibre out for a brand new one from Thorlabs and it was
+exactly the same. A third fibre (exact same model, new) was a lot
+better, but still not as good as I would expect - it gives 17 dB
+attenuation (prefer upwards of 20 dB).
+</p>
+<p>
+Even after `fixing' these polarisation issues the contrast is still
+almost exactly the same. My current thinking is that this is an issue
+with the extension of the detector surface: If we look at the
+interference on a card, it seems clear that there is a much larger
+contrast than is measured on the oscilloscope, but it comes in `bands'
+across the spot of the overlapped beams. If the size of the detector
+is much larger than these bands, or if it is not aligned perpendicular
+to the wavefronts,  then we can expect there to be a limit to the
+contrast ratio obtainable.
+</p>
+<p>
+The cure would be to either image the spots through a pin-hole, or use
+a PD with a very small surface (more efficient than the former).
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15">To do</h2>
+<div class="outline-text-2" id="text-15">
+
+
+</div>
+
+<div id="outline-container-15-1" class="outline-3">
+<h3 id="sec-15-1">To do, Molecular Lab Experiments</h3>
+<div class="outline-text-3" id="text-15-1">
+
+
+</div>
+
+<div id="outline-container-15-1-1" class="outline-4">
+<h4 id="sec-15-1-1"><span class="todo TODO">TODO</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h4>
+<div class="outline-text-4" id="text-15-1-1">
+
+<ul>
+<li id="sec-15-1-1-1"><span class="done DONE">DONE</span> Install pump and pump down PI test chamber &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span><br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-15 Mon</span></span>
+</li>
+</ul>
+
+<p>Installed and seems to be pumping down fine now with the turbo
+on. 
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-1-2"><span class="done DONE">DONE</span> Get a PI spectrum from the test chamber &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Jack">Jack</span>&nbsp;<span class="Nic">Nic</span></span><br/>
+<ul>
+<li><code>[X]</code> Try out the newly serviced laser. | Jack's tuned it up and
+  producing a good amount of power 1 mJ (of 4 mJ new) <span class="timestamp-wrapper"> <span class="timestamp">2013-04-23 Tue</span></span>
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-23 Tue</span></span>
+</li>
+</ul>
+
+<p>Jack's got a preliminary spectrum. Needs tuning.
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-1-3"><span class="todo TODO">TODO</span> Identify gnd-state transition<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-15-1-2" class="outline-4">
+<h4 id="sec-15-1-2"><span class="done DONE">DONE</span> Dipole force laser setup &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Amy">Amy</span></span></h4>
+<div class="outline-text-4" id="text-15-1-2">
+
+<ul>
+<li id="sec-15-1-2-1"><span class="done DONE">DONE</span> AM setup<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-2-2"><span class="done DONE">DONE</span> New laser<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-18 Mon</span></span>
+</li>
+</ul>
+
+<p>Set up and lasing at correct wavelength. Power is lower than the 100 mW
+it is rated at with an external cavity, but we are not exactly at the
+emission peak of the bare diode (took a lot of tuning away from the
+place with easiest optical feedback). Further, the bare diode is rated
+at 200 mA, but I'm not sure how high I can run it with an external
+cavity. 
+</p>
+<p> 
+λ = 787.475 nm,
+</p>
+<p>
+I<sub>th</sub> ~ 45 mA,
+</p>
+<p>
+T = 25.36<sup>&circ;</sup> C,
+</p>
+<p>
+I = 77.54 mA,
+</p>
+<p>
+V<sub>PZT</sub> = 107 V,
+</p>
+<p>
+P ~ 10 mW, 
+</p>
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-2-3"><span class="done DONE">DONE</span> Single-pass AOM and optical fibre<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-21 Thu</span></span> Set up on the test table.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-2-4"><span class="done DONE">DONE</span> Inteferometer setup<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span> 
+</li>
+</ul>
+
+<p>Find appropriate PZT for second arm of the interferometer (small
+travel, high stability) [X]
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-02 Tue</span></span>
+</li>
+</ul>
+
+<p>Improve contrast ratio:
+Sort out focii and polarisation
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-03 Wed</span></span>
+</li>
+</ul>
+
+<p>[X] Polarisation roughly optimised (17 dB PM)
+[X] Overlap/contrast ratio roughly optimised (80 %)
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-05 Fri</span></span>
+</li>
+</ul>
+
+<p>[C] Replace main arm mirror/PZT for dichroic and cylinder piezo (397
+nm input) -&gt; No zero deg. dichroics, setup will inc. two 45 deg
+ones. instead - more complicated, more losses but too expensive
+otherwise | <span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+[X] Source another dichroic (397 nm output) | <span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+[X] Source achromatic asphere (787 &amp; 866) fibre-coupling lens for | <span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+overlapping the dipole laser with the ions
+[X] Source Achromatic 100 mm lens for above. | <span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-2-5"><span class="done DONE">DONE</span> Feedback electronics<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-03 Wed</span></span>
+</li>
+</ul>
+
+<p>[X] PID feedback on main arm + offset control.
+[X] Offset control on secondary arm.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-04 Thu</span></span>
+</li>
+</ul>
+
+<p>[X] AM on AOM.
+[X] Low pass and locking again. <span class="timestamp-wrapper"> <span class="timestamp">2013-04-05 Fri</span></span>
+[-] Fine tune/kill 250 Hz noise.
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-2-6"><span class="todo TODO">TODO</span> Hand over to Amy<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-15-1-3" class="outline-4">
+<h4 id="sec-15-1-3"><span class="todo TODO">TODO</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-15-1-3">
+
+<ul>
+<li id="sec-15-1-3-1"><span class="todo TODO">TODO</span> Building boards<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
+</li>
+</ul>
+
+<p>Pester him for them.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-31 Thu</span></span> Received:
+</li>
+</ul>
+
+<p>Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Matthias is making the boards:
+</li>
+</ul>
+
+<p>Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Pins used:
+</li>
+</ul>
+
+<p>Check with Matthias that his design has incorporated these pins as
+I/Os:
+</p><ul>
+<li>Port D: RD8 (peak detect input), RD5 (CN<sub>interrupt</sub>)
+</li>
+<li>U2RX pins, unless he's already designed these away
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-3-2"><span class="todo TODO">TODO</span> Programming<br/>
+<ul>
+<li id="sec-15-1-3-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-3-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-15-1-4" class="outline-4">
+<h4 id="sec-15-1-4"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-15-1-4">
+
+<ul>
+<li id="sec-15-1-4-1"><span class="done DONE">DONE</span> Flow chart for experimental sequence<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-16 Tue</span></span>
+</li>
+</ul>
+
+<p>Gave this to Kevin a while back. 
+</p>
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-4-2"><span class="done DONE">DONE</span> Fix datasocket bug<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-16 Tue</span></span>
+</li>
+</ul>
+
+<p>Debugged. Not a problem with the datasocket. Rather I was not
+resetting the function socket after it had been called, causing the
+program to constantly be calling functions, and this messed up the
+p7888 server. 
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-4-3"><span class="done DONE">DONE</span> Debug the rest of the program<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-23 Tue</span></span>
+</li>
+</ul>
+
+<p>Program debugged
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-4-4"><span class="todo TODO">TODO</span> Write data extraction vi<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-23 Tue</span></span>
+</li>
+</ul>
+
+<p>Look back at notes as to how this was done.
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-4-5"><span class="todo TODO">TODO</span> Fast autocorrelation calculation<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>[ ] Try using CUDA for a fast autocorrelation calculation | <span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-4-6"><span class="todo TODO">TODO</span> Contact FAST ComTec<br/>
+About the issue with having to communicate with the card via the
+server. 
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-15-1-5" class="outline-4">
+<h4 id="sec-15-1-5"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h4>
+<div class="outline-text-4" id="text-15-1-5">
+
+<ul>
+<li id="sec-15-1-5-1"><span class="todo TODO">TODO</span> One or two calcium ions<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+</p></li>
+</ul>
+<ul>
+<li id="sec-15-1-5-2"><span class="todo TODO">TODO</span> 2-laser motional amplification for stable oscillation<br/>
+c.f. Matter-wave laser paper from Thomas Udem 
+</li>
+</ul>
+<ul>
+<li id="sec-15-1-5-3"><span class="done CNCL">CNCL</span> Adiabatic switching on/off of the cooling laser<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Optimal parameters for adiabatic switching in order to avoid `kicking'
+the ions when switching between cooling and optical-dipole force and
+amplification periods. What is the typically used function?
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-05 Fri</span></span>
+</li>
+</ul>
+
+<p>This optimisation can be done experimentally, there's no need for a
+simulation really.
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-15-2" class="outline-3">
+<h3 id="sec-15-2">To do, General</h3>
+<div class="outline-text-3" id="text-15-2">
+
+
+</div>
+
+<div id="outline-container-15-2-1" class="outline-4">
+<h4 id="sec-15-2-1"><span class="done CNCL">CNCL</span> Check for tantalum for ovens</h4>
+<div class="outline-text-4" id="text-15-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-15-2-2" class="outline-4">
+<h4 id="sec-15-2-2">Find submissions for ITCM-Sussex.com</h4>
+<div class="outline-text-4" id="text-15-2-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-13 Tue</span></span>
+</li>
+</ul>
+
+<p>Matthias has reminded us to look through the old website for these.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-20 Tue</span></span> 
+</li>
+</ul>
+
+<p>I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+</p>
+<p>  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-26 Mon</span></span>
+</li>
+</ul>
+
+<p>Rev. Sci. Instrum. 81, 075109 2010:
+</p>
+<p>
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+</p>
+<p>
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+</p>
+<p>
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(<a href="http://www.microchip.com/">http://www.microchip.com/</a>). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-04 Fri</span></span> Comments on current webpage:
+</li>
+<li>There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+</li>
+<li>Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+</li>
+<li>Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15-2-3" class="outline-4">
+<h4 id="sec-15-2-3">Ask Hiroki for a look at the code for cavity mode prop.</h4>
+<div class="outline-text-4" id="text-15-2-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-06 Tue</span></span>  
+</li>
+</ul>
+
+<p>Asked Hiroki, but he hasn't finished it yet. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15-2-4" class="outline-4">
+<h4 id="sec-15-2-4">Oxford group proposal research</h4>
+<div class="outline-text-4" id="text-15-2-4">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-05 Wed</span></span>
+<ul>
+<li>Drewsen group BBR assisted cooling
+</li>
+<li>Previous ammonia research
+</li>
+<li>Ammonia level structure for state-detection
+</li>
+</ul>
+
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-10 Mon</span></span>
+<ul>
+<li>Drewsen and Schiller both have papers on BBR according to the proposal.
+</li>
+<li>Drewsen proposal uses Raman transitions, requiring narrow/stable
+    lasers - does this apply to our system?
+</li>
+</ul>
+
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-17 Mon</span></span>
+</li>
+</ul>
+
+<p>E-mail Brianna to assess the status of the Stark decelerator.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-03 Thu</span></span> General:
+</li>
+</ul>
+
+<p>Look closer at the reactions that are proposed to investigate in the
+proposal, and make sure that there are going to be setups for those
+experiments, or ones to do with our research here, at Oxford.
+</p>
+<ul>
+<li>Reactions -&gt; Deuterium fractionation:
+</li>
+</ul>
+
+<p>Reactions involving H atom transfer to ionic species e.g.:
+</p><pre class="example">
+Ca^+ + HD0 -&gt; CaH^+(CaD^+) + OD(H)
+Nd_3^+ + HDO -&gt; ND_4^+(ND_3H^+) + OH(OD)
+</pre>
+
+
+<p>
+Addition reactions with H atom elimination (e.g. in <a href="file:///home/nicolas/Documents/literature/proposals/ProjectDescription.pdf">proposal</a>), and
+Near-thermoneutral charge transfer reactions (e.g. at link).
+</p>
+<ul>
+<li>Experimental:
+</li>
+</ul>
+
+<p>In-situ measurement of masses and numbers of reactants and
+products -&gt; Monitor sequential isotopic exchange.
+</p>
+<p>
+Quantum-state selected reactants from stark decelerator (neutrals) and
+REMPI (ions). Thermal redistribution of ions monitored by
+non-destructive state-detection.
+</p>
+<p>
+Control internal states using BBR assisted schemes (see <a href="file:///home/nicolas/Documents/literature/papers/Molecular physics/nphys1604.pdf">nphys1604</a> and
+<a href="file:///home/nicolas/Documents/literature/papers/Molecular physics/nphys1605.pdf">nphys1605</a>).
+</p>
+
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16">Appendix</h2>
+<div class="outline-text-2" id="text-16">
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-06-12 14:00:39 BST</p>
+<p class="author">Author: N. Seymour-Smith</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

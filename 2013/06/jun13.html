@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Research notes: June 2013</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Research notes: June 2013"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-06-12 14:01:24 BST"/>
+<meta name="author" content="N. Seymour-Smith"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Research notes: June 2013</h1>
+
+
+<hr>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Tuesday 11th</a>
+<ul>
+<li><a href="#sec-1-1">N2 Photionisation</a>
+<ul>
+<li><a href="#sec-1-1-1">16:16 Scan preparations</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">Monday 10th</a>
+<ul>
+<li><a href="#sec-2-1">N2 Photionisation</a>
+<ul>
+<li><a href="#sec-2-1-1">11:07 Laser optimisation</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Friday 7th</a>
+<ul>
+<li><a href="#sec-3-1">N2 Photoionisation</a>
+<ul>
+<li><a href="#sec-3-1-1">11:50 Laser optimisation</a></li>
+<li><a href="#sec-3-1-2">11:17 Spectrum data</a></li>
+<li><a href="#sec-3-1-3">14:00 Comparison with paper, and terminology</a></li>
+<li><a href="#sec-3-1-4">16:13 Fitting</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">To do</a>
+<ul>
+<li><a href="#sec-4-1">Molecular Lab Experiments</a>
+<ul>
+<li><a href="#sec-4-1-1">Photoionisation of N2</a></li>
+<li><a href="#sec-4-1-2">Work on DACs for the new SCL</a></li>
+<li><a href="#sec-4-1-3">Code an automation program for experiments</a></li>
+<li><a href="#sec-4-1-4">Simulations</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">General</a>
+<ul>
+<li><a href="#sec-4-2-1">Pseudopotential calculations for Oxford</a></li>
+<li><a href="#sec-4-2-2">Find submissions for ITCM-Sussex.com</a></li>
+<li><a href="#sec-4-2-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">Appendix</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Tuesday 11th</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">N2 Photionisation</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">16:16 Scan preparations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>I couldn't go ahead with the scans yesterday because the N2 canister
+was empty. I don't know how it was emptied, but perhaps its due to one
+of the many connections it has being leaky. Before the experiment I
+will re-attach the output so that it is only going to the PI
+experiment. 
+</p>
+<p>
+Further, while I was waiting, I have set up the autotracker and found
+that it can scan the full range that we are expecting to see lines
+over (473.95 nm &rarr; 474.30 nm) without significantly changing power.
+</p>
+<p>
+Mike Hardiman says he's looking about for a pre-amplifier that he used
+to use for the same channeltrons, and that should help us to get rid
+of discriminator drift. If that's not here by tomorrow morning I will
+go ahead and make a scan anyway.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Monday 10th</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">N2 Photionisation</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">11:07 Laser optimisation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>The laser has been attended by a technician and is running at
+approximately the same power as during the last scans. At around
+T(q-switch) = (150 &rarr; 180) us, the pulse energy of the laser is (1.3
+&rarr; 1.5) mJ. The beam-profile looks marginally better. I am told that
+we have ordered replacement prisms (used to separate the fundamental
+from the frequency doubled light), which should increase the output
+power to around 2.5 mJ. As mentioned previously, since the
+photoionisation is a third-order process, the gains from these
+improvements should be substantial. 
+</p>
+<p>
+I'm going to try taking scans with the current setup. Again ignoring
+the auto-tracker and instead adjusting the doubling-crystal angle
+manually approximately every 0.05 nm.
+</p>
+<p>
+(N.B. It seemed to me, from the behaviour of previous scans, that we
+could do with improving the stability of the channeltron output signal
+by adding a preamplifier before the discriminator, but I'm going to
+hold off on that for the moment just in case the increase in signal
+that we will see from the above improvements is enough to make this
+irrelevant.)
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Friday 7th</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">N2 Photoionisation</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">11:50 Laser optimisation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>The laser is now being seen to by a technician to try and get it up to
+its original power (~4 mJ/pulse). This should give us a much bigger
+signal; since we have a three-photon process the efficiency scales
+with E<sup>3</sup>.
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">11:17 Spectrum data &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Data">Data</span></span></h4>
+<div class="outline-text-4" id="text-3-1-2">
+
+<p>I've cleaned up the spectra taken shown in the entry of the 31st of
+May. The image below shows the relevant data:
+</p>
+
+<div id="fig-N2-PI-spectrum" class="figure">
+<p><img src="img/N2PI_spec.png"  alt="img/N2PI_spec.png" /></p>
+<p>Figure 1. Spectrum of N2 photoionisation, and power of the laser as the scan was being taken.</p>
+</div>
+
+<p>
+The main difference here is that I have taken away another junk scan
+that had slipped in, and excluded all count-rate data for which the
+power on the meter was less than 10 units (on the scale in the
+plots). This cutoff was necessary because it was distorting spectra
+significantly as can be seen at the end of the first iteration of the
+diagram. 
+</p>
+<p>
+Using the paper (<a href="2013/06/img/n2pi.pdf">N2PI</a>) as a guide, we have been able to positively
+identify lines from the <i>P</i>, <i>Q</i> and <i>R</i> branch and can speculate that
+the line that is not shown in the paper (out of scan range) is from
+the <i>O</i> branch. The terminology in the paper however is fairly tricky,
+and I'm not sure we've figured out a correct interpretation yet. It's
+essential that we know exactly what lines we are looking at however,
+so I have been trying to investigate.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3">14:00 Comparison with paper, and terminology &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
+<div class="outline-text-4" id="text-3-1-3">
+
+<p>It seems that the convention is that the symbols represent change in
+<i>total</i> angular momentum including the angular momentum of the
+electron: 
+</p>
+<p>
+K = &Lambda;<sub>electron</sub> + N<sub>rot</sub>
+</p>
+<p>
+In this case we would expect that the <i>R<sub>0</sub></i> line represents the `bare'
+electronic transition frequency, with no adjustments for rotational
+energy: 
+</p>
+<p>
+N<sub>X</sub> = 0, <br/>
+&Delta; K = +1, <br/>
+&Delta; &Lambda; = +1, <br/>
+&rarr; N<sub>a</sub> = 0.
+</p>
+<p>
+Where <i>X</i> and <i>a</i> subscripts refer to the ground and excited states
+respectively. The additional rotational energy of these states is
+given by:
+</p>
+<p>
+&Delta; E<sub>i</sub> = B<sub>i</sub> &sdot; N(N+1), [eqn.1]<br/>
+(i = X, a)
+</p>
+<p>
+Given these relations we would expect that the spacing of the lines in
+the R-branch (<i>R<sub>0</sub></i>, <i>R<sub>1</sub></i>, <i>R<sub>2</sub></i> etc.), would increase quadratically in
+accordance with the difference of the rotational constants <i>B<sub>X</sub></i> and
+<i>B<sub>a</sub></i>. We also expect that the rotational constant for the excited state
+should be smaller than that of the ground state, given that the
+wavefunction is more spread out and therefore has a larger moment of
+inertia. This should give lines with quadratic spacing, succesively
+reducing in energy (or increasing in wavelength).
+</p>
+<p>
+The characteristic of the R-branch in the paper, however, is not like
+this. Instead the energy spacing first increases, before reaching a
+turning point between <i>R<sub>2</sub></i> and <i>R<sub>3</sub></i> and then going on to decrease
+quadratically. By similar arguments to the above, this is the
+characteristic of a branch of transitions where the rotational number
+increases by 1 (which, in this terminology and for this transition
+would be an S-branch). 
+</p>
+<p>
+The paper's Q-branch in fact behaves in the way we would expect the
+R-branch to behave, or as a Q-branch would behave for an excited state
+with no electron angular momentum. It doesn't seem likely that the
+notation is wrong however, since the fact that <i>Q</i> subscripts start at 1
+and <i>P</i> subscripts start at 2 are another indication of correct
+interpretation of the terminology. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-1-4" class="outline-4">
+<h4 id="sec-3-1-4">16:13 Fitting &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
+<div class="outline-text-4" id="text-3-1-4">
+
+<p>Taking a heuristic approach, we fit the data to a model that takes
+into account rotational splittings of the two levels according to
+equation 1 (<a href="#eqn-rotational-splitting">rotational-splitting</a>). We can then start with
+either assumption that R-branch or the Q-branch is the <i>&Delta; N = 0</i>
+transition, and see which model fits best.
+</p>
+<ul>
+<li><i>Follows an explanation of fitting using the Q-branch (short answer:   it didn't work):</i> 
+</li>
+</ul>
+
+
+<p>
+Assuming the Q-branch is <i>&Delta; N = 0</i>, and taking the literature value
+of the ground state rotational constant (~1.9) we find an excited
+state rotational constant of ~1.75. Since the Q-branch in the paper
+only starts at 1 we can either assume that <i>Q<sub>0</sub></i> is disallowed and
+extrapolate where it would be, or that <i>Q<sub>1</sub></i> is the fundamental
+transition. Either way we can fit the Q-branch easily to the paper,
+but then using the calculated value of <i>B<sub>a</sub></i>, we get no agreement with
+any of the other lines in the paper or our spectrum.
+</p>
+<ul>
+<li><i>And using the R-branch (short answer: it kind-of works):</i>
+</li>
+</ul>
+
+
+
+<div id="fig-low-k-fit" class="figure">
+<p><img src="img/low_k_fit.png"  alt="img/low_k_fit.png" /></p>
+<p>Figure 2. Fit to the N<sub>2</sub> photionisation data for low values of <i>K (K &lt; 3)</i>. Higher values give a bad fit. The stars represent observed spectral lines.</p>
+</div>
+
+<p>
+Using the <i>R<sub>0</sub></i> line as the fundamental electronic transition, we can
+calculate <i>B<sub>X</sub></i> from the energy difference:
+</p>
+<p>
+&Delta; E = E(R<sub>0</sub>) - E(Q<sub>1</sub>) <br/>
+&Delta; E = 2B<sub>X</sub>.
+</p>
+<p>
+This gives us a value of <i>B<sub>X</sub></i> of ~0.9, which disagrees with the
+literature value fairly significantly (approx. a factor of
+2). Regardless this fits the paper data well for the lines that we
+have that are only determined by <i>R<sub>0</sub></i> and <i>B<sub>X</sub></i> (<i>R<sub>0</sub></i>, <i>Q<sub>1</sub></i> and
+<i>P<sub>2</sub></i>).
+</p>
+<p>
+Similarly, we can calculate a value of <i>B<sub>a</sub></i> from the energy
+difference of the <i>S<sub>0</sub></i> and <i>R<sub>0</sub></i> branches. This gives us a value of
+<i>B<sub>a</sub></i> of ~1.9, which clearly goes against the expectation that <i>B<sub>a</sub> &lt; B<sub>X</sub></i>. Again disregarding the discrepancy, we find that we get a good
+fit to the <i>S<sub>0</sub></i> line (dependent only on <i>B<sub>a</sub></i>), and additionally
+it gives us a good fit for lines ending in <i>K=2</i> of the upper
+state. Beyond this both the characteristic and the fit is far off.
+</p>
+<p>
+This fit is shown in Fig. 2 (<a href="#fig-low-k-fit">low-k-fit</a>). There are several
+fitted lines that match the data, and their allocations also match
+those of the paper. The lines that have no corresponding data-points
+do have corresponding lines or allocations in the paper. The data
+points that don't have corresponding lines have corresponding
+allocations in the paper, and come from transitions to the excited
+state with <i>K&gt;2</i>.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">To do</h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Molecular Lab Experiments</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="todo TODO">TODO</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<ul>
+<li id="sec-4-1-1-1"><span class="todo TODO">TODO</span> Identify appropriate gnd-state transition<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-08 Wed</span></span>
+</li>
+</ul>
+
+<p>Jack has done most of the work here. Just a case of optimising power
+etc. 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-14 Tue</span></span> 
+</li>
+</ul>
+
+<p>Jack has had to move on to fibre shooting after some trouble with
+getting a spectrum around the gnd-state transition. I'm going to take
+over generally, once Matthias has reoptimised the laser and finished
+baking the chamber (having just replaced the channeltron).
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-31 Fri</span></span>
+</li>
+</ul>
+
+<p>I managed to get a full spectrum on Wednesday and analyse it today. I
+think we've got the whole series of lines, and I've handed it over to
+Matthias to see if he can identify the ground state transition from
+it.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-07 Fri</span></span>
+</li>
+</ul>
+
+<p>Depending on interpretation of the paper we're using (<a href="2013/06/img/n2pi.pdf">N2PI</a>), we either
+have the lines we need or they are a little further to the low energy
+end of the scale than we currently have. Need help interpreting paper,
+and will take another longer scan just in case, once the laser is
+optimised. 
+</p>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="done HOLD">HOLD</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<ul>
+<li id="sec-4-1-2-1"><span class="done HOLD">HOLD</span> Building boards<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
+</li>
+</ul>
+
+<p>Pester him for them.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-31 Thu</span></span> Received:
+</li>
+</ul>
+
+<p>Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Matthias is making the boards:
+</li>
+</ul>
+
+<p>Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Pins used:
+</li>
+</ul>
+
+<p>Check with Matthias that his design has incorporated these pins as
+I/Os:
+</p><ul>
+<li>Port D: RD8 (peak detect input), RD5 (CN<sub>interrupt</sub>)
+</li>
+<li>U2RX pins, unless he's already designed these away
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-2"><span class="done HOLD">HOLD</span> Programming<br/>
+<ul>
+<li id="sec-4-1-2-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-4-1-3">
+
+<ul>
+<li id="sec-4-1-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>[ ] Try using CUDA for a fast autocorrelation calculation |
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+</p></li>
+</ul>
+<ul>
+<li id="sec-4-1-3-2"><span class="done HOLD">HOLD</span> Plan out experiment process<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
+</li>
+</ul>
+
+<p>Waiting on Keving to collect some data on `phonon-laser' type
+amplification of the dipole force before we can decide on the exact
+experimental procedure. 
+</p></li>
+</ul>
+<ul>
+<li id="sec-4-1-3-3"><span class="done HOLD">HOLD</span> Describe phonon laser trick in notes<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-15 Wed</span></span>
+</li>
+</ul>
+
+<p>Check if I already have.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-10 Mon</span></span>
+</li>
+</ul>
+
+<p>Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-4" class="outline-4">
+<h4 id="sec-4-1-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h4>
+<div class="outline-text-4" id="text-4-1-4">
+
+<ul>
+<li id="sec-4-1-4-1"><span class="todo TODO">TODO</span> Hanle dip/b-field map simulation<br/>
+<ul>
+<li id="sec-4-1-4-1-1"><span class="todo TODO">TODO</span> Fluorescence as a function of B-field for different light pol.<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-4-1-2"><span class="todo TODO">TODO</span> Sanity check: modulation sensitivity reduce at higher B-field?<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-4-1-3"><span class="todo TODO">TODO</span> B-field modulation frequency response (reduce laser Rabi f.)<br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-4-2"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
+</li>
+</ul>
+
+<p>Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+</p></li>
+</ul>
+<ul>
+<li id="sec-4-1-4-3"><span class="done HOLD">HOLD</span> One or two calcium ions<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-28 Tue</span></span>
+</li>
+</ul>
+
+<p>This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">General</h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="done HOLD">HOLD</span> Pseudopotential calculations for Oxford</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-07 Fri</span></span>
+</li>
+</ul>
+
+<p>Sent to Laura, awaiting feedback on usage.
+</p></div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="done HOLD">HOLD</span> Find submissions for ITCM-Sussex.com</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-13 Tue</span></span>
+</li>
+</ul>
+
+<p>Matthias has reminded us to look through the old website for these.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-20 Tue</span></span> 
+</li>
+</ul>
+
+<p>I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+</p>
+<p>  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-26 Mon</span></span>
+</li>
+</ul>
+
+<p>Rev. Sci. Instrum. 81, 075109 2010:
+</p>
+<p>
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+</p>
+<p>
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+</p>
+<p>
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(<a href="http://www.microchip.com/">http://www.microchip.com/</a>). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-04 Fri</span></span> Comments on current webpage:
+</li>
+<li>There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+</li>
+<li>Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+</li>
+<li>Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="done HOLD">HOLD</span> Ask Hiroki for a look at the code for cavity mode prop.</h4>
+<div class="outline-text-4" id="text-4-2-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-06 Tue</span></span>  
+</li>
+</ul>
+
+<p>Asked Hiroki, but he hasn't finished it yet. 
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Appendix</h2>
+<div class="outline-text-2" id="text-5">
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-06-12 14:01:24 BST</p>
+<p class="author">Author: N. Seymour-Smith</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

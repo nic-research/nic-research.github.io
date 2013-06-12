@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Research notes: March 2013</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Research notes: March 2013"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-06-12 14:00:21 BST"/>
+<meta name="author" content="N. Seymour-Smith"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Research notes: March 2013</h1>
+
+
+<hr>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1"></a>
+<ul>
+<li><a href="#sec-1-1">Dipole force pulse sequence</a>
+<ul>
+<li><a href="#sec-1-1-1">09:09</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Dipole force interferometer</a>
+<ul>
+<li><a href="#sec-1-2-1">12:23</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2"></a>
+<ul>
+<li><a href="#sec-2-1">Dipole force interferometer</a>
+<ul>
+<li><a href="#sec-2-1-1">11:02</a></li>
+<li><a href="#sec-2-1-2">16:27</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3"></a>
+<ul>
+<li><a href="#sec-3-1">Dipole force interferometer</a>
+<ul>
+<li><a href="#sec-3-1-1">14:29</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">General</a>
+<ul>
+<li><a href="#sec-3-2-1">14:49</a></li>
+<li><a href="#sec-3-2-2">17:22</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4"></a>
+<ul>
+<li><a href="#sec-4-1">Dipole force interferometer</a>
+<ul>
+<li><a href="#sec-4-1-1">12:24</a></li>
+<li><a href="#sec-4-1-2">14:45</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5"></a>
+<ul>
+<li><a href="#sec-5-1">Dipole force interferometer</a>
+<ul>
+<li><a href="#sec-5-1-1">09:26</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-6">To do</a>
+<ul>
+<li><a href="#sec-6-1">To do, Molecular Lab Experiments</a>
+<ul>
+<li><a href="#sec-6-1-1">Beam-line preparation</a></li>
+<li><a href="#sec-6-1-2">Dipole force laser setup</a></li>
+<li><a href="#sec-6-1-3">Time-varying B-field ion simulation</a></li>
+<li><a href="#sec-6-1-4">Work on DACs for the new SCL</a></li>
+<li><a href="#sec-6-1-5">Code an automation program for experiments</a></li>
+<li><a href="#sec-6-1-6">Look up literature for PI of N2</a></li>
+<li><a href="#sec-6-1-7">Simulations</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-2">To do, General</a>
+<ul>
+<li><a href="#sec-6-2-1">"Gantt Project" for project planning</a></li>
+<li><a href="#sec-6-2-2">Fix up Stephen's Toptica PID</a></li>
+<li><a href="#sec-6-2-3">Fix Laura's pulsed-trapping box</a></li>
+<li><a href="#sec-6-2-4">Check for tantalum for ovens</a></li>
+<li><a href="#sec-6-2-5">Look into programming Laura's multiscaler for mass detection</a></li>
+<li><a href="#sec-6-2-6">Find submissions for ITCM-Sussex.com</a></li>
+<li><a href="#sec-6-2-7">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+<li><a href="#sec-6-2-8">Oxford group proposal research</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="timestamp-wrapper"> <span class="timestamp">2013-03-27 Wed</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Dipole force pulse sequence &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Kevin">Kevin</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">09:09</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>Yesterday's discussions during and after the meeting have cleared up
+some of the ideas surrounding the pulse sequence for application of
+the dipole force. 
+</p>
+<p>
+The initial problem that was brought up is that we must turn off the
+cooling laser (or switch it to blue) before applying the dipole force
+in order not to damp it out with cooling power, but this must be done
+without inducing a `kick' from changes in light pressure. Any induced
+kick may act as a false positive for our dipole force detection.
+</p>
+<p>
+One proposed solution is to switch directly to blue (amplification
+stage) at the exact same level of radiation pressure, but this
+requires much better wavelength stabilisation than can be provided by
+the wavemetere. Further we cannot prioritise building a doubling
+cavity for the cooling laser and resurrecting the SCL, if we can think
+of another way around this problem&hellip;
+</p>
+<p>
+&hellip; Which is to use adiabatic switching of the laser beam. In
+principle, if we switch the laser slowly and smoothly enough we should
+be able to turn it off and back on again without inducing any kick to
+the secular motion of the ion. The idea in practice is to program an
+SRS function generator with a pulse window of the correct shape and to
+have that pulse window triggered to be in synch with the dipole force
+and red/blue cooling laser switching. 
+</p>
+<p>
+The optimal shape for the window can be determined from its FFT and
+its corresponding amplitude at the secular frequency of the ion. If we
+can work out how large we estimate the dipole force to be, we can set
+a limit on the amplitude of the window pulse to be some large factor
+below that. Further, we can look at the amount of time it takes to
+switch on and off to help us decide on the optimal tradeoff.
+</p>
+<p>
+Our current (fully hand-wavey) estimates are for a dipole force
+application time of 1 ms and amplification and recooling times of 1
+ms, so I suppose that our on/off times can be roughly of that order as
+a starting point for testing.
+</p>
+<p>
+P.S. Matthias sent a useful link for windows (with their FFTs) that
+are optimised to have good cutoffs of higher frequencies here:
+<a href="http://en.wikipedia.org/wiki/Window_function">http://en.wikipedia.org/wiki/Window_function</a>
+</p>
+<p>
+From these, the "Blackman" and "Flattop" windows seem to be good
+places to start.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Dipole force interferometer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">12:23</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>Part of the problem with different powers in the two arms was down to
+the fact the BS I was using looked like it was a PBS (despite being
+labelled as 50:50). That has been replaced by one that appears to
+behave as if it is a 50:50 (or perhaps a PBS for a different
+wavelength!). There is still a significant drift in the power coming
+out of the fibre (~10 %) which should be treated eventually, if it
+becomes important.
+</p>
+<p>
+After this I felt I improved the matching of the focii of the two arms
+but the contrast of the interference has drastically reduced (not
+worth measuring right now). This may still be an alignment issue.
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="timestamp-wrapper"> <span class="timestamp">2013-03-25 Mon</span></span></h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Dipole force interferometer</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">11:02</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>I found a flat piezo from Piezomechanik, but according to their
+catalog it is a multilayer stack. From the looks of it, it is one of
+the model that has 4 to 3 um stroke (specifically model HPST
+150/15-8-3) and stiffness 1800 N/um. 
+</p>
+<p>
+I've also fished out another of the old Noliac piezos, which I believe
+had a smaller stroke than that, but that needs repairing. UPDATE:
+Model of the Noliac found: CMAR03. Free stroke 2.3 um, stiffness 950
+N/um.
+</p>
+<p>
+The question is whether minimum stroke or maximum stiffness is the
+most important factor when considering the stability of the
+element. It seems a pattern in the Piezomechanik catalog that
+stiffness decreases with length of the PZT and increases with
+cross-section, and the model of actuator we have from them has just
+about the maximum stiffness. I'm tempted to go with the Piezomechanik
+one instead of the Noliac. A) because the increased stiffness seems
+like it would be a good indicator of stability, B) because a smaller
+stroke only gives us stability against electronic noise, which we are
+likely to have relatively little of, and C) because the Noliacs are
+more expensive/rare.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">16:27</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<p>I've mounted the PZT on a standard mirror mount with a mirror designed
+for 0 deg. reflection at 850, which is the closest wavelength I could
+find. The power of the beams in the interferometer are actually
+mismatched because this mirror is better than the one I used for the
+other arm (250 uW vs 200 uW), although some of that might have
+something to do with the focussing and de-focussing lenses. 
+</p>
+<p>
+As before, interference can be seen without modulating either of the
+PZTs, simply due to the jitter in path lengths. Using this as an
+indicator of overlap, it's quite easy to get a good overlap over a
+pretty long path length (up to 2 meters). However, when we install a
+photodiode close to the beamsplitter we can see that the contrast
+ratio is only on the order of 1/8, which indicates that there is bad
+matching of the modes of the two arms of the interferometer. In fact
+it's clear visually that they are different, particularly when looking
+at the spot size at long distances. Some work should be done to try
+to match the focal lengths better. It might also be interesting to
+look at the contrast ratio further along the beam to see if that is
+informative in any way.
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span></h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dipole force interferometer</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">14:29</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>Matthias agrees that one of the standard PZTs might be too unstable
+for the second arm of the interferometer. He doesn't have a feeling
+for whether or not a translation stage would be more stable, but
+regardless is skeptical that they will provide sufficient precision
+unless we buy an expensive model. The suggestion is that we find one
+of the short, flat PZTs we might have lying around, that have a
+shorter stroke and likely a higher stability.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">General</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">14:49</h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<p>Discussions after lunch yesterday with the molecule group rounded up
+as follows:
+</p><ul>
+<li>Kevin and Amy will work on programming an SRS function generator so
+  that we can turn off and on the cooling laser adiabatically
+  i.e. without causing the ion to be kicked. This will need to be done
+  when we are switching on the optical dipole force so that the ions
+  can oscillate without damping from the cooling laser. This should be
+  a case of mapping the response of the AOM and programming the
+  function generator to compensate for it to give the correct pulse
+  shape. 
+</li>
+<li>I should carry on working on the interferometer, whilst also
+  thinking about simulations of the above adiabatic switching, and the
+  first steps of the programming required for automation of the
+  experiment. 
+</li>
+<li>We must consider (probably via simulation) whether a second calcium
+  ion would help us out in this specific experiment. Presumably we
+  would lose acceleration from the dipole force by a factor of 1/3,
+  but would gain in fluorescence by a factor of 2?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2">17:22</h4>
+<div class="outline-text-4" id="text-3-2-2">
+
+<p>Kevin started taking a look at the adiabatic switching using the SRS
+function generator. The approach we'd have to take is to program the
+whole cooling laser intensity sequence for the experiment, into the
+generator. 
+</p>
+<p>
+The limit here is that we only have 1000 points for the whole
+wavefunction. Matthias estimates that a soft maximum for the dipole
+force exposure is 1 ms. If we estimate that we amplify and recool over
+a period of 1 ms, that gives our waveform a time-resolution of 2
+us. 
+</p>
+<p>
+The time-period over which we must switch off the laser must
+correspond to a frequency much lower than the secular frequency of the
+trap (approx. 100 kHz), say by a factor of 100. This gives us a switch
+off time of 1 kHz, or 1 ms. That's long enough to give good resolution
+over the switching period. 
+</p>
+<p>
+On the other hand however, to simplify the process we could just try
+using a low pass filter at 1 kHz to try and achieve the same
+effect. The trade-off for that simplicity will be the potential danger
+of ringing affects from higher frequencies, but since it's such a
+simple system we might as well give it a go?
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="timestamp-wrapper"> <span class="timestamp">2013-03-20 Wed</span></span></h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Dipole force interferometer</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">12:24</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<p>Had been struggling a bit with coupling, was stupidly using APC
+coupler, and now switched to an old, crappy PC coupler I found. Still
+only got 40 uW out of a possible mW though, while the coupling and
+lens are about maximal. At first glance the fibre looks to be the
+problem, since it doesn't transmit much light from the fibre alignment
+pen any more (despite having done so fairly well just yesterday).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2">14:45</h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<p>The fibre was dud, and it's been labelled and put away. Hopefully it's
+just damage to the surface of the fibre and it can be polished and
+re-used at some point. 
+</p>
+<p>
+The replacement fibre has given us 1.5 mW out from a total 4.1 mW. I
+didn't spend much time re-optimising the lens position and so the
+extra 30% or so we expect can probably got from there when it becomes
+relevant. 
+</p>
+
+<div id="fig-dipole_int" class="figure">
+<p><img src="dipole_interferometer.png"  alt="dipole_interferometer.png" /></p>
+<p>Schematic of the dipole-force laser interferometer</p>
+</div>
+
+<p>
+The dipole interferometer setup that must now be built is shown again
+in Fig. <a href="#fig-dipole_int">dipole<sub>int</sub></a>. The actively controlled PZT on the
+right-hand side is used to overlap the standing wave with the ion for
+the optimal amplitude of the dipole force, and to compensate for any
+deviations of the optical path-length detected by the interferometer.
+</p>
+<p>
+The length of the second arm of the interferometer can
+also be adjusted in order to maintain maximum sensitivity in the
+interferometry signal, regardless of the overlap of the standing wave
+with the ion. I'm wondering right now though, whether this could
+potentially introduce a troublesome drift in the overlap with the ion,
+since any drift in the top PZT (which is not actively
+position-compensated), will result in unwanted `compensation' of the
+right-hand PZT by the feedback system. Would a micrometer stage be
+better/more stable? I guess it would need sub-micrometer precision and
+high stability, but that should be manageable. The question is which
+is more stable, a PZT or a micrometer stage?
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="timestamp-wrapper"> <span class="timestamp">2013-03-18 Mon</span></span></h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">Dipole force interferometer</h3>
+<div class="outline-text-3" id="text-5-1">
+
+
+</div>
+
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1">09:26</h4>
+<div class="outline-text-4" id="text-5-1-1">
+
+<p>According to the project plan (<a href="StateDetection.gan">file</a>), I should have finished with this
+(a week ago!) and be onto designing and automating the state-detection
+experiment! Of course we forgot to take into account my two weeks away
+so it's hardly a realistic timescale. 
+</p>
+<p>
+Regardless the trap hasn't started baking yet so I still have time to
+work on the interferometer setup before it's required on the main
+table. Hopefully Kevin is also on his way as far as software goes, but
+I need to have a chat with him about that.
+</p>
+<p>
+The notes of last month say I managed only 67% efficiency out of the
+AOM at last take. I think it can be better given that we are only
+single pass and have a lot of freedom as far as our choice of lens
+goes, but it will do for now in order to get going with the
+interferometry. Next up is to couple the output of the AOM to a fibre,
+and then build a test interferometry setup on the laser table.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">To do</h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1">To do, Molecular Lab Experiments</h3>
+<div class="outline-text-3" id="text-6-1">
+
+
+</div>
+
+<div id="outline-container-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="done DONE">DONE</span> Beam-line preparation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-6-1-1">
+
+<ul>
+<li id="sec-6-1-1-1"><span class="done CNCL">CNCL</span> Second TMP installation<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-04 Tue</span></span>
+</li>
+</ul>
+
+<p>Data in previous headline indicates there's not enough pumping power
+and the ion trap region in the beamline chamber. It's time to consider
+adding a turbo to pump alongside the ion pump to maintain a good
+pressure differential between the beamline and the trapping region. 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-03 Thu</span></span>
+</li>
+</ul>
+
+<p>Matthias has ordered the parts, but we are trying a setup that may not
+require them first (see entry on preliminary N2 chamber)
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-18 Mon</span></span>
+</li>
+</ul>
+
+<p>We're going ahead without this, just using a prechamber as described
+in January's notes.
+</p>
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-1-2"><span class="done DONE">DONE</span> Take apart beamline<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-13 Wed</span></span> Alan needs the 5-way cross
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-18 Mon</span></span> Alan now has the second skimmer built, and I've
+  taken the 5-way cross out for him and handed it over.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-1-3"><span class="done DONE">DONE</span> Check for all the parts<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-18 Mon</span></span>
+</li>
+</ul>
+
+<p>Need 6 CF60 (?) gasketts and an adapter from CF60 to DN63.
+</p></li>
+</ul>
+<ul>
+<li id="sec-6-1-1-4">Hand over the rest to Kevin<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="todo TODO">TODO</span> Dipole force laser setup &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h4>
+<div class="outline-text-4" id="text-6-1-2">
+
+<ul>
+<li id="sec-6-1-2-1"><span class="done DONE">DONE</span> AM setup<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-2-2"><span class="done DONE">DONE</span> New laser<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-18 Mon</span></span>
+</li>
+</ul>
+
+<p>Set up and lasing at correct wavelength. Power is lower than the 100 mW
+it is rated at with an external cavity, but we are not exactly at the
+emission peak of the bare diode (took a lot of tuning away from the
+place with easiest optical feedback). Further, the bare diode is rated
+at 200 mA, but I'm not sure how high I can run it with an external
+cavity. 
+</p>
+<p> 
+λ = 787.475 nm,
+</p>
+<p>
+I<sub>th</sub> ~ 45 mA,
+</p>
+<p>
+T = 25.36<sup>&circ;</sup> C,
+</p>
+<p>
+I = 77.54 mA,
+</p>
+<p>
+V<sub>PZT</sub> = 107 V,
+</p>
+<p>
+P ~ 10 mW, 
+</p>
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-2-3"><span class="done DONE">DONE</span> Single-pass AOM and optical fibre<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-21 Thu</span></span> Set up on the test table.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-2-4"><span class="todo TODO">TODO</span> Inteferometer/feedback setup<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Find appropriate PZT for second arm of the interferometer (small
+travel, high stability)
+</p>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="done DONE">DONE</span> Time-varying B-field ion simulation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-6-1-3">
+
+<ul>
+<li id="sec-6-1-3-1"><span class="done DONE">DONE</span> Matthias' code<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-13 Wed</span></span> Compare Matthias' approach with my own
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-20 Wed</span></span> Virtually identical apart from the solver, which is
+  the correct, time-dependent approach.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-3-2"><span class="done DONE">DONE</span> Modifications<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-20 Wed</span></span> Frequencies around Γ show a dropoff, but that's
+  much higher than what we see. Need new ideas as to the source of the
+  attenuation. 
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4"><span class="todo TODO">TODO</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-6-1-4">
+
+<ul>
+<li id="sec-6-1-4-1"><span class="todo TODO">TODO</span> Building boards<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
+</li>
+</ul>
+
+<p>Pester him for them.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-31 Thu</span></span> Received:
+</li>
+</ul>
+
+<p>Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Matthias is making the boards:
+</li>
+</ul>
+
+<p>Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Pins used:
+</li>
+</ul>
+
+<p>Check with Matthias that his design has incorporated these pins as
+I/Os:
+</p><ul>
+<li>Port D: RD8 (peak detect input), RD5 (CN<sub>interrupt</sub>)
+</li>
+<li>U2RX pins, unless he's already designed these away
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-4-2"><span class="todo TODO">TODO</span> Programming<br/>
+<ul>
+<li id="sec-6-1-4-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-4-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-5" class="outline-4">
+<h4 id="sec-6-1-5"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-6-1-5">
+
+<ul>
+<li id="sec-6-1-5-1"><span class="todo TODO">TODO</span> Contact FAST ComTec<br/>
+About the issue with having to communicate with the card via the
+server. 
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-5-2"><span class="todo TODO">TODO</span> Fix datasocket bug<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-6-1-5-3"><span class="todo TODO">TODO</span> Flow chart for experimental sequence<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-6" class="outline-4">
+<h4 id="sec-6-1-6"><span class="done CNCL">CNCL</span> Look up literature for PI of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Amy">Amy</span>&nbsp;<span class="Nic">Nic</span></span></h4>
+<div class="outline-text-4" id="text-6-1-6">
+
+<ul>
+<li>Wavelength and I<sub>sat</sub>
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Matthias and Jack seem to be under the impression that the problem is
+down to the power in the dye laser. This in turn is likely to be a
+problem with the power from the pump laser, which Chris Rennick from
+Oxford had a look at. He says that it needs some regular maintanence,
+and probably a new flashbulb. An engineer has been called and a visit
+will be arranged soon by Jack.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-7" class="outline-4">
+<h4 id="sec-6-1-7"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h4>
+<div class="outline-text-4" id="text-6-1-7">
+
+<ul>
+<li id="sec-6-1-7-1"><span class="todo TODO">TODO</span> One or two calcium ions<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+</p></li>
+</ul>
+<ul>
+<li id="sec-6-1-7-2"><span class="todo TODO">TODO</span> Adiabatic switching on/off of the cooling laser<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Optimal parameters for adiabatic switching in order to avoid `kicking'
+the ions when switching between cooling and optical-dipole force and
+amplification periods. What is the typically used function?
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2">To do, General</h3>
+<div class="outline-text-3" id="text-6-2">
+
+
+</div>
+
+<div id="outline-container-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="done DONE">DONE</span> "Gantt Project" for project planning</h4>
+<div class="outline-text-4" id="text-6-2-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-15 Fri</span></span> Installed.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2"><span class="done DONE">DONE</span> Fix up Stephen's Toptica PID</h4>
+<div class="outline-text-4" id="text-6-2-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-13 Wed</span></span> More unstable that I remember, tune up.
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-18 Mon</span></span> I gave a go to tuning it up but no luck. Might need
+  a closer look, but will ask Matthias to have a gander first.
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-25 Mon</span></span> Matthias had a look and fixed it up before I went
+  away to Mexico. Rather than just looking at the electronics, he
+  tuned up the doubling cavity too. This improved the stability
+  significantly, from what I hear.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3"><span class="done DONE">DONE</span> Fix Laura's pulsed-trapping box</h4>
+<div class="outline-text-4" id="text-6-2-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-25 Mon</span></span> 
+</li>
+</ul>
+
+<p>Somebody must have done this while I was away. Laura managed to get
+the square-wave trapping to work before she left.
+</p></div>
+
+</div>
+
+<div id="outline-container-6-2-4" class="outline-4">
+<h4 id="sec-6-2-4"><span class="todo TODO">TODO</span> Check for tantalum for ovens</h4>
+<div class="outline-text-4" id="text-6-2-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-5" class="outline-4">
+<h4 id="sec-6-2-5"><span class="done CNCL">CNCL</span> Look into programming Laura's multiscaler for mass detection</h4>
+<div class="outline-text-4" id="text-6-2-5">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-25 Mon</span></span>
+</li>
+</ul>
+
+<p>Laura's left with her trap, back to Oxford. They're first going to
+look into ion identification using MCPs and the square-wave trapping. 
+</p></div>
+
+</div>
+
+<div id="outline-container-6-2-6" class="outline-4">
+<h4 id="sec-6-2-6">Find submissions for ITCM-Sussex.com</h4>
+<div class="outline-text-4" id="text-6-2-6">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-13 Tue</span></span>
+</li>
+</ul>
+
+<p>Matthias has reminded us to look through the old website for these.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-20 Tue</span></span> 
+</li>
+</ul>
+
+<p>I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+</p>
+<p>  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-26 Mon</span></span>
+</li>
+</ul>
+
+<p>Rev. Sci. Instrum. 81, 075109 2010:
+</p>
+<p>
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+</p>
+<p>
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+</p>
+<p>
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(<a href="http://www.microchip.com/">http://www.microchip.com/</a>). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-04 Fri</span></span> Comments on current webpage:
+</li>
+<li>There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+</li>
+<li>Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+</li>
+<li>Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-7" class="outline-4">
+<h4 id="sec-6-2-7">Ask Hiroki for a look at the code for cavity mode prop.</h4>
+<div class="outline-text-4" id="text-6-2-7">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-06 Tue</span></span>  
+</li>
+</ul>
+
+<p>Asked Hiroki, but he hasn't finished it yet. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6-2-8" class="outline-4">
+<h4 id="sec-6-2-8">Oxford group proposal research</h4>
+<div class="outline-text-4" id="text-6-2-8">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-05 Wed</span></span>
+<ul>
+<li>Drewsen group BBR assisted cooling
+</li>
+<li>Previous ammonia research
+</li>
+<li>Ammonia level structure for state-detection
+</li>
+</ul>
+
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-10 Mon</span></span>
+<ul>
+<li>Drewsen and Schiller both have papers on BBR according to the proposal.
+</li>
+<li>Drewsen proposal uses Raman transitions, requiring narrow/stable
+    lasers - does this apply to our system?
+</li>
+</ul>
+
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-12-17 Mon</span></span>
+</li>
+</ul>
+
+<p>E-mail Brianna to assess the status of the Stark decelerator.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-03 Thu</span></span> General:
+</li>
+</ul>
+
+<p>Look closer at the reactions that are proposed to investigate in the
+proposal, and make sure that there are going to be setups for those
+experiments, or ones to do with our research here, at Oxford.
+</p>
+<ul>
+<li>Reactions -&gt; Deuterium fractionation:
+</li>
+</ul>
+
+<p>Reactions involving H atom transfer to ionic species e.g.:
+</p><pre class="example">
+Ca^+ + HD0 -&gt; CaH^+(CaD^+) + OD(H)
+Nd_3^+ + HDO -&gt; ND_4^+(ND_3H^+) + OH(OD)
+</pre>
+
+
+<p>
+Addition reactions with H atom elimination (e.g. in <a href="file:///home/nicolas/Documents/literature/proposals/ProjectDescription.pdf">proposal</a>), and
+Near-thermoneutral charge transfer reactions (e.g. at link).
+</p>
+<ul>
+<li>Experimental:
+</li>
+</ul>
+
+<p>In-situ measurement of masses and numbers of reactants and
+products -&gt; Monitor sequential isotopic exchange.
+</p>
+<p>
+Quantum-state selected reactants from stark decelerator (neutrals) and
+REMPI (ions). Thermal redistribution of ions monitored by
+non-destructive state-detection.
+</p>
+<p>
+Control internal states using BBR assisted schemes (see <a href="file:///home/nicolas/Documents/literature/papers/Molecular physics/nphys1604.pdf">nphys1604</a> and
+<a href="file:///home/nicolas/Documents/literature/papers/Molecular physics/nphys1605.pdf">nphys1605</a>).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-06-12 14:00:21 BST</p>
+<p class="author">Author: N. Seymour-Smith</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

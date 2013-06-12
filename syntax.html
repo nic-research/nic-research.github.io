@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Handy command syntaxes and emacs sequences</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Handy command syntaxes and emacs sequences"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-06-12 14:21:36 BST"/>
+<meta name="author" content="Nicolas"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Handy command syntaxes and emacs sequences</h1>
+
+
+<hr>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">General</a>
+<ul>
+<li><a href="#sec-1-1">rgrep syntax</a></li>
+<li><a href="#sec-1-2">Macros</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Org mode</a>
+<ul>
+<li><a href="#sec-2-1">Motion</a></li>
+<li><a href="#sec-2-2">Agenda</a></li>
+<li><a href="#sec-2-3">Links</a></li>
+<li><a href="#sec-2-4">Export</a></li>
+<li><a href="#sec-2-5">Tags</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Git</a>
+<ul>
+<li><a href="#sec-3-1">General</a></li>
+<li><a href="#sec-3-2">Initialisation</a></li>
+<li><a href="#sec-3-3">Tracking and staging files</a></li>
+<li><a href="#sec-3-4">Committing locally</a></li>
+<li><a href="#sec-3-5">Remote repositories</a></li>
+<li><a href="#sec-3-6">Committing remotely</a></li>
+<li><a href="#sec-3-7">Tags</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">General</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">rgrep syntax</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<pre class="example">
+rgrep "search pattern" [directory to search]
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Macros</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<ul>
+<li>Here is how to define a keyboard macro:
+</li>
+</ul>
+
+<pre class="example">
+`C-x (’ – start defining a keyboard macro
+`C-x )’ – stop defining the keyboard macro
+</pre>
+
+
+<ul>
+<li>And here is how to execute a keyboard macro you’ve defined:
+</li>
+</ul>
+
+<pre class="example">
+‘C-x e’ – execute the keyboard macro
+</pre>
+
+
+<ul>
+<li>Here’s how to execute the macro 37 times (you use ‘C-u’ to provide the 37):
+</li>
+</ul>
+
+<pre class="example">
+‘C-u 37 C-x e’
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Org mode</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Motion</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>The following commands jump to other headlines in the buffer.
+</li>
+</ul>
+
+<pre class="example">
+C-c C-n     (outline-next-visible-heading)
+</pre>
+
+<ul>
+<li>Next heading. 
+</li>
+</ul>
+
+<pre class="example">
+C-c C-p     (outline-previous-visible-heading)
+</pre>
+
+<ul>
+<li>Previous heading. 
+</li>
+</ul>
+
+<pre class="example">
+C-c C-f     (org-forward-same-level)
+</pre>
+
+<ul>
+<li>Next heading same level. 
+</li>
+</ul>
+
+<pre class="example">
+C-c C-b     (org-backward-same-level)
+</pre>
+
+<ul>
+<li>Previous heading same level. 
+</li>
+</ul>
+
+<pre class="example">
+C-c C-u     (outline-up-heading)
+</pre>
+
+<ul>
+<li>Backward to higher level heading. 
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Agenda</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<pre class="example">
+"C-c ." insert active date from calendar
+"C-c !" insert inactive date from calendar
+"C-c C-d" insert deadline stamp from calendar
+"C-u C-c ." insert timestamp
+"S-left/right" move cursor in calendar buffer
+"f/b, n/p" navigate weeks/days in agenda mode
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Links</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<pre class="example">
+"C-c l" store link
+"C-c C-l" insert link (use with above)
+"C-u C-c C-l" insert link (filename completion)
+"C-c C-o" open link (or click)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4">Export</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<pre class="example">
+"C-c C-e h" export to HTML ("b" to open in browser)
+"C-c C-e p" export to pdf ("d" to open pdf)
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5">Tags</h3>
+<div class="outline-text-3" id="text-2-5">
+
+<p><a href="http://orgmode.org/manual/Setting-tags.html#Setting-tags">http://orgmode.org/manual/Setting-tags.html#Setting-tags</a>
+</p><pre class="example">
+C-c C-q     (org-set-tags-command)
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Git</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">General</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>"git config &ndash;global alias.co checkout" - example alias: checkout-&gt;co
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Initialisation</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>"git init" - Initialise a local repository in current directory
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3">Tracking and staging files</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<p>"git add &lt;file&gt;" - tracks a file with git, stages changes
+"git add -u" - stages changes in modified files
+"git add -A" - tracks and stages all files (even previously unadded)
+"git reset HEAD &lt;file&gt;" - unstages a change
+"git checkout &ndash; &lt;file&gt;" - unmodify file (based on latest snapshot)
+</p></div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4">Committing locally</h3>
+<div class="outline-text-3" id="text-3-4">
+
+<p>"git commit -m "&lt;message&gt;" - commit staged changes with supplied
+message
+"git commit &ndash;amend" - amend the previous commit (with e.g. a newley
+staged file)
+"git log" - shows commit history
+</p></div>
+
+</div>
+
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5">Remote repositories</h3>
+<div class="outline-text-3" id="text-3-5">
+
+<p>"git clone [url]" - Set up a new repository based on the one at url
+"git remote add [shortname] [url]" - Add a repository at url
+"git fetch [shortname]" - Get the changes from that repo
+"git pull [shortname]" - Get the changes and automatically merge with
+local repo
+"git remote show [shortname]" - info on remote repo
+"git remote rename [old] [new]" - rename repo
+"git remote rm [name]" - remove remote repo
+</p></div>
+
+</div>
+
+<div id="outline-container-3-6" class="outline-3">
+<h3 id="sec-3-6">Committing remotely</h3>
+<div class="outline-text-3" id="text-3-6">
+
+<p>"git push origin master" - push to remote server
+"git push -u origin &ndash;all" - same as above?
+</p></div>
+
+</div>
+
+<div id="outline-container-3-7" class="outline-3">
+<h3 id="sec-3-7">Tags</h3>
+<div class="outline-text-3" id="text-3-7">
+
+<p>"git tag -a v[X.X] -m 'my version X.X'" - tag the latest commit with
+version and message (-a is for annotated tag)
+"git tag -a v[X.Y] -m 'my version X.Y' [commit hash]" - Tags a
+previous commit denoted by its hash
+"git push [repo name] [tagname]" - push tag to repo (normal push
+does not do this by default)
+"git push [repo name] &ndash;tags - push all tags to repo
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-06-12 14:21:36 BST</p>
+<p class="author">Author: Nicolas</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

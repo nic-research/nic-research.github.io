@@ -1,0 +1,539 @@
+-November 2012-
+#Export options here:
+#+OPTIONS: toc:2
+#+TODO: TODO OPEN | DONE CANCELED
+
+* To do, Molecular Lab Experiments
+
+** TODO Code an automation program for experiments
+- <2012-10-05 Fri> 
+[[file:~/Documents/molecule_trap/automation/automation_project.org][project org file]]
+- <2012-11-30 Fri>
+Core functionality written and working on the industrial PC (can we
+call it Marvin?). Command latency is very high, could cause problems
+unless we use the machine's sequential data set mode. On the other
+hand we could try to get to the bottom of the latency issue.
+** TODO  Write simulation of 8-level atom for experiments
+*** TODO Dark resonance spectroscopy/amplification
+- <2012-10-05 Fri>
+  Matthias has a reference (paper or lecture course) that
+  shows a way in which we can account for laser linewidth in
+  simulations. Chase up.
+- <2012-10-23 Tue> Easiest thing right now is incorporate Wolfgang's
+  matlab simulation into mine
+*** Single ion-heat engine
+
+** DONE Test Oxford valve controller
+- <2012-10-15 Thu>
+Matthias has a power supply we can use. It doesn't need to be high
+  current since the current is supplied from a charged capacitor.
+
+- <2012-10-31 Wed> 
+No input for the power supply, have they sent us a
+ different model than they meant to?
+
+ Current testing is on an inductor coil chosen to roughly match that
+  of the valve. A previous entry states that I measured the inductance
+  to be roughly 5.8 mH recently. Lab notes from February suggest an
+  inductance of 18 mH. Either way the closest inductor we have is 100
+  mH, with 75 Ohm resistance. Given that the valve is 1 Ohm, are these
+  similar enough to test, or different enough to have damaged the
+  circuit?
+
+- <2012-11-05 Mon> 
+E-mail from Chris:
+ " Hello,
+   That should be OK to drive a valve. Are you supplying a trigger pulse?
+   Have you tried adjusting the spring tension while it's running? Turn
+   the valve face while holding the body and in one position it should
+   get nice and loud. "
+- Replaced a fuse on the main circuit-board and now it works fine.
+- Characterisation up next: 
+  * Opening/closing time (pulse monitor output)
+  * Beamline pressure gradient
+
+- <2012-11-06 Tue>
+Characterisation, f = 10Hz, tau = 100 us:
+  | Var /% | P /mbar |
+  |--------+---------|
+  |      0 |  3.3E-8 |
+  |      5 |  3.3E-8 |
+  |     10 |  3.3E-8 |
+  |     15 |  3.3E-8 |
+  |     20 |  3.3E-8 |
+  |     25 |  3.3E-8 |
+  |     30 |  3.3E-8 |
+  |     35 |  3.3E-8 |
+  |     40 |  4.5E-8 |
+  |   42.5 |  4.1E-7 |
+  |     45 |  4.5E-7 |
+  |--------+---------|
+
+- For f = 10 Hz, tau = 1 ms, Var = 0 %, the valve pulsing is clearly
+  audible and the pressure rises imediately to ~1E-3. The load on the
+  turbo pump remains the same (low) however, so I suppose I need an
+  upper limit on the pressure in the beam line.
+- NB cable for the old ion pump has gone missing, so for now the above
+  tests are made without it.
+- NB2 there is a second ion gauge that can be plugged in once the ion
+  pump is up and running, but the skimmer chamber should be isolated
+  from the ion pump chamber once it is.
+
+** TODO Beam-line characterisation
+*** DONE Pressure vs pulse voltage
+- <2012-11-08 Thu>
+  Ion pump and second ion gauge installed. Retaking
+  data to include both gauge readings and a proper Voltmeter reading
+  of the variac output voltage. 
+  
+  Notes of 6.11.12 have some data taken with o-scope voltage reading
+  of variac voltage and only one gauge, if we need it, but I'm not
+  transcribing because I'm about to take better data (I hope).
+  
+  Accidentally took a whole set of data with the separation valve
+  open. Will leave the system to pump down overnight and start again
+  with the valve closed tomorrow. N.B. Clockwise opens (bolt /out/),
+  anti-clockwise closes (bolt /in/).
+
+  In any case the ion pump is fairly weak. The readings on the two
+  separated chambers (valve closed) after time to pump out were:
+  : g1 = 1.86E-8 mbar
+  : g2 = 4.8E-8 mbar
+  : Ip = 35 uA
+  Where g1 is the pressure behind the nozzle (pumped by turbo), g2 is
+  the pressure after the nozzle (pumped by ion pump), and Ip is the
+  current on the ion pump. Will check these values again in the
+  morning, since these may not be fully settled values (the separator
+  valve was closed the entire time, meaning the beam-line chamber was
+  being pumped only through the nozzle hole)
+
+- <2012-11-09 Fri> 
+Beamline chamber pumped out overnight with
+  separator valve open and ion pump off: g1 = 6.95E-9 mbar, g2 =
+  3.0E-8 mbar
+  
+  Ion pump on, readings settling (?) at: g1 = 6.5E-9, g2 = 2.2E-8, Ip
+  = 11 uA
+  
+  After closing separator valve, pressure settles at: g1 = 5.5E-9, g2
+  = 2.0E-8, Ip = 10 uA
+  
+  NB g1 is the gauge in the valve chamber, before the nozzle, g2 is
+  the gauge at the target, Ip is the ion pump pressure.
+  
+  Took a set of pressure vs pulse valve voltage readings, but forgot
+  to put N2 pressure behind the valve. I'll take another set of
+  readings on Monday with N2 pressure, but since it probably won't
+  make a difference, here's the data taken today:
+
+  | V /V | g1 /mbar | error /mbar | g2 /mbar | error /mbar | Ip /uA |
+  |------+----------+-------------+----------+-------------+--------|
+  |   31 |   5.5E-9 |     0.05E-9 |   1.9E-8 |      0.5E-8 |     10 |
+  |  160 |   5.7E-9 |      0.1E-9 |   1.9E-8 |      0.5E-8 |     10 |
+  |  165 |  1.05E-8 |     0.05E-8 |   1.9E-8 |      0.5E-8 |     10 |
+  |  170 |   5.0E-8 |      0.1E-8 |   2.0E-8 |      0.5E-8 |     10 |
+  |  175 |   1.8E-7 |      0.1E-7 |   2.5E-8 |      0.5E-8 |     13 |
+  |  180 |   7.0E-7 |      0.3E-7 |   3.9E-8 |      0.5E-8 |     20 |
+  |  185 |   1.9E-6 |      0.1E-6 |   7.0E-8 |      0.1E-8 |     36 |
+  |  190 |   4.6E-6 |      0.2E-6 |   1.4E-7 |      0.5E-7 |     70 |
+  |  195 |  1.19E-5 |     0.01E-5 |   2.7E-7 |      0.5E-7 |    145 |
+  |  200 |   2.3E-5 |     0.01E-5 |   5.0E-7 |      0.1E-7 |    232 |
+  |  205 |   4.2E-5 |     0.02E-5 |   8.0E-7 |      0.6E-7 |    369 |
+  |  210 |  7.55E-5 |     0.05E-5 |   1.4E-6 |      0.5E-6 |    600 |
+  |------+----------+-------------+----------+-------------+--------|
+
+- <2012-11-12 Mon> 
+Want to take a new set of readings, with N2
+  pressure behind valve. Settled values: g1 = 2.5E-9 mbar, g2 =6.5E-9
+  mbar, Ip = 2 uA.
+  
+  Amy is working around the gauge and has to unplug it. She says
+  she'll be done tonight so I'll make the measurements in the
+  morning. 
+
+- <2012-11-13 Tue> 
+[[file:beam_line_data_12_11_12.png][beam line data 2012-11-09]] -> Friday's data
+  Shows a ratio, at best, of x50 between the pressures of the
+  chambers, and that at reasonably high second chamber pressure
+  (1E-6). The data needs to be taken again, of course, with N2
+  pressure behind the pulse valve.
+
+  | V /V | g1 /mbar |   error | g2 /mbar |  error | Ip /uA | error |
+  |------+----------+---------+----------+--------+--------+-------|
+  |   30 |   2.2E-9 | 0.05E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  150 |   2.2E-9 | 0.05E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  155 |   2.2E-9 | 0.05E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  160 |  2.65E-9 |  0.1E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  165 |   8.1E-9 |  0.3E-9 |   6.7E-9 | 0.1E-9 |      2 |   0.5 |
+  |  170 |   7.5E-8 |  0.3E-8 |   8.7E-9 | 0.1E-9 |      3 |   0.5 |
+  |  175 |   2.4E-7 |  0.4E-7 |   1.4E-8 | 0.1E-8 |      6 |   0.5 |
+  |  180 |   1.0E-6 | 0.04E-6 |   3.4E-8 | 0.1E-8 |     16 |     1 |
+  |  185 |   2.3E-6 |  0.1E-6 |   7.0E-8 | 0.1E-8 |     35 |     1 |
+  |  190 |   6.7E-6 |  0.2E-6 |   1.7E-7 | 0.1E-7 |     81 |     2 |
+  |  195 |  1.54E-5 | 0.04E-5 |   3.5E-7 | 0.2E-7 |    160 |     5 |
+  |  200 |  3.00E-5 | 0.04E-5 |   5.9E-7 | 0.1E-7 |    265 |     5 |
+  |  205 |  4.64E-5 | 0.06E-5 |   8.6E-7 | 0.6E-7 |    365 |     5 |
+  |  210 |  8.10E-5 | 0.06E-5 |   1.4E-6 | 0.1E-6 |    610 |    10 |
+  |------+----------+---------+----------+--------+--------+-------|
+
+  Today's data (above) shows pretty much the same behaviour. apart
+  from starting at a lower pressure thanks to having been pumped out
+  for longer, the pressure readings as a function of pulse voltage are
+  almost exactly the same and so, therefore, is the ratio.
+  
+  I'm not entirely convinced that this tells us a great deal about
+  what the beamline will do once attached to the trap however. Since
+  the molecular beam currently has nowhere to go (firing directly at
+  the second gauge), the load on the ion pump is likely to be much
+  larger than we can expect when the beam is directed at the trap
+  chamber.
+
+  Some thoughts: 
+  * The ion pump is there mostly to pump out lighter
+    elements that leak into the second chamber. Having it pump out the
+    molecules is not its job, so how is this measurement relevant?
+  * If it is a relevant measurement then the pressure ratio is
+    probably not high enough. The two solutions suggested by Matthias
+    are a) adding a turbo to the second chamber b) if the N2
+    photoionisation is efficient enough, only using a single pulse to
+    load.
+  
+  In today's meeting, Laura points out that the data above must be at
+  least partly a cumulative distribution function, since there's
+  probably not enough time to pump out gases from the previous
+  readings. If data were taken at regular intervals then maybe we
+  could take the difference in order to compensate for that. On the
+  other hand I don't know whether this is valid if the pumping
+  efficiency depends on the chamber pressure.
+  
+  On my comment that the ion pump will not be pumping so many
+  molecules in the ultimate setup, Matthias points out that there will
+  be a second skimmer in that chamber, and so it's really not too far
+  off.
+
+  Matthias would also like me to check the bandwidth of the analog
+  output of the ion gauge, even if it's slow, we can use it to measure
+  the pressure change from single pulses. If these are small enough
+  and spaced out in time, then we won't have the problem of cumulative
+  pressure, as the pumps will have time to clear out the remnants of
+  previous pulses.
+  
+  The latter would be about all we could do without more info on the
+  N2 photoionisation efficiency.
+
+*** TODO Pressure build-up
+- <2012-11-14 Wed> 
+Characterise `build-up' of gas by varying pulse
+  voltage at low rep. rate. Watch the display or analog output signal
+  for settling time.
+- <2012-11-16 Fri> 
+If the pressures read on the continuous pulsing
+  measurements is due to a build-up effect, then we might be okay to
+  run at higher pulse voltages as long as the N2 photoionisation is
+  efficient enough and we can use a small number of pulses. 
+  
+  I will test pressures for continuous pulsing, but with as low a
+  repetition rate as I can bear to wait for (likely 0.1Hz).
+
+** TODO Beam-line preparation
+*** DONE Test beamline-to-trap valve
+- <2012-11-14 Wed> 
+Test beamline-to-trap valve to assess leak-rate.
+- <2012-11-16 Fri> 
+No significant leak rate when closed down
+  tightly. If closed down with ordinary firmness, there's a pretty
+  significant leak-rate of up to 1E-7 mbarl/s. It takes some
+  significant amount more force to properly close it.
+- <2012-11-20 Tue> 
+Matthias is a bit worried about this
+  behaviour. I should probably test again to see if it behaves the
+  same every time or if the performance degrades.
+- <2012-12-04 Tue>
+Just as before, the valve must be closed fairly tight in order that
+there be no leaks. Of course this gets worse every time we open and
+close it. We should get a torque wrench for this type of thing.
+
+** TODO Purchase list
+[ ] Torque wrench
+[ ] IR diodes from AMS techonology (req. error)
+
+
+* To do, General
+
+** DONE Order new notebooks
+- <2012-10-23 Tue>
+Can I get these on the grant? Probably not. Maybe wait `til payday:
+<2012-10-30 Tue>
+
+- <2012-10-31 Wed> 
+Money not through yet. Putting an agenda entry in
+for Monday to remind me <2012-11-05 Mon>
+
+- <2012-11-27 Tue> 
+November pay-day
+
+- <2012-11-28 Wed>
+Money not through yet. Reminder for Friday: <2012-11-30 Fri>.
+
+- <2012-11-30 Fri>
+Ordered two notebooks today, 3-5 days delivery.
+
+** DONE Order RAM for stephen
+- <2012-10-29 Mon> 
+RAM for Stephen, i946PL/GZ, DDR2-333 2x1GB,
+  PC2-5300-u (333MHz 667 Mb/s/pin) -> RS don't stock that RAM ^
+- <2012-10-30 Tue> 
+I will order the RAM if Stephen can find it
+- <2012-11-12 Mon> 
+I've placed the order with Gill.
+- <2012-11-15 Thu> 
+Order arrived today.
+
+** DONE Find a copy of "German Quickly" for reading class
+- <2012-11-05 Mon>
+
+** DONE Fax payslips to the student loans company
+- <2012-11-05 Mon>
+  + Contact no.: 0845 0738 891
+  + NI Number: JK727693B
+  + Customer reference No. 316 366 397 48
+  + Sort code 20-33-70
+  + Acc. No. 33534480
+  + Fax no. to send payslips after overpayment:
+    (All payslips since April 2012)
+    0141 810 1844
+  + Cover note info:
+    Name, Customer reference No.
+- <2012-11-19 Mon> 
+School office fax machine didn't work. 
+  Address:
+  FAO ICR department
+  Student loans company Ltd.
+  100 Bothwell St.
+  Glasgow
+  G27JD
+
+Scans posted by snail-mail.
+  + [[file:~/Documents/personal/payslips/payslips_apr_oct.pdf][payslips scanned]]
+  + [[file:~/Documents/personal/payslips/cover_note.txt::Nicolas%20Seymour-Smith][cover note]]
+
+- <2012-11-27 Tue>
+Slips were received. Payment will come in by the 12th of December.
+
+** Get windows installed on netbook by ITS
+- <2012-11-05 Mon>
+  Maybe I can use the license key that I'm not using currently for my
+  main office computer (linux only)
+  
+  License key (Vista): 2TVRV-XRGD2-DVT78-XP3CX-WTD3Y
+
+- <2012-11-15 Thu>
+  They can install a version that needs to log in to the Sussex
+  network every six months. That sounds fine, but I'm actively
+  programming on the computer right now. Going to strike this off as
+  an active TODO, but leave it in the list.
+
+** TODO Find submissions for ITCM-Sussex.com
+- <2012-11-13 Tue>
+Matthias has reminded us to look through the old website for these.
+- <2012-11-20 Tue> 
+I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+- <2012-11-26 Mon>
+Rev. Sci. Instrum. 81, 075109 2010:
+
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. 
+
+By stabilizing the position of the transmission peaks of the slave
+lasers relative to successive peaks of the master laser as the length
+of the cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s, a significant
+improvement on previous scanning-cavity stabilization systems."
+
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(http://www.microchip.com/). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+
+** Ask Hiroki for a look at the code for cavity mode prop.
+- <2012-11-06 Tue>  
+Asked Hiroki, but he hasn't finished it yet. 
+** DONE Order RAM for the p7888 industrial
+- <2012-11-12 Mon>
+Placed the order with Gill for 
+   "Crucial 1GB PC3200 DDR Desktop Memory Upgrade 184-pin Dimm"
+- <2012-11-15 Thu> Order arrived today.
+
+** DONE PIC programming suggestions
+- <2012-11-13 Tue>
+  + Hiroki has already made a circuit board for serial ADC,
+    worthsharing info.
+  + Focus on the program rather than the USB communication for now?
+
+- <2012-11-13 Tue>
+Made suggestions at the meeting, Matthias looking into Hiroki's ADC
+  solution, even noted that Texas Instruments provide a breakout board
+  for their ADCs, which would be ideal.
+
+** DONE Tally mirrors (IR, broadband)
+- <2012-11-15 Thu> 
+Each box of the double-coated mirrors contains four
+  mirrors, so we have a lot more than I thought.
+
+** DONE Fix ReadP7888SingleChannel.vi
+- <2012-11-29 Thu>
+The vi that has been being used to analyse data from the p7888 up
+until now has started acting up as of today. It's no longer reading
+data correctly from the saved list files. It seems that it finds that
+there is no data in the second channel and therefore the analysis dll
+that Wolfgang wrote exits with an unspecified error.
+
+If I use it to open up very old data sets it seems to work fine,
+finding data in both channels and giving out the auto-correlation. If
+I use it to open up yesterday's data however (from Amy's tests), it
+doesn't work, and can't find data in the second channel. This is odd,
+since from what Amy says the vi was working fine on that data
+yesterday. 
+
+The data from the channel that /is/ found doesn't seem to add up to
+what it should do given the repetition rates and counts from the PMT. 
+
+Looking at the data as it is taken  on the MCDWIN, it seems that there
+is no signal on one of the channels in most cases. I don't really know
+whether or not to expect anything, since I don't remember seeing it on
+the other machine - it's worth a check on that machine I guess. On one
+occassion I took a data set that looked on the MCDWIN as if there was
+a single trigger on the second channel. The vi read both channels and
+output an FFT, but the data looked sparse and mostly nonsensical.
+
+I'm fairly certain it's not possible that the work I was doing on the
+machine yesterday ( [[id:3c323710-c29c-414d-80e0-436929f53c13][Data analysis (FFT)]] ), could affect the analyser
+vi. The vi doesn't pull from any of the p7888.dll functions or
+settings in the first place, besides which I have been careful that my
+program does not change any settings itself (for the moment it relies
+on the user adjusting the settings manually in the server
+program). The final nail in the coffin of that `possible-cause' is
+that the vi no longer works on data it took yesterday, before I used
+my software, and also doesn't seem to work on some of the other old
+data that's been taken.
+
+-<2012-11-30 Fri>
+Kevin helpfully pointed out that the problem was that in the "data"
+settings, the save file for the second module/channel needs to be the
+same as for the first. Everything's working properly now. (That it
+worked once without this set properly is just weird).
+
+
+* Journal & Theory club
+
+** Club papers
+- <2012-11-09 Fri> Amy presenting:
+   PHYSICAL REVIEW A 76, 023413 ͑2007͒
+   Blackbody thermometry with cold molecular ions and application
+   to ion-based frequency standards
+   J. C. J. Koelemeij, B. Roth, and S. Schiller
+- <2012-11-23 Fri> Hiroki presenting:
+  Stute et al. - 2012 - Toward an ion–photon quantum interface in an
+  optical cavity 
+  (Innsbruck group)
+
+** Papers to look at
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+
+*** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+** General papers
+*** TODO J.D. Siverns et. al. 2011
+
+** Theory subjects
+*** TODO Applications for data analysis and simulation
+
+** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+
+* To do, non-work
+
+** TODO Learn git
+- <2012-10-22 Mon>
+  + [[http://sixrevisions.com/resources/git-tutorials-beginners/][git tutorial links 2]]
+  + [[http://git-scm.com/documentation][git tutorial links 1]]
+
+** TODO Barclays payment dispute
+- <2012-11-07 Wed>
+  + No payment made to El Mexicano for £28.50 on 20 Oct. (came out on 23
+  Oct).
+  + reference: 850807 November 12
+
+** TODO Textbooks
+*** <2012-11-13 Tue>
++ QM
++ Atomic physics
++ Quantum optics
+
+** DONE Check for Mexico tickets
+- <2012-11-13 Tue>
+- <2012-12-04 Tue>
+Booking reference: 6207503
+
+** DONE Buy Snood
+- <2012-11-16 Fri>
+
+** Bus ticket dates
+- Next renewal <2013-02-20 Wed>.
+  
+** DONE Buy train ticket to Dorset on <2012-12-20 Thu>
+- <2012-11-28 Wed>
+Pay should be in by Friday <2012-11-30 Fri>.
+- <2012-11-30 Fri>
+Booked today, ref. 35F6RFTN
+
+
+* Handy command syntaxes and emacs sequences
+** General
+** Org mode
+*** Motion
+The following commands jump to other headlines in the buffer.
+C-c C-n     (outline-next-visible-heading)
+Next heading. 
+C-c C-p     (outline-previous-visible-heading)
+Previous heading. 
+C-c C-f     (org-forward-same-level)
+Next heading same level. 
+C-c C-b     (org-backward-same-level)
+Previous heading same level. 
+C-c C-u     (outline-up-heading)
+Backward to higher level heading. 
+
+*** Agenda
+- "C-c ." insert active date from calendar
+- "C-c !" insert inactive date from calendar
+- "C-c C-d" insert deadline stamp from calendar
+- "C-u C-c ." insert timestamp
+- "S-left/right" move cursor in calndar buffer
+
+*** Links
+- "C-c l" store link
+- "C-c C-l" insert link (use with above)
+- "C-u C-c C-l" insert link (filename completion)
+- "C-c C-o" open link (or click)
+
+*** Export
+- "C-c C-e h" export to HTML ("b" to open in browser)
+- "C-c C-e p" export to pdf ("d" to open pdf)
+

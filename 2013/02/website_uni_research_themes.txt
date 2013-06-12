@@ -1,0 +1,18 @@
+In the course of this project we will develop a system to
+deterministically transfer quantum information between distant nodes
+of a `quantum-network'. Using optical fibres as a carrier,
+quantum-bits (or qubits) of information will be transferred by
+exchange of single photons (light-particles) between atomic ions. This
+system is a fundamental building block for the quantum-network, which
+will one day connect quantum computers in the same way the internet
+does for present-day computers.
+
+Single-photon exchanges are already used today to transmit information
+securely over long distances. This process, called `quantum
+communication', utilises the fundamental laws of quantum mechanics to
+foil any possibility of eavesdropping. Quantum effects can also be
+used to perform compuations much faster than is currently possible
+with classical computers. In our project, we will combine the areas of
+quantum computation and quantum communication by building an efficient
+user-controlled interface (quantum link) between ions and photons and
+thus develop a crucial building block for the future quantum internet.

@@ -1,0 +1,291 @@
+#+Title: To do: June 2013
+#+AUTHOR: N. Seymour-Smith
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL HOLD
+#Export options here:
+#+OPTIONS: toc:3
+#+LaTeX_HEADER: \usepackage{fullpage}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks}
+#+LaTeX_HEADER: \usepackage[mathletters]{ucs}
+#+LaTeX_HEADER: \usepackage[utf8x]{inputenc}
+
+* Molecular Lab Experiments
+** TODO [#A] Photoionisation of N2				    :Nic:Amy:
+*** TODO [#A] Identify appropriate gnd-state transition
+- <2013-05-08 Wed>
+Jack has done most of the work here. Just a case of optimising power
+etc. 
+- <2013-05-14 Tue> 
+Jack has had to move on to fibre shooting after some trouble with
+getting a spectrum around the gnd-state transition. I'm going to take
+over generally, once Matthias has reoptimised the laser and finished
+baking the chamber (having just replaced the channeltron).
+- <2013-05-31 Fri>
+I managed to get a full spectrum on Wednesday and analyse it today. I
+think we've got the whole series of lines, and I've handed it over to
+Matthias to see if he can identify the ground state transition from
+it.
+- <2013-06-07 Fri>
+Depending on interpretation of the paper we're using ([[file:2013/06/img/n2pi.pdf][N2PI]]), we either
+have the lines we need or they are a little further to the low energy
+end of the scale than we currently have. Need help interpreting paper,
+and will take another longer scan just in case, once the laser is
+optimised. 
+
+** HOLD Work on DACs for the new SCL				  :Nic:Kevin:
+*** HOLD Building boards
+- <2013-01-25 Fri> Matthias has the plans:
+Pester him for them.
+- <2013-01-31 Thu> Received:
+Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+- <2013-02-04 Mon> Matthias is making the boards:
+Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+- <2013-02-04 Mon> Pins used:
+Check with Matthias that his design has incorporated these pins as
+I/Os:
++ Port D: RD8 (peak detect input), RD5 (CN_interrupt)
++ U2RX pins, unless he's already designed these away
+*** HOLD Programming
+**** TODO Write SPI library for PIC comms with computer
+**** TODO Write SPI library for PIC comms with DAC
+
+** TODO [#C] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO [#C] Fast autocorrelation calculation
+- <2013-04-09 Tue>
+[ ] Try using CUDA for a fast autocorrelation calculation |
+- <2013-04-09 Tue>
+Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+*** HOLD [#C] Plan out experiment process
+- <2013-05-30 Thu>
+Waiting on Keving to collect some data on `phonon-laser' type
+amplification of the dipole force before we can decide on the exact
+experimental procedure. 
+*** HOLD [#C] Describe phonon laser trick in notes
+- <2013-05-15 Wed>
+Check if I already have.
+- <2013-06-10 Mon>
+Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+** TODO [#B] Simulations						:Nic:
+*** TODO [#B] Hanle dip/b-field map simulation
+**** TODO Fluorescence as a function of B-field for different light pol.
+**** TODO Sanity check: modulation sensitivity reduce at higher B-field?
+**** TODO B-field modulation frequency response (reduce laser Rabi f.)
+*** TODO [#C] Single ion `heat-engine' effect
+- <2013-05-30 Thu>
+Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+*** HOLD [#C] One or two calcium ions
+- <2013-03-22 Fri>
+Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+- <2013-05-28 Tue>
+This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+
+
+* General
+** DONE Pseudopotential calculations for Oxford
+- <2013-06-07 Fri>
+Sent to Laura, awaiting feedback on usage.
+** TODO [#B] Job application research
+*** Drewsen group
+*** Innsbruck group
+*** Munich group
+** Meetings
+** Purchase list
+*** RS/Farnell
+**** Standard consumables
+- Liquid superglue 473-455
+- Dymo label tape, large 449-3939
+- Dual monostable multivibrators 652-140
+*** Thorlabs
+- [-] x1 IR BS for the cavity expt. | Identify unlabelled in lab <2013-04-05 Fri>
+*** Sci-tech stores
+*** Miscellaneous
+- [-] New PZT amplifiers | Matthias repairing one? <2013-04-04 Thu>
+*** Returns
+
+** Find submissions for ITCM-Sussex.com
+- <2012-11-13 Tue>
+Matthias has reminded us to look through the old website for these.
+
+- <2012-11-20 Tue> 
+I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+
+- <2012-11-26 Mon>
+Rev. Sci. Instrum. 81, 075109 2010:
+
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(http://www.microchip.com/). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+
+- <2013-01-04 Fri> Comments on current webpage:
+1. There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+2. Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+3. Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+
+** Ask Hiroki for a look at the code for cavity mode prop.
+- <2012-11-06 Tue>  
+Asked Hiroki, but he hasn't finished it yet. 
+
+
+* Journal & Theory club
+** Rota
+- Nic
+- Stephen
+- Amy
+- Hiroki
+- Jack
+- Michael
+- Kevin
+- Markus
+Theory club is offset by +4.
+** Papers to look at
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+*** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+** General papers
+** Theory subjects
+*** TODO Applications for data analysis and simulation
+** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+
+* Addresses and contacts
+** Return to:
+#+BEGIN_VERSE
+FAO N. Seymour-Smith,
+JMS Stores,
+University of Sussex,
+Falmer,
+Brighton,
+BN1 9QG
+#+END_VERSE
+
+** BSP
+#+BEGIN_VERSE
+BSP Engineering Services (UK) Ltd,
+Maitland Road,
+Needham Market, 
+Ipswich,
+IP6 8NZ
+#+END_VERSE
+
+** Erodatools Ltd
+#+BEGIN_VERSE
+Unit 4, 
+Lawrence Works,
+Sheffield Road,
+Penistone,
+Sheffield,
+S36 6HF
+#+END_VERSE
+
+
+* To do, non-work :noexport:
+** TODO Learn CSS/Jekyll
+- <2013-05-24 Fri>
+** TODO Illustrate hydrogen wavefunctions in POV-ray
+- <2013-05-24 Fri>
+** TODO Move ISA
+- <2013-04-24 Wed>
+Check Guardian article on cooperative banks
+** TODO Purchase 
+- Scarf
+- Atomic physics text book
+- Thermodynamics text book
+- Quantum optics text book
+- Backup-drive replacement
+** TODO Dekatron
+- [ ] 555 timer input
+
+
+* Handy command syntaxes and emacs sequences :noexport:
+** General
+*** rgrep syntax
+: rgrep "search pattern" [directory to search]
+
+*** Macros
+Here is how to define a keyboard macro:
+`C-x (’ – start defining a keyboard macro
+`C-x )’ – stop defining the keyboard macro
+
+And here is how to execute a keyboard macro you’ve defined:
+‘C-x e’ – execute the keyboard macro
+
+Here’s how to execute the macro 37 times (you use ‘C-u’ to provide the 37):
+‘C-u 37 C-x e’
+
+** Org mode
+*** Motion
+- The following commands jump to other headlines in the buffer.
+: C-c C-n     (outline-next-visible-heading)
+- Next heading. 
+: C-c C-p     (outline-previous-visible-heading)
+- Previous heading. 
+: C-c C-f     (org-forward-same-level)
+- Next heading same level. 
+: C-c C-b     (org-backward-same-level)
+- Previous heading same level. 
+: C-c C-u     (outline-up-heading)
+- Backward to higher level heading. 
+
+*** Agenda
+- "C-c ." insert active date from calendar
+- "C-c !" insert inactive date from calendar
+- "C-c C-d" insert deadline stamp from calendar
+- "C-u C-c ." insert timestamp
+- "S-left/right" move cursor in calendar buffer
+- "f/b, n/p" navigate weeks/days in agenda mode
+
+*** Links
+- "C-c l" store link
+- "C-c C-l" insert link (use with above)
+- "C-u C-c C-l" insert link (filename completion)
+- "C-c C-o" open link (or click)
+
+*** Export
+- "C-c C-e h" export to HTML ("b" to open in browser)
+- "C-c C-e p" export to pdf ("d" to open pdf)
+
+
+*** Tags
+http://orgmode.org/manual/Setting-tags.html#Setting-tags
+: C-c C-q     (org-set-tags-command)

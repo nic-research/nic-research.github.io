@@ -1,0 +1,516 @@
+-December 2012-
+#Export options here:
+#+OPTIONS: toc:2
+#+TODO: TODO | DONE CNCL POST
+
+* To do, Molecular Lab Experiments
+
+** TODO Code an automation program for experiments
+- <2012-10-05 Fri> 
+[[file:~/Documents/molecule_trap/automation/automation_project.org][project org file]]
+- <2012-12-18 Tue>
+PMT program written. Locally run vers. suffers from priority/resource
+sharing issues, but remotely run version with client/server works
+fine.
+
+Client is general and light, just runs the command that it reads from
+the datasocket (LV communication protocol).
+
+** POST Write simulation of 8-level atom for experiments
+*** TODO Dark resonance spectroscopy/amplification
+- <2012-10-05 Fri>
+  Matthias has a reference (paper or lecture course) that
+  shows a way in which we can account for laser linewidth in
+  simulations. Chase up.
+- <2012-10-23 Tue> Easiest thing right now is incorporate Wolfgang's
+  matlab simulation into mine
+*** Single ion-heat engine
+
+** POST Beam-line preparation
+*** DONE Test beamline-to-trap valve
+- <2012-11-14 Wed> 
+Test beamline-to-trap valve to assess leak-rate.
+- <2012-11-16 Fri> 
+No significant leak rate when closed down
+  tightly. If closed down with ordinary firmness, there's a pretty
+  significant leak-rate of up to 1E-7 mbarl/s. It takes some
+  significant amount more force to properly close it.
+- <2012-11-20 Tue> 
+Matthias is a bit worried about this
+  behaviour. I should probably test again to see if it behaves the
+  same every time or if the performance degrades.
+- <2012-12-04 Tue>
+Just as before, the valve must be closed fairly tight in order that
+there be no leaks. Of course this gets worse every time we open and
+close it. We should get a torque wrench for this type of thing.
+
+*** DONE Pressure vs pulse voltage
+- <2012-11-08 Thu>
+  Ion pump and second ion gauge installed. Retaking
+  data to include both gauge readings and a proper Voltmeter reading
+  of the variac output voltage. 
+  
+  Notes of 6.11.12 have some data taken with o-scope voltage reading
+  of variac voltage and only one gauge, if we need it, but I'm not
+  transcribing because I'm about to take better data (I hope).
+  
+  Accidentally took a whole set of data with the separation valve
+  open. Will leave the system to pump down overnight and start again
+  with the valve closed tomorrow. N.B. Clockwise opens (bolt /out/),
+  anti-clockwise closes (bolt /in/). (-EDIT <2013-01-09 Wed> This is
+  /wrong/. It is the other way around -> bolt in - open, bolt out -
+  closed).
+
+  In any case the ion pump is fairly weak. The readings on the two
+  separated chambers (valve closed) after time to pump out were:
+  : g1 = 1.86E-8 mbar
+  : g2 = 4.8E-8 mbar
+  : Ip = 35 uA
+  Where g1 is the pressure behind the nozzle (pumped by turbo), g2 is
+  the pressure after the nozzle (pumped by ion pump), and Ip is the
+  current on the ion pump. Will check these values again in the
+  morning, since these may not be fully settled values (the separator
+  valve was closed the entire time, meaning the beam-line chamber was
+  being pumped only through the nozzle hole)
+
+- <2012-11-09 Fri> 
+Beamline chamber pumped out overnight with
+  separator valve open and ion pump off: g1 = 6.95E-9 mbar, g2 =
+  3.0E-8 mbar
+  
+  Ion pump on, readings settling (?) at: g1 = 6.5E-9, g2 = 2.2E-8, Ip
+  = 11 uA
+  
+  After closing separator valve, pressure settles at: g1 = 5.5E-9, g2
+  = 2.0E-8, Ip = 10 uA
+  
+  NB g1 is the gauge in the valve chamber, before the nozzle, g2 is
+  the gauge at the target, Ip is the ion pump pressure.
+  
+  Took a set of pressure vs pulse valve voltage readings, but forgot
+  to put N2 pressure behind the valve. I'll take another set of
+  readings on Monday with N2 pressure, but since it probably won't
+  make a difference, here's the data taken today:
+
+  | V /V | g1 /mbar | error /mbar | g2 /mbar | error /mbar | Ip /uA |
+  |------+----------+-------------+----------+-------------+--------|
+  |   31 |   5.5E-9 |     0.05E-9 |   1.9E-8 |      0.5E-8 |     10 |
+  |  160 |   5.7E-9 |      0.1E-9 |   1.9E-8 |      0.5E-8 |     10 |
+  |  165 |  1.05E-8 |     0.05E-8 |   1.9E-8 |      0.5E-8 |     10 |
+  |  170 |   5.0E-8 |      0.1E-8 |   2.0E-8 |      0.5E-8 |     10 |
+  |  175 |   1.8E-7 |      0.1E-7 |   2.5E-8 |      0.5E-8 |     13 |
+  |  180 |   7.0E-7 |      0.3E-7 |   3.9E-8 |      0.5E-8 |     20 |
+  |  185 |   1.9E-6 |      0.1E-6 |   7.0E-8 |      0.1E-8 |     36 |
+  |  190 |   4.6E-6 |      0.2E-6 |   1.4E-7 |      0.5E-7 |     70 |
+  |  195 |  1.19E-5 |     0.01E-5 |   2.7E-7 |      0.5E-7 |    145 |
+  |  200 |   2.3E-5 |     0.01E-5 |   5.0E-7 |      0.1E-7 |    232 |
+  |  205 |   4.2E-5 |     0.02E-5 |   8.0E-7 |      0.6E-7 |    369 |
+  |  210 |  7.55E-5 |     0.05E-5 |   1.4E-6 |      0.5E-6 |    600 |
+  |------+----------+-------------+----------+-------------+--------|
+
+- <2012-11-12 Mon> 
+Want to take a new set of readings, with N2
+  pressure behind valve. Settled values: g1 = 2.5E-9 mbar, g2 =6.5E-9
+  mbar, Ip = 2 uA.
+  
+  Amy is working around the gauge and has to unplug it. She says
+  she'll be done tonight so I'll make the measurements in the
+  morning. 
+
+- <2012-11-13 Tue> 
+[[file:beam_line_data_12_11_12.png][beam line data 2012-11-09]] -> Friday's data
+  Shows a ratio, at best, of x50 between the pressures of the
+  chambers, and that at reasonably high second chamber pressure
+  (1E-6). The data needs to be taken again, of course, with N2
+  pressure behind the pulse valve.
+
+  | V /V | g1 /mbar |   error | g2 /mbar |  error | Ip /uA | error |
+  |------+----------+---------+----------+--------+--------+-------|
+  |   30 |   2.2E-9 | 0.05E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  150 |   2.2E-9 | 0.05E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  155 |   2.2E-9 | 0.05E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  160 |  2.65E-9 |  0.1E-9 |   6.6E-9 | 0.1E-9 |      2 |   0.5 |
+  |  165 |   8.1E-9 |  0.3E-9 |   6.7E-9 | 0.1E-9 |      2 |   0.5 |
+  |  170 |   7.5E-8 |  0.3E-8 |   8.7E-9 | 0.1E-9 |      3 |   0.5 |
+  |  175 |   2.4E-7 |  0.4E-7 |   1.4E-8 | 0.1E-8 |      6 |   0.5 |
+  |  180 |   1.0E-6 | 0.04E-6 |   3.4E-8 | 0.1E-8 |     16 |     1 |
+  |  185 |   2.3E-6 |  0.1E-6 |   7.0E-8 | 0.1E-8 |     35 |     1 |
+  |  190 |   6.7E-6 |  0.2E-6 |   1.7E-7 | 0.1E-7 |     81 |     2 |
+  |  195 |  1.54E-5 | 0.04E-5 |   3.5E-7 | 0.2E-7 |    160 |     5 |
+  |  200 |  3.00E-5 | 0.04E-5 |   5.9E-7 | 0.1E-7 |    265 |     5 |
+  |  205 |  4.64E-5 | 0.06E-5 |   8.6E-7 | 0.6E-7 |    365 |     5 |
+  |  210 |  8.10E-5 | 0.06E-5 |   1.4E-6 | 0.1E-6 |    610 |    10 |
+  |------+----------+---------+----------+--------+--------+-------|
+
+  Today's data (above) shows pretty much the same behaviour. apart
+  from starting at a lower pressure thanks to having been pumped out
+  for longer, the pressure readings as a function of pulse voltage are
+  almost exactly the same and so, therefore, is the ratio.
+  
+  I'm not entirely convinced that this tells us a great deal about
+  what the beamline will do once attached to the trap however. Since
+  the molecular beam currently has nowhere to go (firing directly at
+  the second gauge), the load on the ion pump is likely to be much
+  larger than we can expect when the beam is directed at the trap
+  chamber.
+
+  Some thoughts: 
+  * The ion pump is there mostly to pump out lighter
+    elements that leak into the second chamber. Having it pump out the
+    molecules is not its job, so how is this measurement relevant?
+  * If it is a relevant measurement then the pressure ratio is
+    probably not high enough. The two solutions suggested by Matthias
+    are a) adding a turbo to the second chamber b) if the N2
+    photoionisation is efficient enough, only using a single pulse to
+    load.
+  
+  In today's meeting, Laura points out that the data above must be at
+  least partly a cumulative distribution function, since there's
+  probably not enough time to pump out gases from the previous
+  readings. If data were taken at regular intervals then maybe we
+  could take the difference in order to compensate for that. On the
+  other hand I don't know whether this is valid if the pumping
+  efficiency depends on the chamber pressure.
+  
+  On my comment that the ion pump will not be pumping so many
+  molecules in the ultimate setup, Matthias points out that there will
+  be a second skimmer in that chamber, and so it's really not too far
+  off.
+
+  Matthias would also like me to check the bandwidth of the analog
+  output of the ion gauge, even if it's slow, we can use it to measure
+  the pressure change from single pulses. If these are small enough
+  and spaced out in time, then we won't have the problem of cumulative
+  pressure, as the pumps will have time to clear out the remnants of
+  previous pulses.
+  
+  The latter would be about all we could do without more info on the
+  N2 photoionisation efficiency.
+
+*** DONE Pressure build-up
+- <2012-11-14 Wed> 
+Characterise `build-up' of gas by varying pulse
+  voltage at low rep. rate. Watch the display or analog output signal
+  for settling time.
+- <2012-11-16 Fri> 
+If the pressures read on the continuous pulsing
+  measurements is due to a build-up effect, then we might be okay to
+  run at higher pulse voltages as long as the N2 photoionisation is
+  efficient enough and we can use a small number of pulses. 
+  
+  I will test pressures for continuous pulsing, but with as low a
+  repetition rate as I can bear to wait for (likely 0.1Hz).
+- <2012-12-04 Tue>
+Beam line pressure has had a chance to get nice and low:
+: g1 = 1.9E-9 mbar
+: g2 = 4.3E-9 mbar
+: I_pump = 1 uA
+
+Tested yesterday with a low repetitions rate of R = 0.1 Hz to
+characterise the pressure differential and pump-out time.
+
+The data is in my notebook entry for yesterday, but the brief summary
+is that with a rep. rate of 0.1 Hz (i.e. 10 s pumping time), pressures
+starts to build up in the chamber at a pulse height of around 180
+V. At this point the pressure peak in the beam chamber is around
+(7+/-2)E-9 mbar. Compared to the non-pulsed pressure of 4.3E-9 mbar,
+this indicates very low pumping power/speed in the second chamber.
+
+If the N2 photoionisation process is efficient enough, then it's
+possible that we can do with just a single pulse. According to the
+above data, if we fail to load an N2 ion then we must wait longer
+(possibly much longer for sufficient neutral N2 density) than 10
+seconds in order to apply another pulse. 
+
+For these reasons I think it would be a good idea to consider adding a
+TMP to the beamline chamber.
+
+*** TODO TMP installation
+- <2012-12-04 Tue>
+Data in previous headline indicates there's not enough pumping power
+and the ion trap region in the beamline chamber. It's time to consider
+adding a turbo to pump alongside the ion pump to maintain a good
+pressure differential between the beamline and the trapping region. 
+
+** DONE LICT spectroscopy preliminary
+- <2012-12-03 Mon>. Reading:
+Matthias has sent me some papers on LICT with Argon and N2. We're
+looking to perform some variations on the experiments done in these
+papers and he wants me to make some calculations based on the
+information in the papers. More info to follow.
+
+- <2012-12-06 Thu>. Collision rates:
+Matthias wants to know whether we can do spectroscopy on the
+rotational state of N2 using LICT (laser-induced charge transfer) with
+Argon. The main question is whether or not we can get a high enough
+collision rate, using the leak valve, in order to do the spectroscopy
+in a reasonable time. If the pressure of Ar is too high, then our
+crystal might not be stable enough. If the pressure of Ar is to low,
+then the experiment will take beyond a resonable amount of time for
+proper statistics.
+
+The reaction rate as a function of Ar pressure can be calculated
+fairly simply from the cross-section and the population of the chosen
+N2+ (nu>0) state, as I believe it is a reaction with no dependence on
+temperature. The cross-section and further details should be found in
+the Wilitsch papers.
+
+- PRA 83, 023415 (2011):
+According to PRA 83, 023415 (2011) "Subsequent fluorescent decay of
+the electronically excited state populates vibrationally excited
+levels in the ground electronic state with a probability of 55%." This
+gives us a rough value of population to make preliminary calculations
+from.
+
+
+This paper uses an Ar pressure of 5E-8 mbar for reactions, but looks
+at a much larger crystal than we plan to i.e. one calcium ion and one
+N2+/Ar+. When off-resonant with the excitation laser they look for
+thirty seconds to see if there's been any reactions. This can be taken
+for a rough value to check results against.
+
+Measured second order rate coefficient for N2+&N2 charge exchange: 
+: k = (3.8+-2.0)x10^-10 cm^3s^-1
+: (r = k[N2+(nu > 0)][Ar])
+
+"The bimolecular rate constant was calculated from the measured
+pseudo-first-order rate coefficient k = tau - 1 using a nitrogen
+partial pressure of p = (1.1+-0.6)e-10 mbar in our UHV chamber, as
+measured with a residual-gas analyzer."
+
+Relevant references:
+1) Earlier paper by the same group:
+   X. Tong, A. H.Winney, and S.Willitsch, Phys.Rev.Lett. 105, 143001 (2010).
+2) LICT reference:
+   S. Schlemmer, T. Kuhn, E. Lescop, and D. Gerlich, Int. J. Mass Spectrom. 185/186/187, 589 (1999).
+-----
+
+- Int. J. Mass Spectrom. 185/186/187, 589 (1999):
+Charge transfer rate coefficient:
+: N2+(nu > 0) + Ar -> Ar+ + N2
+: k_CT = (4+-2)e-10 cm^3s^-1
+
+This charge transfer rate coefficient is all I need to make the
+necessary calculations, using the differential rate equation
+: R = k_CT[Ar],
+
+given [Ar], the density of Argon in cm^-3.
+
+- Crystal `cleaning':
+Another point of interest is whether or not, after confirming charge
+exchange between N2 and Argon, we can expel the Argon from the crystal
+without losing the calcium. Apart from the reaction rate, calcium
+loading would be the main time-limiting factor of the experiment.
+
+Expulsion of N2 after a non-reaction would be fairly straightforward
+given that it has a very different mass from Ca. In this case, we can
+change the q-value of the trap in order to make it unstable for the
+mass range of N2. The problem with argon (atomic number 18) is that
+the mass is similar to Ca (#20), and so the q change would risk losing
+Ca as well. 
+
+Kevin has suggested loading Ca-44 instead of Ca-40, which would give
+us better separation. Lasers can fairly easily be tuned to the right
+wavelengths to deal with this, and Kevin says loading can be done by
+tuning the photoionisation laser to Ca-44 whilst simulataneously
+applying a modulation at the Ca-40 secular frequency in order to
+prevent trapping the inevitable 40-isotopes (there is significant
+overlap in the wavelengths given the relative abundance of Ca-40 to
+44).
+
+If the above technique works though, then it might be worthwhile
+checking whether or not a combination of moderate q-changing and
+excitation at the Ca-40 secular frequency couldn't do the job for us,
+and save us the trouble of retuning our wavelengths and dealing with
+relatively low abundances of Ca-44.
+
+- <2012-12-07 Fri> Collision rates:
+Since we need to prepare N2 in specific states for
+spectroscopy (the normal thermal distribution has fairly low
+population in the lower rotational levels), N2-N2 charge exchange
+limits the time we have to get an Ar reaction by replacing our
+state-prepared and subsequently vibrationally excited N2 ion with an
+ion in the vibrational ground state.
+
+The calculations for this experiment ended up being fairly
+straightforward: The rate constant given for the N2 to Ar charge
+transfer reaction is the same as the rate constant given for N2 to N2
+charge transfer. Without the beamline, we are planning to leak N2
+simultaneously with Ar via the leak-valve. This means that the
+relative pressure of N2 must be high enough for photoionisation and
+capture in the trap, but not so high that N2-N2 charge transfer is the
+dominant reaction. We can't know whether this will be possible until
+we know more about the photoionisation efficiency. This is information
+we plan to get either from the N2 spectroscopy setup or from the trap
+directly in the next few weeks.
+
+Another problem in this arrangement is that, according to the Wilitsch
+group, Ar is fairly easy to ionise, being closer to a two-photon
+process than the three-photon process of N2. This means that with
+relatively large abundance of Ar, we could have a problem selectively
+preparing the Ca-N2 coulomb crystal. If we had a good crystal cleaning
+method maybe that wouldn't be a problem, since then we could keep
+trying to load N2, whilst ejecting Ar as necessary.
+
+
+* To do, General
+
+** TODO Purchase list
+- [ ] Torque wrench <2012-12-04 Tue>
+- [X] IR diodes from AMS techonology. Ordered: <2012-12-05 Wed>
+- [X] Tungsten foil from Sigma-Aldrich. Ordered: <2012-12-05 Wed>
+- [ ] Pedestal bases for optics posts. <2012-12-17 Mon>
+
+** POST Get windows installed on netbook by ITS
+- <2012-11-05 Mon>
+  Maybe I can use the license key that I'm not using currently for my
+  main office computer (linux only)
+  
+  License key (Vista): 2TVRV-XRGD2-DVT78-XP3CX-WTD3Y
+
+- <2012-11-15 Thu>
+  They can install a version that needs to log in to the Sussex
+  network every six months. That sounds fine, but I'm actively
+  programming on the computer right now. Going to strike this off as
+  an active TODO, but leave it in the list.
+
+** TODO Find submissions for ITCM-Sussex.com
+- <2012-11-13 Tue>
+Matthias has reminded us to look through the old website for these.
+- <2012-11-20 Tue> 
+I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+- <2012-11-26 Mon>
+Rev. Sci. Instrum. 81, 075109 2010:
+
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. 
+
+By stabilizing the position of the transmission peaks of the slave
+lasers relative to successive peaks of the master laser as the length
+of the cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s, a significant
+improvement on previous scanning-cavity stabilization systems."
+
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(http://www.microchip.com/). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+
+** POST Ask Hiroki for a look at the code for cavity mode prop.
+- <2012-11-06 Tue>  
+Asked Hiroki, but he hasn't finished it yet. 
+
+** TODO Oxford group proposal research
+- <2012-12-05 Wed>
+  * Drewsen group BBR assisted cooling
+  * Previous ammonia research
+  * Ammonia level structure for state-detection
+- <2012-12-10 Mon>
+  * Drewsen and Schiller both have papers on BBR according to the proposal.
+  * Drewsen proposal uses Raman transitions, requiring narrow/stable
+    lasers - does this apply to our system?
+- <2012-12-17 Mon>
+E-mail Brianna to assess the status of the Stark decelerator.
+
+
+* Journal & Theory club
+
+** Club papers
+- <2012-11-09 Fri> Amy presenting:
+   PHYSICAL REVIEW A 76, 023413 ͑2007͒
+   Blackbody thermometry with cold molecular ions and application
+   to ion-based frequency standards
+   J. C. J. Koelemeij, B. Roth, and S. Schiller
+- <2012-11-23 Fri> Hiroki presenting:
+  Stute et al. - 2012 - Toward an ion–photon quantum interface in an
+  optical cavity 
+  (Innsbruck group)
+
+** Papers to look at
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+
+*** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+** General papers
+*** TODO J.D. Siverns et. al. 2011
+
+** Theory subjects
+*** TODO Applications for data analysis and simulation
+
+** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+
+* To do, non-work
+
+** TODO Learn git
+- <2012-10-22 Mon>
+  + [[http://sixrevisions.com/resources/git-tutorials-beginners/][git tutorial links 2]]
+  + [[http://git-scm.com/documentation][git tutorial links 1]]
+
+** TODO Barclays payment dispute
+- <2012-11-07 Wed>
+  + No payment made to El Mexicano for £28.50 on 20 Oct. (came out on 23
+  Oct).
+  + reference: 850807 November 12
+
+** TODO Textbooks
+- <2012-12-10 Mon>
++ QM
++ Atomic physics
++ Thermodynamics
++ Quantum optics
+
+** Bus ticket dates
+- Next renewal <2013-02-20 Wed>.
+  
+
+
+* Handy command syntaxes and emacs sequences
+** General
+** Org mode
+*** Motion
+The following commands jump to other headlines in the buffer.
+C-c C-n     (outline-next-visible-heading)
+Next heading. 
+C-c C-p     (outline-previous-visible-heading)
+Previous heading. 
+C-c C-f     (org-forward-same-level)
+Next heading same level. 
+C-c C-b     (org-backward-same-level)
+Previous heading same level. 
+C-c C-u     (outline-up-heading)
+Backward to higher level heading. 
+
+*** Agenda
+- "C-c ." insert active date from calendar
+- "C-c !" insert inactive date from calendar
+- "C-c C-d" insert deadline stamp from calendar
+- "C-u C-c ." insert timestamp
+- "S-left/right" move cursor in calndar buffer
+
+*** Links
+- "C-c l" store link
+- "C-c C-l" insert link (use with above)
+- "C-u C-c C-l" insert link (filename completion)
+- "C-c C-o" open link (or click)
+
+*** Export
+- "C-c C-e h" export to HTML ("b" to open in browser)
+- "C-c C-e p" export to pdf ("d" to open pdf)
+

@@ -1,0 +1,37 @@
+#+TITLE: Addresses and contacts
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+* Return to:
+#+BEGIN_VERSE
+FAO N. Seymour-Smith,
+JMS Stores,
+University of Sussex,
+Falmer,
+Brighton,
+BN1 9QG
+#+END_VERSE
+
+* BSP
+#+BEGIN_VERSE
+BSP Engineering Services (UK) Ltd,
+Maitland Road,
+Needham Market, 
+Ipswich,
+IP6 8NZ
+#+END_VERSE
+
+* Erodatools Ltd
+#+BEGIN_VERSE
+Unit 4, 
+Lawrence Works,
+Sheffield Road,
+Penistone,
+Sheffield,
+S36 6HF
+#+END_VERSE
