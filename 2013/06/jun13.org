@@ -10,6 +10,99 @@
 #+BEGIN_HTML
 <hr>
 #+END_HTML
+
+* Thursday 13th
+** N2 Photionisation
+*** 11:40 Scan analysis 					       :Data:
+The scan taken yesterday finished fine, and I took another in the
+reverse direction since I had the time. The second is not as nice,
+perhaps because the power was dropping over time, as it does, or
+because of the problem with the drifting channeltron voltage. 
+
+The [[file:N2PI/12-6-13][data taken]] shows good agreement with previous scans, and shows an
+additional line that is predicted by [[*16:13%20Fitting][our model]] - the /O_4/ line (seen
+to the far right in the model figure). You can also see the splitting
+in splitting in some branches where lines are close to overlapping
+(e.g. /S_{4/5}/ and /S_{1/8}/).
+
+The better of the two scans is shown below (the [[*Second%20N2%20photoionisation%20scan][second]] is shown in
+the appendix), ([[file:scripts/N2PI_plot1.py][python-script]]):
+
+#+CAPTION: Figure 3, N2 photoionisation spectrum. 
+#+CAPTION: Labels are derived from the paper (appendix), apart from
+#+CAPTION: that of the /O_3/ and /O_4/ lines, which are predicted
+#+CAPTION: by the model.
+#+LABEL: fig:N2-PI-spectrum2
+[[file:img/n2_scan18][file:img/n2_scan18.png]]
+
+Lines which are not particularly clear in this scan are confirmed in
+other scans (/S_{2/7}, Q_5 and O_3/). The relevant lines are the /O_3/
+and /P_2/ with the /O_3/ more likely to be our first target for
+photoionisation. This path likely leaves us in the /N = 1/ rotational
+state of N2+, rather than the originally planned ground state, but the
+selection rules for this transition are more strongly selective for
+this state than n the transition to the ground state using /P_2/,
+according to Matthias. 
+
+The signal-to-noise ratio is not as good as expected given an increase
+in laser power, and there seems to be significant jitter in the
+wavelength reading. As well, despite the fact that the peaks seem to
+have a fairly constant height between scans in the calibrations, the
+signal to noise drifts significantly by the end of the second
+scan. Regardless of these issues, I'm going to refrain from trying to
+make any improvements to these issues, until we have some replacement
+optical elements that are going to be installed in to the laser to
+improve the power further. Once we have them installed, I'll change
+the dye and try and get Mike's channeltron preamp working. 
+
+* Wednesday 12th
+** N2 Photionisation
+*** 15:56 Optimisations and a wide scan				      :Setup:
+Mike hasn't got back to me about the pre-amp yet. Luckily, I've done
+some testing on the signal in the meantime, and it seems a lot more
+stable than in previous scans.
+
+Less positively, the signal does not seem to have improved a huge
+amount compare the last set of scans, despite the power increasing by
+about a half. 
+
+I have tried to optimise using the channeltron voltage /V_ch/, the
+discriminator voltage /V_disc/, and finally a small amount with the
+pointing of the laser in the chamber. Optimisations found for the
+first two were
+
+V_ch = 2.9 kV,\\
+V_disc = 0.20 mV.
+
+This gives a signal of ~270 cps for the /Q_4/ line, with a background
+of ~80 cps. I was in the middle of optimising the pointing when I
+realised the power was dropping and decided it would be wise to take a
+scan before it bottomed out. I noticed at the least that pointing the
+laser any further down from its current position reduces the
+signal. So if there's still good power after the scan then I will try
+and optimise by raising it up. 
+
+The scan I'm performing is made with the following parameters
+
+\Lambda = (474.40 \to 474.0) nm,\\
+\Delta \Lambda = 0.001 nm (4000 steps),\\
+T_step = 10 s,\\
+E_in = 1.5 mJ,\\
+E_thru = 800 uJ,\\
+P_chamber ~ 3E-5 mbar,\\
+V_cap = 4 V,\\
+V_ch = 2.9 kV,\\
+V_disc = 0.2 mV.
+
+Where /\Lambda/ is the range of wavelengths (N.B. There is an offset from thew
+wavelength input written here and the one read from the wavemeter, it
+is roughly 0.1 nm). /\Delta \Lambda/ is the wavelength steps of the
+scan, /T_step/ is the time spent taking count rate data at each
+wavelength,  /E_in/ is the pulse energy going into the chamber and
+/E_out/ is the pulse energy coming out of it, P_chamber is the
+pressure of N_2 in the chamber and V_cap is the voltage on the
+repeller plate.
+
 * Tuesday 11th
 ** N2 Photionisation
 *** 16:16 Scan preparations						:Log:
@@ -61,7 +154,7 @@ signal; since we have a three-photon process the efficiency scales
 with E^3.
 *** 11:17 Spectrum data 					       :Data:
 I've cleaned up the spectra taken shown in the entry of the 31st of
-May. The image below shows the relevant data:
+May. The image below shows the relevant data ([[file:~/Documents/logs/2013/05/N2PI][data set]], [[file:scripts/N2PI_plot1.py][python script]]): 
 
 #+CAPTION: Figure 1. 
 #+CAPTION: Spectrum of N2 photoionisation, and power of the laser
@@ -179,18 +272,18 @@ fit to the /S_0/ line (dependent only on /B_a/), and additionally
 it gives us a good fit for lines ending in /K=2/ of the upper
 state. Beyond this both the characteristic and the fit is far off.
 
-This fit is shown in Fig. 2 (\ref{fig:low-k-fit}). There are several
-fitted lines that match the data, and their allocations also match
-those of the paper. The lines that have no corresponding data-points
-do have corresponding lines or allocations in the paper. The data
-points that don't have corresponding lines have corresponding
-allocations in the paper, and come from transitions to the excited
-state with /K>2/.
+This fit is shown in Fig. 2 (\ref{fig:low-k-fit}) ([[file:scripts/PISpectrum.m][matlab
+script]]). There are several fitted lines that match the data, and their
+allocations also match those of the paper. The lines that have no
+corresponding data-points do have corresponding lines or allocations
+in the paper. The data points that don't have corresponding lines have
+corresponding allocations in the paper, and come from transitions to
+the excited state with /K>2/.
 
 * To do
 ** Molecular Lab Experiments
-*** TODO [#A] Photoionisation of N2				    :Nic:Amy:
-**** TODO [#A] Identify appropriate gnd-state transition
+*** HOLD Photoionisation of N2 					    :Nic:Amy:
+**** DONE [#A] Identify appropriate gnd-state transition
 - <2013-05-08 Wed>
 Jack has done most of the work here. Just a case of optimising power
 etc. 
@@ -210,7 +303,12 @@ have the lines we need or they are a little further to the low energy
 end of the scale than we currently have. Need help interpreting paper,
 and will take another longer scan just in case, once the laser is
 optimised. 
+- <2013-06-13 Thu>
+/O_3/ transition identified ([[*11:40%20Scan%20analysis][11:40 Scan analysis]]). 
 
+**** TODO Replace damaged optical elements in laser
+**** TODO Build power supply for discriminator preamp
+**** TODO Re-take spectra with better S-N
 *** HOLD Work on DACs for the new SCL				  :Nic:Kevin:
 **** HOLD Building boards
 - <2013-01-25 Fri> Matthias has the plans:
@@ -231,8 +329,8 @@ I/Os:
 ***** TODO Write SPI library for PIC comms with computer
 ***** TODO Write SPI library for PIC comms with DAC
 
-*** TODO [#C] Code an automation program for experiments	  :Nic:Kevin:
-**** TODO [#C] Fast autocorrelation calculation
+*** TODO [#B] Code an automation program for experiments	  :Nic:Kevin:
+**** TODO [#B] Fast autocorrelation calculation
 - <2013-04-09 Tue>
 [ ] Try using CUDA for a fast autocorrelation calculation |
 - <2013-04-09 Tue>
@@ -270,10 +368,6 @@ we're going to try and take works well. This idea is on hold until
 more work is done there.
 
 ** General
-*** TODO [#B] Job application research				   :noexport:
-**** Drewsen group
-**** Innsbruck group
-**** Munich group
 *** HOLD Pseudopotential calculations for Oxford
 - <2013-06-07 Fri>
 Sent to Laura, awaiting feedback on usage.
@@ -326,6 +420,10 @@ improvements to bandwidth and stability.
 - <2012-11-06 Tue>  
 Asked Hiroki, but he hasn't finished it yet. 
 
+*** TODO [#B] Job application research				   :noexport:
+**** Drewsen group
+**** Innsbruck group
+**** Munich group
 ** Meetings							   :noexport:
 ** Journal & Theory club					   :noexport:
 *** Rota
@@ -368,3 +466,5 @@ Check Guardian article on cooperative banks
 - [ ] 555 timer input
 
 * Appendix
+** Second N2 photoionisation scan
+[[file:img/n2_scan19][file:img/n2_scan19.png]]
