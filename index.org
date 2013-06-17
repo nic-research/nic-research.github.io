@@ -29,7 +29,7 @@
 #+BEGIN_HTML
 <hr>
 #+END_HTML
-* Search
+* Search							   :noexport:
 #+BEGIN_HTML
 <!-- start of freefind search box html -->
 <table cellpadding=0 cellspacing=0 border=0 >
@@ -62,3 +62,4 @@
 </table>
 <!-- end of freefind search box html -->
 #+END_HTML
+

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Research notes: June 2013"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-14 14:44:01 BST"/>
+<meta name="generated" content="2013-06-17 16:27:12 BST"/>
 <meta name="author" content="N. Seymour-Smith"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -83,7 +83,47 @@
  }
 /*]]>*///-->
 </script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
 
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
 </head>
 <body>
 
@@ -102,70 +142,84 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Thursday 13th</a>
+<li><a href="#sec-1">Monday 17th</a>
 <ul>
-<li><a href="#sec-1-1">N2 Photionisation</a>
+<li><a href="#sec-1-1">B-field map (Hanle-dip experiment</a>
 <ul>
-<li><a href="#sec-1-1-1">11:40 Scan analysis</a></li>
+<li><a href="#sec-1-1-1">15:16 Simulating a B-field map</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-2">Wednesday 12th</a>
+<li><a href="#sec-2">Thursday 13th</a>
 <ul>
 <li><a href="#sec-2-1">N2 Photionisation</a>
 <ul>
-<li><a href="#sec-2-1-1">15:56 Optimisations and a wide scan</a></li>
+<li><a href="#sec-2-1-1">11:40 Scan analysis</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-3">Tuesday 11th</a>
+<li><a href="#sec-3">Wednesday 12th</a>
 <ul>
 <li><a href="#sec-3-1">N2 Photionisation</a>
 <ul>
-<li><a href="#sec-3-1-1">16:16 Scan preparations</a></li>
+<li><a href="#sec-3-1-1">15:56 Optimisations and a wide scan</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-4">Monday 10th</a>
+<li><a href="#sec-4">Tuesday 11th</a>
 <ul>
 <li><a href="#sec-4-1">N2 Photionisation</a>
 <ul>
-<li><a href="#sec-4-1-1">11:07 Laser optimisation</a></li>
+<li><a href="#sec-4-1-1">16:16 Scan preparations</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-5">Friday 7th</a>
+<li><a href="#sec-5">Monday 10th</a>
 <ul>
-<li><a href="#sec-5-1">N2 Photoionisation</a>
+<li><a href="#sec-5-1">N2 Photionisation</a>
 <ul>
-<li><a href="#sec-5-1-1">11:50 Laser optimisation</a></li>
-<li><a href="#sec-5-1-2">11:17 Spectrum data</a></li>
-<li><a href="#sec-5-1-3">14:00 Comparison with paper, and terminology</a></li>
-<li><a href="#sec-5-1-4">16:13 Fitting</a></li>
+<li><a href="#sec-5-1-1">11:07 Laser optimisation</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-6">To do</a>
+<li><a href="#sec-6">Friday 7th</a>
 <ul>
-<li><a href="#sec-6-1">Molecular Lab Experiments</a>
+<li><a href="#sec-6-1">N2 Photoionisation</a>
 <ul>
-<li><a href="#sec-6-1-1">Photoionisation of N2</a></li>
-<li><a href="#sec-6-1-2">Work on DACs for the new SCL</a></li>
-<li><a href="#sec-6-1-3">Code an automation program for experiments</a></li>
-<li><a href="#sec-6-1-4">Simulations</a></li>
-</ul>
-</li>
-<li><a href="#sec-6-2">General</a>
-<ul>
-<li><a href="#sec-6-2-1">Pseudopotential calculations for Oxford</a></li>
-<li><a href="#sec-6-2-2">Find submissions for ITCM-Sussex.com</a></li>
-<li><a href="#sec-6-2-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+<li><a href="#sec-6-1-1">11:50 Laser optimisation</a></li>
+<li><a href="#sec-6-1-2">11:17 Spectrum data</a></li>
+<li><a href="#sec-6-1-3">14:00 Comparison with paper, and terminology</a></li>
+<li><a href="#sec-6-1-4">16:13 Fitting</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-7">Appendix</a>
+<li><a href="#sec-7">To do</a>
 <ul>
-<li><a href="#sec-7-1">Second N2 photoionisation scan</a></li>
+<li><a href="#sec-7-1">Molecular Lab Experiments</a>
+<ul>
+<li><a href="#sec-7-1-1">Photoionisation of N2</a></li>
+<li><a href="#sec-7-1-2">Work on DACs for the new SCL</a></li>
+<li><a href="#sec-7-1-3">Code an automation program for experiments</a></li>
+<li><a href="#sec-7-1-4">Simulations</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-2">General</a>
+<ul>
+<li><a href="#sec-7-2-1">Pseudopotential calculations for Oxford</a></li>
+<li><a href="#sec-7-2-2">Find submissions for ITCM-Sussex.com</a></li>
+<li><a href="#sec-7-2-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">Appendix</a>
+<ul>
+<li><a href="#sec-8-1">Second N2 photoionisation scan</a></li>
+<li><a href="#sec-8-2">Hanle dip experiment parameters</a>
+<ul>
+<li><a href="#sec-8-2-1">Lasers</a></li>
+<li><a href="#sec-8-2-2">B-field</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -173,22 +227,73 @@
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Thursday 13th</h2>
+<h2 id="sec-1">Monday 17th</h2>
 <div class="outline-text-2" id="text-1">
 
 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">N2 Photionisation</h3>
+<h3 id="sec-1-1">B-field map (Hanle-dip experiment</h3>
 <div class="outline-text-3" id="text-1-1">
 
 
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">11:40 Scan analysis &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Data">Data</span></span></h4>
+<h4 id="sec-1-1-1">15:16 Simulating a B-field map</h4>
 <div class="outline-text-4" id="text-1-1-1">
+
+<p>As mentioned <a href="file:///home/nicolas/Documents/logs/2013/05/may13.html">previously</a>, Matthias has asked me to take another look at
+the simulation of the Hanle-dip experiment that Kevin performed a long
+while back. Specifically he wanted to know whether we could simulate a
+space-varying B-field map, so that we could take fluorescence data
+from the experiment and create a picture of the magnetic fields in the
+trap (he also wanted to see if we could simulate the ion's response to
+a time-varying B-field but I will log details of that when I start
+working on it in earnest). 
+</p>
+<p>
+I went back to a Matlab simulation I had written whilst the experiment
+was under way, which calculates the populations of the three states of
+the lambda-system, but takes into account Zeeman-splitting, laser
+polarisation and direction and varying B-field (<a href="hanle_effect/Hanle_dip_nd.m">script here</a> and
+<a href="hanle_effect/kevin_params.m">parameters</a> used in the simulation, see appendix for <a href="#sec-8-2">more details</a>). 
+</p>
+<p>
+After debugging a little, I have found the simulation gives
+reasonable, expected results - low fluorescence at low B-fields and a
+linear region (where we set the background B-field for the experiment)
+where we can ideally map fluorescence to local fields.
+</p>
+<p>
+The question now is, how does varying B-fields in different directions
+affect the fluorescence, and can we really make a meaningful map out
+of what we see in the experiment. 
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Thursday 13th</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">N2 Photionisation</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">11:40 Scan analysis &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Data">Data</span></span></h4>
+<div class="outline-text-4" id="text-2-1-1">
 
 <p>The scan taken yesterday finished fine, and I took another in the
 reverse direction since I had the time. The second is not as nice,
@@ -197,14 +302,14 @@ because of the problem with the drifting channeltron voltage.
 </p>
 <p>
 The <a href="N2PI/12-6-13">data taken</a> shows good agreement with previous scans, and shows an
-additional line that is predicted by <a href="#sec-5-1-4">our model</a> - the <i>O<sub>4</sub></i> line (seen
+additional line that is predicted by <a href="#sec-6-1-4">our model</a> - the <i>O<sub>4</sub></i> line (seen
 to the far right in the model figure). You can also see the splitting
 in splitting in some branches where lines are close to overlapping
 (e.g. <i>S<sub>4/5</sub></i> and <i>S<sub>1/8</sub></i>).
 </p>
 <p>
-The better of the two scans is shown below (the <a href="#sec-7-1">second</a> is shown in
-the appendix), (<a href="scripts/N2PI_plot1.py">python-script</a>):
+The better of the two scans is shown below (the <a href="#sec-8-1">second</a> is shown in
+the appendix), (<a href="N2PI/scripts/N2PI_plot1.py">python-script</a>):
 </p>
 <p>
 <a href="img/n2_scan18"><img src="img/n2_scan18.png" alt="n2_scan18.png"/></a>
@@ -237,23 +342,23 @@ the dye and try and get Mike's channeltron preamp working.
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Wednesday 12th</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Wednesday 12th</h2>
+<div class="outline-text-2" id="text-3">
 
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">N2 Photionisation</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">N2 Photionisation</h3>
+<div class="outline-text-3" id="text-3-1">
 
 
 </div>
 
-<div id="outline-container-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1">15:56 Optimisations and a wide scan &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Setup">Setup</span></span></h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">15:56 Optimisations and a wide scan &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Setup">Setup</span></span></h4>
+<div class="outline-text-4" id="text-3-1-1">
 
 <p>Mike hasn't got back to me about the pre-amp yet. Luckily, I've done
 some testing on the signal in the meantime, and it seems a lot more
@@ -313,23 +418,23 @@ repeller plate.
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Tuesday 11th</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Tuesday 11th</h2>
+<div class="outline-text-2" id="text-4">
 
 
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">N2 Photionisation</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">N2 Photionisation</h3>
+<div class="outline-text-3" id="text-4-1">
 
 
 </div>
 
-<div id="outline-container-3-1-1" class="outline-4">
-<h4 id="sec-3-1-1">16:16 Scan preparations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
-<div class="outline-text-4" id="text-3-1-1">
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">16:16 Scan preparations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
+<div class="outline-text-4" id="text-4-1-1">
 
 <p>I couldn't go ahead with the scans yesterday because the N2 canister
 was empty. I don't know how it was emptied, but perhaps its due to one
@@ -354,23 +459,23 @@ go ahead and make a scan anyway.
 
 </div>
 
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Monday 10th</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Monday 10th</h2>
+<div class="outline-text-2" id="text-5">
 
 
 </div>
 
-<div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1">N2 Photionisation</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">N2 Photionisation</h3>
+<div class="outline-text-3" id="text-5-1">
 
 
 </div>
 
-<div id="outline-container-4-1-1" class="outline-4">
-<h4 id="sec-4-1-1">11:07 Laser optimisation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
-<div class="outline-text-4" id="text-4-1-1">
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1">11:07 Laser optimisation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
+<div class="outline-text-4" id="text-5-1-1">
 
 <p>The laser has been attended by a technician and is running at
 approximately the same power as during the last scans. At around
@@ -401,23 +506,23 @@ irrelevant.)
 
 </div>
 
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">Friday 7th</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Friday 7th</h2>
+<div class="outline-text-2" id="text-6">
 
 
 </div>
 
-<div id="outline-container-5-1" class="outline-3">
-<h3 id="sec-5-1">N2 Photoionisation</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1">N2 Photoionisation</h3>
+<div class="outline-text-3" id="text-6-1">
 
 
 </div>
 
-<div id="outline-container-5-1-1" class="outline-4">
-<h4 id="sec-5-1-1">11:50 Laser optimisation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
-<div class="outline-text-4" id="text-5-1-1">
+<div id="outline-container-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1">11:50 Laser optimisation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Log">Log</span></span></h4>
+<div class="outline-text-4" id="text-6-1-1">
 
 <p>The laser is now being seen to by a technician to try and get it up to
 its original power (~4 mJ/pulse). This should give us a much bigger
@@ -427,9 +532,9 @@ with E<sup>3</sup>.
 
 </div>
 
-<div id="outline-container-5-1-2" class="outline-4">
-<h4 id="sec-5-1-2">11:17 Spectrum data &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Data">Data</span></span></h4>
-<div class="outline-text-4" id="text-5-1-2">
+<div id="outline-container-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2">11:17 Spectrum data &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Data">Data</span></span></h4>
+<div class="outline-text-4" id="text-6-1-2">
 
 <p>I've cleaned up the spectra taken shown in the entry of the 31st of
 May. The image below shows the relevant data (<a href="file:///home/nicolas/Documents/logs/2013/05/N2PI">data set</a>, <a href="scripts/N2PI_plot1.py">python script</a>): 
@@ -461,9 +566,9 @@ so I have been trying to investigate.
 
 </div>
 
-<div id="outline-container-5-1-3" class="outline-4">
-<h4 id="sec-5-1-3">14:00 Comparison with paper, and terminology &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
-<div class="outline-text-4" id="text-5-1-3">
+<div id="outline-container-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3">14:00 Comparison with paper, and terminology &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
+<div class="outline-text-4" id="text-6-1-3">
 
 <p>It seems that the convention is that the symbols represent change in
 <i>total</i> angular momentum including the angular momentum of the
@@ -523,9 +628,9 @@ interpretation of the terminology.
 
 </div>
 
-<div id="outline-container-5-1-4" class="outline-4">
-<h4 id="sec-5-1-4">16:13 Fitting &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
-<div class="outline-text-4" id="text-5-1-4">
+<div id="outline-container-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4">16:13 Fitting &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
+<div class="outline-text-4" id="text-6-1-4">
 
 <p>Taking a heuristic approach, we fit the data to a model that takes
 into account rotational splittings of the two levels according to
@@ -598,26 +703,26 @@ the excited state with <i>K&gt;2</i>.
 
 </div>
 
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">To do</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">To do</h2>
+<div class="outline-text-2" id="text-7">
 
 
 </div>
 
-<div id="outline-container-6-1" class="outline-3">
-<h3 id="sec-6-1">Molecular Lab Experiments</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1">Molecular Lab Experiments</h3>
+<div class="outline-text-3" id="text-7-1">
 
 
 </div>
 
-<div id="outline-container-6-1-1" class="outline-4">
-<h4 id="sec-6-1-1"><span class="done HOLD">HOLD</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h4>
-<div class="outline-text-4" id="text-6-1-1">
+<div id="outline-container-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1"><span class="done HOLD">HOLD</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h4>
+<div class="outline-text-4" id="text-7-1-1">
 
 <ul>
-<li id="sec-6-1-1-1"><span class="done DONE">DONE</span> Identify appropriate gnd-state transition<br/>
+<li id="sec-7-1-1-1"><span class="done DONE">DONE</span> Identify appropriate gnd-state transition<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-08 Wed</span></span>
 </li>
@@ -658,32 +763,32 @@ optimised.
 </li>
 </ul>
 
-<p><i>O<sub>3</sub></i> transition identified (<a href="#sec-1-1-1">11:40 Scan analysis</a>). 
+<p><i>O<sub>3</sub></i> transition identified (<a href="#sec-2-1-1">11:40 Scan analysis</a>). 
 </p>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-2"><span class="todo TODO">TODO</span> Replace damaged optical elements in laser<br/>
+<li id="sec-7-1-1-2"><span class="todo TODO">TODO</span> Replace damaged optical elements in laser<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-3"><span class="todo TODO">TODO</span> Build power supply for discriminator preamp<br/>
+<li id="sec-7-1-1-3"><span class="todo TODO">TODO</span> Build power supply for discriminator preamp<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-4"><span class="todo TODO">TODO</span> Re-take spectra with better S-N<br/>
+<li id="sec-7-1-1-4"><span class="todo TODO">TODO</span> Re-take spectra with better S-N<br/>
 </li>
 </ul>
 </div>
 
 </div>
 
-<div id="outline-container-6-1-2" class="outline-4">
-<h4 id="sec-6-1-2"><span class="done HOLD">HOLD</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
-<div class="outline-text-4" id="text-6-1-2">
+<div id="outline-container-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2"><span class="done HOLD">HOLD</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-7-1-2">
 
 <ul>
-<li id="sec-6-1-2-1"><span class="done HOLD">HOLD</span> Building boards<br/>
+<li id="sec-7-1-2-1"><span class="done HOLD">HOLD</span> Building boards<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
 </li>
@@ -722,13 +827,13 @@ I/Os:
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-2-2"><span class="done HOLD">HOLD</span> Programming<br/>
+<li id="sec-7-1-2-2"><span class="done HOLD">HOLD</span> Programming<br/>
 <ul>
-<li id="sec-6-1-2-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+<li id="sec-7-1-2-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-2-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+<li id="sec-7-1-2-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
 
 </li>
 </ul>
@@ -738,12 +843,12 @@ I/Os:
 
 </div>
 
-<div id="outline-container-6-1-3" class="outline-4">
-<h4 id="sec-6-1-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
-<div class="outline-text-4" id="text-6-1-3">
+<div id="outline-container-7-1-3" class="outline-4">
+<h4 id="sec-7-1-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h4>
+<div class="outline-text-4" id="text-7-1-3">
 
 <ul>
-<li id="sec-6-1-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation<br/>
+<li id="sec-7-1-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
 </li>
@@ -760,7 +865,7 @@ enough on its own.
 </p></li>
 </ul>
 <ul>
-<li id="sec-6-1-3-2"><span class="done HOLD">HOLD</span> Plan out experiment process<br/>
+<li id="sec-7-1-3-2"><span class="done HOLD">HOLD</span> Plan out experiment process<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
 </li>
@@ -772,7 +877,7 @@ experimental procedure.
 </p></li>
 </ul>
 <ul>
-<li id="sec-6-1-3-3"><span class="done HOLD">HOLD</span> Describe phonon laser trick in notes<br/>
+<li id="sec-7-1-3-3"><span class="done HOLD">HOLD</span> Describe phonon laser trick in notes<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-15 Wed</span></span>
 </li>
@@ -792,28 +897,28 @@ results.
 
 </div>
 
-<div id="outline-container-6-1-4" class="outline-4">
-<h4 id="sec-6-1-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h4>
-<div class="outline-text-4" id="text-6-1-4">
+<div id="outline-container-7-1-4" class="outline-4">
+<h4 id="sec-7-1-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h4>
+<div class="outline-text-4" id="text-7-1-4">
 
 <ul>
-<li id="sec-6-1-4-1"><span class="todo TODO">TODO</span> Hanle dip/b-field map simulation<br/>
+<li id="sec-7-1-4-1"><span class="todo TODO">TODO</span> Hanle dip/b-field map simulation<br/>
 <ul>
-<li id="sec-6-1-4-1-1"><span class="todo TODO">TODO</span> Fluorescence as a function of B-field for different light pol.<br/>
+<li id="sec-7-1-4-1-1"><span class="todo TODO">TODO</span> Fluorescence as a function of B-field for different light pol.<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-4-1-2"><span class="todo TODO">TODO</span> Sanity check: modulation sensitivity reduce at higher B-field?<br/>
+<li id="sec-7-1-4-1-2"><span class="todo TODO">TODO</span> Sanity check: modulation sensitivity reduce at higher B-field?<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-4-1-3"><span class="todo TODO">TODO</span> B-field modulation frequency response (reduce laser Rabi f.)<br/>
+<li id="sec-7-1-4-1-3"><span class="todo TODO">TODO</span> B-field modulation frequency response (reduce laser Rabi f.)<br/>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-4-2"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect<br/>
+<li id="sec-7-1-4-2"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
 </li>
@@ -826,7 +931,7 @@ shift).
 </p></li>
 </ul>
 <ul>
-<li id="sec-6-1-4-3"><span class="done HOLD">HOLD</span> One or two calcium ions<br/>
+<li id="sec-7-1-4-3"><span class="done HOLD">HOLD</span> One or two calcium ions<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
 </li>
@@ -850,16 +955,16 @@ more work is done there.
 
 </div>
 
-<div id="outline-container-6-2" class="outline-3">
-<h3 id="sec-6-2">General</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2">General</h3>
+<div class="outline-text-3" id="text-7-2">
 
 
 </div>
 
-<div id="outline-container-6-2-1" class="outline-4">
-<h4 id="sec-6-2-1"><span class="done HOLD">HOLD</span> Pseudopotential calculations for Oxford</h4>
-<div class="outline-text-4" id="text-6-2-1">
+<div id="outline-container-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1"><span class="done HOLD">HOLD</span> Pseudopotential calculations for Oxford</h4>
+<div class="outline-text-4" id="text-7-2-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-07 Fri</span></span>
@@ -871,9 +976,9 @@ more work is done there.
 
 </div>
 
-<div id="outline-container-6-2-2" class="outline-4">
-<h4 id="sec-6-2-2"><span class="done HOLD">HOLD</span> Find submissions for ITCM-Sussex.com</h4>
-<div class="outline-text-4" id="text-6-2-2">
+<div id="outline-container-7-2-2" class="outline-4">
+<h4 id="sec-7-2-2"><span class="done HOLD">HOLD</span> Find submissions for ITCM-Sussex.com</h4>
+<div class="outline-text-4" id="text-7-2-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-13 Tue</span></span>
@@ -946,9 +1051,9 @@ improvements to bandwidth and stability.
 
 </div>
 
-<div id="outline-container-6-2-3" class="outline-4">
-<h4 id="sec-6-2-3"><span class="done HOLD">HOLD</span> Ask Hiroki for a look at the code for cavity mode prop.</h4>
-<div class="outline-text-4" id="text-6-2-3">
+<div id="outline-container-7-2-3" class="outline-4">
+<h4 id="sec-7-2-3"><span class="done HOLD">HOLD</span> Ask Hiroki for a look at the code for cavity mode prop.</h4>
+<div class="outline-text-4" id="text-7-2-3">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-06 Tue</span></span>  
@@ -963,25 +1068,97 @@ improvements to bandwidth and stability.
 
 </div>
 
-<div id="outline-container-7" class="outline-2">
-<h2 id="sec-7">Appendix</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8">Appendix</h2>
+<div class="outline-text-2" id="text-8">
 
 
 </div>
 
-<div id="outline-container-7-1" class="outline-3">
-<h3 id="sec-7-1">Second N2 photoionisation scan</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1">Second N2 photoionisation scan</h3>
+<div class="outline-text-3" id="text-8-1">
 
 <p><a href="img/n2_scan19"><img src="img/n2_scan19.png" alt="n2_scan19.png"/></a>
 </p></div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-3">
+<h3 id="sec-8-2">Hanle dip experiment parameters</h3>
+<div class="outline-text-3" id="text-8-2">
+
+<p>The file used in the simulation only has what has been derived from
+the stats Kevin gave me - here are the full set of parameters:
+</p>
+<p>
+N.B. The x-axis is defined as the trap axis. The y-axis is
+perpendicular to this in the horizontal plane. The z-axis is the
+vertical axis. \(\alpha\) is defined as the angle from the x-axis in the
+horizontal plane, \(\beta\) as the angle away from the horizontal plane. 
+</p>
+
+</div>
+
+<div id="outline-container-8-2-1" class="outline-4">
+<h4 id="sec-8-2-1">Lasers</h4>
+<div class="outline-text-4" id="text-8-2-1">
+
+<p>The first two are the main lasers, and to start with I have not
+included the third in the simulation. The main purpose of it is for
+radial cooling, and because of its low power and large size, I'm
+hoping it won't make a big difference.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">wavelength /nm</th><th scope="col" class="right">detuning /MHz</th><th scope="col" class="right">Power /uW</th><th scope="col" class="right">beam diameter /um</th><th scope="col" class="right">&alpha; /deg</th><th scope="col" class="right">&beta; /deg</th><th scope="col" class="left">polarisation</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">397</td><td class="right">-30</td><td class="right">5</td><td class="right">28</td><td class="right">0</td><td class="right">0</td><td class="left">&sigma;<sub>+</sub></td></tr>
+<tr><td class="right">866</td><td class="right">0</td><td class="right">1000</td><td class="right">145</td><td class="right">180</td><td class="right">0</td><td class="left">Y</td></tr>
+<tr><td class="right">397</td><td class="right">-30</td><td class="right">1</td><td class="right">60</td><td class="right">85</td><td class="right">0</td><td class="left">X</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2-2" class="outline-4">
+<h4 id="sec-8-2-2">B-field</h4>
+<div class="outline-text-4" id="text-8-2-2">
+
+<p>These are only approximate. I think the y coils actually have
+different dimensions/separations from the other two, which is why I've
+made a table that I can fill in appropriately when I have the values. 
+The coils each have \(N=100\) turns.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">axis</th><th scope="col" class="right">separation /mm</th><th scope="col" class="right">diameter /mm</th><th scope="col" class="right">current /mA</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">x</td><td class="right">140</td><td class="right">115</td><td class="right">106.9</td></tr>
+<tr><td class="left">y</td><td class="right">140</td><td class="right">115</td><td class="right">0</td></tr>
+<tr><td class="left">z</td><td class="right">140</td><td class="right">115</td><td class="right">0</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-06-14 14:44:01 BST</p>
+<p class="date">Date: 2013-06-17 16:27:12 BST</p>
 <p class="author">Author: N. Seymour-Smith</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

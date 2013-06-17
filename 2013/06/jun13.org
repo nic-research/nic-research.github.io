@@ -11,6 +11,33 @@
 <hr>
 #+END_HTML
 
+* Monday 17th 
+** B-field map (Hanle-dip experiment
+*** 15:16 Simulating a B-field map
+As mentioned [[file:~/Documents/logs/2013/05/may13.org::*Hanle%20dip%20simulation][previously]], Matthias has asked me to take another look at
+the simulation of the Hanle-dip experiment that Kevin performed a long
+while back. Specifically he wanted to know whether we could simulate a
+space-varying B-field map, so that we could take fluorescence data
+from the experiment and create a picture of the magnetic fields in the
+trap (he also wanted to see if we could simulate the ion's response to
+a time-varying B-field but I will log details of that when I start
+working on it in earnest). 
+
+I went back to a Matlab simulation I had written whilst the experiment
+was under way, which calculates the populations of the three states of
+the lambda-system, but takes into account Zeeman-splitting, laser
+polarisation and direction and varying B-field ([[file:hanle_effect/Hanle_dip_nd.m][script here]] and
+[[file:hanle_effect/kevin_params.m][parameters]] used in the simulation, see appendix for [[*Hanle%20dip%20experiment%20parameters][more details]]). 
+
+After debugging a little, I have found the simulation gives
+reasonable, expected results - low fluorescence at low B-fields and a
+linear region (where we set the background B-field for the experiment)
+where we can ideally map fluorescence to local fields.
+
+The question now is, how does varying B-fields in different directions
+affect the fluorescence, and can we really make a meaningful map out
+of what we see in the experiment. 
+
 * Thursday 13th
 ** N2 Photionisation
 *** 11:40 Scan analysis 					       :Data:
@@ -26,7 +53,7 @@ in splitting in some branches where lines are close to overlapping
 (e.g. /S_{4/5}/ and /S_{1/8}/).
 
 The better of the two scans is shown below (the [[*Second%20N2%20photoionisation%20scan][second]] is shown in
-the appendix), ([[file:scripts/N2PI_plot1.py][python-script]]):
+the appendix), ([[file:N2PI/scripts/N2PI_plot1.py][python-script]]):
 
 #+CAPTION: Figure 3, N2 photoionisation spectrum. 
 #+CAPTION: Labels are derived from the paper (appendix), apart from
@@ -468,3 +495,35 @@ Check Guardian article on cooperative banks
 * Appendix
 ** Second N2 photoionisation scan
 [[file:img/n2_scan19][file:img/n2_scan19.png]]
+** Hanle dip experiment parameters
+The file used in the simulation only has what has been derived from
+the stats Kevin gave me - here are the full set of parameters:
+
+N.B. The x-axis is defined as the trap axis. The y-axis is
+perpendicular to this in the horizontal plane. The z-axis is the
+vertical axis. $\alpha$ is defined as the angle from the x-axis in the
+horizontal plane, $\beta$ as the angle away from the horizontal plane. 
+
+*** Lasers
+The first two are the main lasers, and to start with I have not
+included the third in the simulation. The main purpose of it is for
+radial cooling, and because of its low power and large size, I'm
+hoping it won't make a big difference.
+
+| wavelength /nm | detuning /MHz | Power /uW | beam diameter /um | \alpha /deg | \beta /deg | polarisation |
+|----------------+---------------+-----------+-------------------+-------------+------------+--------------|
+|            397 |           -30 |         5 |                28 |           0 |          0 | \sigma_{+}   |
+|            866 |             0 |      1000 |               145 |         180 |          0 | Y            |
+|            397 |           -30 |         1 |                60 |          85 |          0 | X            |
+
+*** B-field
+These are only approximate. I think the y coils actually have
+different dimensions/separations from the other two, which is why I've
+made a table that I can fill in appropriately when I have the values. 
+The coils each have $N=100$ turns.
+
+| axis | separation /mm | diameter /mm | current /mA |
+|------+----------------+--------------+-------------|
+| x    |            140 |          115 |       106.9 |
+| y    |            140 |          115 |           0 |
+| z    |            140 |          115 |           0 |
