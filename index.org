@@ -29,17 +29,17 @@
 #+BEGIN_HTML
 <hr>
 #+END_HTML
-* Search							   :noexport:
+* Search
 #+BEGIN_HTML
 <!-- start of freefind search box html -->
 <table cellpadding=0 cellspacing=0 border=0 >
 <tr>
-	<td  style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt">
-		<center><table width="90%" cellpadding=0 cellspacing=0 border=0  style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt" >
+	<td  style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;">
+		<center><table width="90%" cellpadding=0 cellspacing=0 border=0  style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" >
 		<tr>
-			<td style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" align=left ><a href="http://search.freefind.com/siteindex.html?si=88958835">index</a></td>
-			<td style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" align=center><a href="http://search.freefind.com/find.html?si=88958835&amp;m=0&amp;p=0">sitemap</a></td>
-			<td style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" align=right><a href="http://search.freefind.com/find.html?si=88958835&amp;pid=a">advanced</a></td>
+			<td class = "right" style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" align=left ><a href="http://search.freefind.com/siteindex.html?si=88958835">index</a></td>
+			<td class = "center" style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" align=center><a href="http://search.freefind.com/find.html?si=88958835&amp;m=0&amp;p=0">sitemap</a></td>
+			<td class = "left" style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;" align=right><a href="http://search.freefind.com/find.html?si=88958835&amp;pid=a">advanced</a></td>
 		</tr>
 		</table></center>
 		<form style="margin:0px; margin-top:4px;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
@@ -48,7 +48,7 @@
 		<input type="hidden" name="n" value="0">
 		<input type="hidden" name="_charset_" value="">
 		<input type="hidden" name="bcd" value="&#247;">
-		<input type="text" name="query" size="30"> 
+		<input type="text" name="query" size="40"> 
 		<input type="submit" value="search">
 		</form>
 	</td>
