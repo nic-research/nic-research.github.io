@@ -11,9 +11,107 @@
 <hr>
 #+END_HTML
 
+* Friday 21st
+** Hanle experiment
+*** 10:50 Modulation frequency response 			       :logs:
+I've finally managed to arrange the parameters in the simulation so
+that we see something like the frequency response observed in the
+experiment. For these parameters, we see a very fast drop-off of the
+amplitude of fluorescence modulation as the frequency of B-field
+modulation on the edge of the Hanle dip is increased above a few kHz.
+
+The parameters were found by copying, as close as possible, the
+experimental [[*Hanle%20dip%20experiment%20parameters][parameters]] given to me by Kevin, and also by noticing
+that although he applies a B-field to the experiment this is in order
+compensate the earth's field and so the effective B-field is roughly
+zero. 
+
+One interesting thing about this set of parameters is that, because
+the repumper Rabi frequency is so high (/~37 \Gamma/), we can see
+interesting effects at relatively high B-field. I believe this
+probably has to do with Rabi-splitting of the individual Zeeman
+sub-levels, but I don't have a clear theoretical picture yet. The
+effects are shown in three diagrams in the [[*Hanle%20dip%20regimes][appendix]], showing the
+fluorescence for varying B in low-field, medium-field and high-field
+regimes.
+
+These diagrams show that apart from what we normally consider the
+standard `Hanle-dip' feature at low B-field, there are further regions
+of increasing fluorescence at medium and high B, including a feature
+larger by orders of magnitude at around /250 gauss/.
+
+*** 13:14 Continued						       :Logs:
+At a guess, what we're seeing here is a very large Rabi splitting from
+the high power of the 866 - the features seen in the diagram then
+correspond to 397 resonances between specific Zeeman sub-levels as
+they are `tuned' by the changing B-field. 
+
+If this is the case then we certainly don't expect to see a low
+frequency cut-off of the response - something that is backed up by
+simulations showing that the frequency cutoff is much higher (of the
+order of the decay rate of the P-state) when we modulate the B-field
+around these features instead of the Hanle dip.
+
+Furthermore, investigations into the parameters in the simulation show
+that as we reduce the 866 power, the large peak shown in the high
+B-field [[*High%20B-field][diagram]] is brought down so that it appears at much lower
+B. This behaviour continues until it overlaps with the Hanle dip
+effect (NB at this stage I have no good physical explanation of what's
+happening, but am rather describing things empirically), at roughly
+/\Omega_{re} ~ 1 \Gamma/. If we then look at the frequency modulation
+response we find that although we get a lower drop-off than at high
+866 power and B-field, we get a distinctly higher drop-off than around
+the Hanle dip (low B) at high 866 power.
+
+This is an easy test to put into practice in the experiment, and if it
+works will greatly enhance the potential for publication of this
+technique. 
+
+*** 15:34 Final note						       :Logs:
+One final note on this experiment for the moment: Matthias has some
+explanation of a quantum effect that could limit the frequency
+response, which I can't remember right now. The upshot was that it
+could be limited by the energy splitting of the Zeeman sub-levels, but
+he made some calculations based on Kevin's numbers that indicated
+that, if it were the case, the cutoff would be at higher
+frequencies. 
+
+It's possible however that Matthias used Kevin's estimates for the
+total /applied/ field (estimated at between 1 and 10 /gauss/),
+forgetting that this applied field is actually used to compensate the
+magnetic fields inside the trap and that of the earth. 
+
+If we use the total magnetic field then we might find indeed that the
+energy splitting would be larger and expect a higher cut-off
+frequency. If instead we assume that the field is compensated, and use
+values of B from our simulation that give us maximum fluorescence
+sensitivity on the Hanle dip (e.g. [[*Low%20B-field][/0.15 gauss/]]), we find that this
+effect could well explain the cut-off observed.
+
+* Tuesday 18th
+** Hanle experiment
+*** 16:37 B-field map: 3-dimensions 				       :logs:
+I've changed up the simulation referred to yesterday to include
+methods for simulating fluorescence change for B-fields that vary in
+strength in all three dimensions ([[file:hanle_effect/Hanle_dip_nd_3d.m][full 3d here]], and [[file:hanle_effect/Hanle_dip_nd_slices.m][planes here]]). 
+
+The ideal situation for this experiment would be such that we could
+set up the polarisation and B-fields so that the fluorescence would
+only be sensitive to variations of B in one particular direction. Once
+mapped, we would then rearrange those parameters so that we could
+probe the next two directions in turn. If the fluorescence is
+sensitive to more than one direction at a time, then it becomes
+difficult to tell anything more than the magnitude of the B-field
+variations.
+
+I have not yet been able to find a configuration where this kind of
+response is observed. I think I need to think about how the
+quantisation axis is defined in this case, and given that, whether or
+not it is even theoretical possible to create that response. 
+
 * Monday 17th 
-** B-field map (Hanle-dip experiment
-*** 15:16 Simulating a B-field map
+** Hanle experiment
+*** 15:16 Simulating a B-field map				       :logs:
 As mentioned [[file:~/Documents/logs/2013/05/may13.org::*Hanle%20dip%20simulation][previously]], Matthias has asked me to take another look at
 the simulation of the Hanle-dip experiment that Kevin performed a long
 while back. Specifically he wanted to know whether we could simulate a
@@ -36,7 +134,7 @@ where we can ideally map fluorescence to local fields.
 
 The question now is, how does varying B-fields in different directions
 affect the fluorescence, and can we really make a meaningful map out
-of what we see in the experiment. 
+of what we see in the experiment.
 
 * Thursday 13th
 ** N2 Photionisation
@@ -307,10 +405,9 @@ in the paper. The data points that don't have corresponding lines have
 corresponding allocations in the paper, and come from transitions to
 the excited state with /K>2/.
 
-* To do
-** Molecular Lab Experiments
-*** HOLD Photoionisation of N2 					    :Nic:Amy:
-**** DONE [#A] Identify appropriate gnd-state transition
+* To do: Molecule lab 
+** HOLD Photoionisation of N2					    :Nic:Amy:
+*** DONE [#A] Identify appropriate gnd-state transition
 - <2013-05-08 Wed>
 Jack has done most of the work here. Just a case of optimising power
 etc. 
@@ -333,11 +430,13 @@ optimised.
 - <2013-06-13 Thu>
 /O_3/ transition identified ([[*11:40%20Scan%20analysis][11:40 Scan analysis]]). 
 
-**** TODO Replace damaged optical elements in laser
-**** TODO Build power supply for discriminator preamp
-**** TODO Re-take spectra with better S-N
-*** HOLD Work on DACs for the new SCL				  :Nic:Kevin:
-**** HOLD Building boards
+*** HOLD Replace damaged optical elements in laser
+- <2013-06-21 Fri>
+Waiting on parts
+*** HOLD Build power supply for discriminator preamp
+*** HOLD Re-take spectra with better S-N
+** HOLD Work on DACs for the new SCL				  :Nic:Kevin:
+*** HOLD Building boards
 - <2013-01-25 Fri> Matthias has the plans:
 Pester him for them.
 - <2013-01-31 Thu> Received:
@@ -352,40 +451,40 @@ Check with Matthias that his design has incorporated these pins as
 I/Os:
 + Port D: RD8 (peak detect input), RD5 (CN_interrupt)
 + U2RX pins, unless he's already designed these away
-**** HOLD Programming
-***** TODO Write SPI library for PIC comms with computer
-***** TODO Write SPI library for PIC comms with DAC
+*** HOLD Programming
+**** TODO Write SPI library for PIC comms with computer
+**** TODO Write SPI library for PIC comms with DAC
 
-*** TODO [#B] Code an automation program for experiments	  :Nic:Kevin:
-**** TODO [#B] Fast autocorrelation calculation
+** TODO [#B] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO [#B] Fast autocorrelation calculation
 - <2013-04-09 Tue>
 [ ] Try using CUDA for a fast autocorrelation calculation |
 - <2013-04-09 Tue>
 Maybe first just try using Wolfgang's code. It might just be fast
 enough on its own.
-**** HOLD [#C] Plan out experiment process
+*** HOLD [#C] Plan out experiment process
 - <2013-05-30 Thu>
 Waiting on Keving to collect some data on `phonon-laser' type
 amplification of the dipole force before we can decide on the exact
 experimental procedure. 
-**** HOLD [#C] Describe phonon laser trick in notes
+*** HOLD [#C] Describe phonon laser trick in notes
 - <2013-05-15 Wed>
 Check if I already have.
 - <2013-06-10 Mon>
 Only really required if it turns out to be usable. Waiting on Kevin's
 results. 
-*** TODO [#B] Simulations						:Nic:
-**** TODO [#B] Hanle dip/b-field map simulation
-***** TODO Fluorescence as a function of B-field for different light pol.
-***** TODO Sanity check: modulation sensitivity reduce at higher B-field?
-***** TODO B-field modulation frequency response (reduce laser Rabi f.)
-**** TODO [#C] Single ion `heat-engine' effect
+** TODO [#C] Simulations						:Nic:
+*** TODO [#C] N2 PI spectrum simulation
+- <2013-06-21 Fri>
+Not currently matching for high rotational levels - contact Anthony
+McCaffery or Tim Softley for advice?
+*** TODO [#C] Single ion `heat-engine' effect
 - <2013-05-30 Thu>
 Does the oscillation have something to do with a kind of `parametric'
 excitation from the laser pressure - Perhaps the ion only feels force
 from the laser when it is at the edges of its oscillation (no Doppler
 shift).
-**** HOLD [#C] One or two calcium ions
+*** HOLD [#C] One or two calcium ions
 - <2013-03-22 Fri>
 Although an extra ion will reduce the acceleration of the crystal due
 to the dipole force, is the increase in signal a good trade-off?
@@ -393,12 +492,23 @@ to the dipole force, is the increase in signal a good trade-off?
 This question is not important if the `phonon-laser'-like approach
 we're going to try and take works well. This idea is on hold until
 more work is done there.
+*** DONE Hanle dip/b-field map simulation
+**** DONE Fluorescence as a function of B-field for different light pol.
+- <2013-06-21 Fri>
+Done for now, need to talk about Matthias about results seen.
+**** DONE Sanity check: modulation sensitivity reduce at higher B-field?
+**** DONE B-field modulation frequency response (reduce laser Rabi f.)
+- <2013-06-21 Fri>
+Done for now, found a frequency reponse close to that seen in the
+experiment, but only for very particular regime. I think it's
+possible that if we move out of that regime we can sidestep this
+effect - needs experimentation.
 
-** General
-*** HOLD Pseudopotential calculations for Oxford
+* To do: General
+** HOLD Pseudopotential calculations for Oxford
 - <2013-06-07 Fri>
 Sent to Laura, awaiting feedback on usage.
-*** HOLD Find submissions for ITCM-Sussex.com
+** HOLD Find submissions for ITCM-Sussex.com
 - <2012-11-13 Tue>
 Matthias has reminded us to look through the old website for these.
 
@@ -443,17 +553,21 @@ improvements to bandwidth and stability.
 3. Can we add references to our papers in the "crystal weighing" and
    "optical excitation" sections?
 
-*** HOLD Ask Hiroki for a look at the code for cavity mode prop.
+** HOLD Ask Hiroki for a look at the code for cavity mode prop.
 - <2012-11-06 Tue>  
 Asked Hiroki, but he hasn't finished it yet. 
 
-*** TODO [#B] Job application research				   :noexport:
-**** Drewsen group
-**** Innsbruck group
-**** Munich group
-** Meetings							   :noexport:
-** Journal & Theory club					   :noexport:
-*** Rota
+** TODO [#B] Job application research				   :noexport:
+*** TODO CV refinement
+- Redo academic to be more like industry
+- Add HTML/CSS to languages
+- Make Charlotte and Dan's suggested changes
+*** TODO Drewsen group
+*** TODO Innsbruck group
+*** TODO Munich group
+* Meetings							   :noexport:
+* Journal & Theory club						   :noexport:
+** Rota
 - Nic
 - Stephen
 - Amy
@@ -463,33 +577,33 @@ Asked Hiroki, but he hasn't finished it yet.
 - Kevin
 - Markus
 Theory club is offset by +4.
-*** Papers to look at
-**** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
-**** TODO Brian Odom's manuscript
-**** TODO Koehl's Dipole trap + ion trap
-**** TODO Wielitsch's MOT + ion trap
-**** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
-*** General papers
-*** Theory subjects
-**** TODO Applications for data analysis and simulation
-*** Books
+** Papers to look at
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+*** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+** General papers
+** Theory subjects
+*** TODO Applications for data analysis and simulation
+** Books
 - Molecular Quantum Mechanics, Aleins, Friedman
 
-** To do, non-work						   :noexport:
-*** TODO Learn CSS/Jekyll
+* To do, non-work						   :noexport:
+** TODO Learn CSS/Jekyll
 - <2013-05-24 Fri>
-*** TODO Illustrate hydrogen wavefunctions in POV-ray
+** TODO Illustrate hydrogen wavefunctions in POV-ray
 - <2013-05-24 Fri>
-*** TODO Move ISA
+** TODO Move ISA
 - <2013-04-24 Wed>
 Check Guardian article on cooperative banks
-*** TODO Purchase 
+** TODO Purchase 
 - Scarf
 - Atomic physics text book
 - Thermodynamics text book
 - Quantum optics text book
 - Backup-drive replacement
-*** TODO Dekatron
+** TODO Dekatron
 - [ ] 555 timer input
 
 * Appendix
@@ -527,3 +641,17 @@ The coils each have $N=100$ turns.
 | x    |            140 |          115 |       106.9 |
 | y    |            140 |          115 |           0 |
 | z    |            140 |          115 |        16.3 |
+
+** Hanle dip regimes
+Simulations of ion fluorescence for varying total B-field, using the
+experimental parameters given to me by Kevin.
+*** Low B-field
+[[file:hanle_effect/200613/kevin_params_low_B.png][file:hanle_effect/200613/kevin_params_low_B.png]]
+
+*** Medium B-field
+[[file:hanle_effect/200613/kevin_params_mediumB.png][file:hanle_effect/200613/kevin_params_mediumB.png]]
+
+*** High B-field
+[[file:hanle_effect/200613/kevin_params_high_B.png][file:hanle_effect/200613/kevin_params_high_B.png]]
+
+

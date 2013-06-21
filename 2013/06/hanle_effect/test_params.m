@@ -1,0 +1,62 @@
+
+% Kevin's parameters for the Hanle dip experiment
+epsilon_0 = 8.85e-12;
+c = 3E8;
+hbar = 1.05457e-34;
+deg = pi/180;
+Gamma = 2*pi*22*1E6;
+
+% Axes and Angles:   
+% x = trap axis       (endcap-endcap)
+% y = cavity axis     (horizontal and perp. to x)
+% z = vertical axis   (up direction)
+
+% B-field /gauss (rough estimate)
+Bx=0;
+By=0;
+Bz=0;
+
+% Laser detunings (units of Gamma)
+Delta1 = -1;
+Delta3 = 0;
+
+% Laser powers and spot sizes (SI)
+P_1 = 2E-6;
+waist_1 = 0.5*68E-6;
+P_3 = 0.1E-6;
+waist_3 = 0.5*68E-6;
+
+% Laser wavelengths /nm
+lambda_1 = 397E-9;
+lambda_3 = 866E-9;
+
+% incoherent pumping 
+GammaPump1 = 0;
+GammaPump3 = 0;
+
+% Laser direction
+alpha = 0*deg;   % angle with trap axis in horizontal plane
+beta  = 0*deg;    % angle out of horizontal plane
+
+% laser polarization  (x,y,sigma+ or sigma-) for coherent and incoherent pump
+pol1 = 'sigma-';
+pol3 = 'y';
+
+% laser linewidths (in units of Gamma)
+gamma_1 = 0E6*2*pi/Gamma; %linewidth of cooling laser (ground to p state)
+gamma_3 = 0E6*2*pi/Gamma; %linewidth of repumping laser (excited to p state)
+gamma_rel = gamma_1 + gamma_3; %combined linewidth (gnd to exc)
+
+% --Derived variables--
+Freq = @(lambda) 2*pi*c/lambda;
+Intensity = @(power, waist) 2*power/(pi*waist^2);
+E_field = @(intensity) sqrt(2*intensity/(c*epsilon_0));
+Rabi_freq = @(lambda, power, waist) sqrt(3*pi*epsilon_0*hbar*c^3*Gamma/(Freq(lambda)^3))*(E_field(Intensity(power, waist))/hbar)/Gamma;
+% cooling laser rabi frequency (units of Gamma)
+Omega1 = Rabi_freq(lambda_1, P_1, waist_1);
+s_1 = 2*Omega1^2;
+
+% repumper rabi frequency (units of Gamma)
+Omega3 = Rabi_freq(lambda_3, P_3, waist_3);
+s_3 = 170*2*Omega3^2;
+
