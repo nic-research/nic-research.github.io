@@ -67,7 +67,7 @@ This is an easy test to put into practice in the experiment, and if it
 works will greatly enhance the potential for publication of this
 technique. 
 
-*** 15:34 Final note						       :Logs:
+*** 15:34 Final note 						       :Logs:
 One final note on this experiment for the moment: Matthias has some
 explanation of a quantum effect that could limit the frequency
 response, which I can't remember right now. The upshot was that it
@@ -279,7 +279,7 @@ signal; since we have a three-photon process the efficiency scales
 with E^3.
 *** 11:17 Spectrum data 					       :Data:
 I've cleaned up the spectra taken shown in the entry of the 31st of
-May. The image below shows the relevant data ([[file:~/Documents/logs/2013/05/N2PI][data set]], [[file:scripts/N2PI_plot1.py][python script]]): 
+May. The image below shows the relevant data ([[file:../05/N2PI/29-05-13/][data set]] [[file:N2PI/scripts/N2PI_plot1.py][python script]]): 
 
 #+CAPTION: Figure 1. 
 #+CAPTION: Spectrum of N2 photoionisation, and power of the laser
