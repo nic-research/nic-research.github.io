@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Research notes: July 2013</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Research notes: July 2013"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-07-01 15:39:49 BST"/>
+<meta name="author" content="N. Seymour-Smith"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Research notes: July 2013</h1>
+
+
+<hr>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Monday 1st</a>
+<ul>
+<li><a href="#sec-1-1">N2 photoionisation</a>
+<ul>
+<li><a href="#sec-1-1-1">Wavelength table</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">To do: Molecule lab</a>
+<ul>
+<li><a href="#sec-2-1">Photoionisation of N2</a>
+<ul>
+<li><a href="#sec-2-1-1">Explain photoionisation process</a></li>
+<li><a href="#sec-2-1-2">Replace damaged optical elements in laser</a></li>
+<li><a href="#sec-2-1-3">Build power supply for discriminator preamp</a></li>
+<li><a href="#sec-2-1-4">Re-take spectra with better S-N</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">Work on DACs for the new SCL</a>
+<ul>
+<li><a href="#sec-2-2-1">Building boards</a></li>
+<li><a href="#sec-2-2-2">Programming</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">Code an automation program for experiments</a>
+<ul>
+<li><a href="#sec-2-3-1">Fast autocorrelation calculation</a></li>
+<li><a href="#sec-2-3-2">Plan out experiment process</a></li>
+<li><a href="#sec-2-3-3">Describe phonon laser trick in notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-4">Simulations</a>
+<ul>
+<li><a href="#sec-2-4-1">N2 PI spectrum simulation</a></li>
+<li><a href="#sec-2-4-2">Single ion `heat-engine' effect</a></li>
+<li><a href="#sec-2-4-3">Hanle dip/b-field map simulation</a></li>
+<li><a href="#sec-2-4-4">One or two calcium ions</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">To do: General</a>
+<ul>
+<li><a href="#sec-3-1">Pseudopotential calculations for Oxford</a></li>
+<li><a href="#sec-3-2">Find submissions for ITCM-Sussex.com</a></li>
+<li><a href="#sec-3-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Monday 1st</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">N2 photoionisation</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Wavelength table &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>For lab use, here is a table of the N<sub>2</sub> photoionisation transition
+wavelengths alongside the best dataset we obtained so far:
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="right" /><col class="right" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Line</th><th scope="col" class="right">&lambda; /nm</th><th scope="col" class="right">2 &sdot; &lambda; /nm</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">\(S_{4/5}\)</td><td class="right">236.99</td><td class="right">473.98</td></tr>
+<tr><td class="left">\(S_{2/7}\)</td><td class="right">237.0</td><td class="right">474.</td></tr>
+<tr><td class="left">\(S_{1/8}\)</td><td class="right">237.009</td><td class="right">474.018</td></tr>
+<tr><td class="left">\(S_0\)</td><td class="right">237.022</td><td class="right">474.044</td></tr>
+<tr><td class="left">\(R_{0/4}\)</td><td class="right">237.038</td><td class="right">474.076</td></tr>
+<tr><td class="left">\(R_5/Q_1\)</td><td class="right">237.049</td><td class="right">474.098</td></tr>
+<tr><td class="left">\(R_6/Q_2\)</td><td class="right">237.056</td><td class="right">474.112</td></tr>
+<tr><td class="left">\(P_2\)</td><td class="right">237.072</td><td class="right">474.144</td></tr>
+<tr><td class="left">\(Q_4\)</td><td class="right">237.078</td><td class="right">474.156</td></tr>
+<tr><td class="left">\(P_3\)</td><td class="right">237.089</td><td class="right">474.178</td></tr>
+<tr><td class="left">\(Q_5\)</td><td class="right">237.094</td><td class="right">474.188</td></tr>
+<tr><td class="left">\(O_3\)</td><td class="right">237.104</td><td class="right">474.208</td></tr>
+<tr><td class="left">\(P_4\)</td><td class="right">237.110</td><td class="right">474.22</td></tr>
+<tr><td class="left">\(O_4\)</td><td class="right">237.135</td><td class="right">474.27</td></tr>
+</tbody>
+</table>
+
+Link to diagram:
+<a href="N2PI/scripts/n2_scan18.png"><img src="/N2PI/scripts/n2_scan18.png" alt="n2_scan18.png"/></a>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">To do: Molecule lab</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="done HOLD">HOLD</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="todo TODO">TODO</span> Explain photoionisation process</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-01 Mon</span></span>
+</li>
+</ul>
+
+<p>Draw up diagram with our options, write-up including selection rules
+(see Matthias).
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2"><span class="done HOLD">HOLD</span> Replace damaged optical elements in laser</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
+</li>
+</ul>
+
+<p>Waiting on parts
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3"><span class="done HOLD">HOLD</span> Build power supply for discriminator preamp</h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-4" class="outline-4">
+<h4 id="sec-2-1-4"><span class="done HOLD">HOLD</span> Re-take spectra with better S-N</h4>
+<div class="outline-text-4" id="text-2-1-4">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="done HOLD">HOLD</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="done HOLD">HOLD</span> Building boards</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
+</li>
+</ul>
+
+<p>Pester him for them.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-31 Thu</span></span> Received:
+</li>
+</ul>
+
+<p>Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Matthias is making the boards:
+</li>
+</ul>
+
+<p>Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Pins used:
+</li>
+</ul>
+
+<p>Check with Matthias that his design has incorporated these pins as
+I/Os:
+</p><ul>
+<li>Port D: RD8 (peak detect input), RD5 (CN<sub>interrupt</sub>)
+</li>
+<li>U2RX pins, unless he's already designed these away
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="done HOLD">HOLD</span> Programming</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+<ul>
+<li id="sec-2-2-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-2-2-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-2-3">
+
+
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>[ ] Try using CUDA for a fast autocorrelation calculation |
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="done HOLD">HOLD</span> Plan out experiment process</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
+</li>
+</ul>
+
+<p>Waiting on Keving to collect some data on `phonon-laser' type
+amplification of the dipole force before we can decide on the exact
+experimental procedure. 
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3-3" class="outline-4">
+<h4 id="sec-2-3-3"><span class="done HOLD">HOLD</span> Describe phonon laser trick in notes</h4>
+<div class="outline-text-4" id="text-2-3-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-15 Wed</span></span>
+</li>
+</ul>
+
+<p>Check if I already have.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-10 Mon</span></span>
+</li>
+</ul>
+
+<p>Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-2-4">
+
+
+</div>
+
+<div id="outline-container-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1"><span class="todo TODO">TODO</span> N2 PI spectrum simulation</h4>
+<div class="outline-text-4" id="text-2-4-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
+</li>
+</ul>
+
+<p>Not currently matching for high rotational levels - contact Anthony
+McCaffery or Tim Softley for advice?
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
+<div class="outline-text-4" id="text-2-4-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
+</li>
+</ul>
+
+<p>Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4-3" class="outline-4">
+<h4 id="sec-2-4-3"><span class="todo TODO">TODO</span> Hanle dip/b-field map simulation</h4>
+<div class="outline-text-4" id="text-2-4-3">
+
+<ul>
+<li id="sec-2-4-3-1"><span class="todo TODO">TODO</span> Fluorescence as a function of B-field for different light pol.<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
+</li>
+</ul>
+
+<p>Done for now, need to talk about Matthias about results seen.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-01 Mon</span></span>
+</li>
+</ul>
+
+<p>Need to find a way of combining maps from different polarisations and
+directions to give independent B-field direction data.
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2-4-4" class="outline-4">
+<h4 id="sec-2-4-4"><span class="done HOLD">HOLD</span> One or two calcium ions</h4>
+<div class="outline-text-4" id="text-2-4-4">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-28 Tue</span></span>
+</li>
+</ul>
+
+<p>This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">To do: General</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="done HOLD">HOLD</span> Pseudopotential calculations for Oxford</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-07 Fri</span></span>
+</li>
+</ul>
+
+<p>Sent to Laura, awaiting feedback on usage.
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="done HOLD">HOLD</span> Find submissions for ITCM-Sussex.com</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-13 Tue</span></span>
+</li>
+</ul>
+
+<p>Matthias has reminded us to look through the old website for these.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-20 Tue</span></span> 
+</li>
+</ul>
+
+<p>I should add a scanning cavity lock section to the "Technology" page
+of the site (extended abstract?).
+</p>
+<p>  
+Furthermore, I think it'd be nice to look over the diagrams that are
+on there already, and think about whether or not I could make some
+improved ones in POVRAY.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-26 Mon</span></span>
+</li>
+</ul>
+
+<p>Rev. Sci. Instrum. 81, 075109 2010:
+</p>
+<p>
+"We have implemented a compact setup for long-term laser frequency
+stabilization. Light from a stable reference laser and several slave
+lasers is coupled into a confocal Fabry–Pérot resonator. By
+stabilizing the position of the transmission peaks of the slave lasers
+relative to successive peaks of the master laser as the length of the
+cavity is scanned over one free spectral range, the long-term
+stability of the master laser is transferred to the slave lasers.
+</p>
+<p>
+By using fast analog peak detection and low-latency
+microcontroller-based digital feedback, with a scanning frequency of 3
+kHz, we obtain a feedback bandwidth of 380 Hz and a relative stability
+of better than 10 kHz at timescales longer than 1 s."
+</p>
+<p>
+Current undergraduate/masters projects are focused on implementing our
+scanning cavity lock design with a cheap and feature-rich
+microcontroller from the dsPIC line
+(<a href="http://www.microchip.com/">http://www.microchip.com/</a>). Automated impulse-response-function
+analysis and digital filter generation will provide significant
+improvements to bandwidth and stability.
+</p>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-04 Fri</span></span> Comments on current webpage:
+</li>
+<li>There are no sub-titles at the lowest level of the pages when looking
+   at the research interests. e.g. "ion-photon entanglement" is a page
+   inside "cavity-QED", but when you click on it it is title only
+   "cavity-QED".
+</li>
+<li>Only "charge exchange reactions" in the molecular physics
+   section. Should we show something about our research direction?
+</li>
+<li>Can we add references to our papers in the "crystal weighing" and
+   "optical excitation" sections?
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="done HOLD">HOLD</span> Ask Hiroki for a look at the code for cavity mode prop.</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-06 Tue</span></span>  
+</li>
+</ul>
+
+<p>Asked Hiroki, but he hasn't finished it yet. 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-07-01 15:39:49 BST</p>
+<p class="author">Author: N. Seymour-Smith</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

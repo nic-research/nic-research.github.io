@@ -9,16 +9,20 @@
 #+BEGIN_HTML
 <hr>
 #+END_HTML
+
 * 2013 logs
+** [[file:2013/07/jul13.html][July]]
 ** [[file:2013/06/jun13.org][June]] 
 ** [[file:2013/05/may13.org][May]] 
 ** [[file:2013/04/apr13.org][April]] 
 ** [[file:2013/03/mar13.org][March]] 
 ** [[file:2013/02/feb13.org][February]] 
 ** [[file:2013/01/jan13.org][January]] 
+
 #+BEGIN_HTML
 <hr>
 #+END_HTML
+
 * General links
 ** [[http://itcm-sussex.com/][ITCM Sussex webpage]]
 ** [[http://139.184.128.188/amowiki][Cavity lab wiki]]
