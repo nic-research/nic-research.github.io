@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Research notes: July 2013"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-31 14:20:06 BST"/>
+<meta name="generated" content="2013-07-31 14:46:30 BST"/>
 <meta name="author" content="N. Seymour-Smith"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -153,6 +153,12 @@
 <ul>
 <li><a href="#sec-1-2-1">Current status</a></li>
 <li><a href="#sec-1-2-2">Autocorrelation calculation</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">Simulations</a>
+<ul>
+<li><a href="#sec-1-3-1">Hanle experiment</a></li>
+<li><a href="#sec-1-3-2">Heat-engine experiment</a></li>
 </ul></li>
 </ul>
 </li>
@@ -274,7 +280,7 @@ state machine that follows the states and transitions shown below:
 </p>
 <p>
 It's not yet clear whether or not the <i>crystal cleaning</i> state can be
-used to also eject non-N2/Ca ions that contaminate the crystal. If so,
+used to also eject non-N<sub>2</sub>/Ca ions that contaminate the crystal. If so,
 then for the most part the <i>crystal cleaning</i> can replace the <i>eject ions</i> (except in the case where we've loaded too many ions).
 </p>
 <p>
@@ -307,6 +313,49 @@ At one point, I tried running the FFT with a python script on an old
 set of data, but it was painfully slow. It might not be fair to test
 it without also testing the c-code, and on the computer we aim to
 analyse on, but as a preliminary estimation, python is too slow.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Simulations</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Hanle experiment &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<p>Kevin has tried to take a quick look at the parameter space I advised
+in the notes of <a href="file:///home/nicolas/Documents/logs/2013/06/jun13.html">Friday 21st</a>, but had no luck in seeing another
+fluorescence feature with varying B-field, or a change in the
+frequency response.
+</p>
+<p>
+However, noting his recent findings on the stability of the wavemeter
+lock (minimum 20 MHz fast drift), it's hard to say whether or not
+we're really stable enough to pick out that parameter space. I think
+it might be worthwhile looking at the experiment again in Amy's trap,
+with the laser locked to the atom in Kevin's trap. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">Heat-engine experiment</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<p>I managed to write some code which I feel should incorporate the
+dipole force into my 1D simulation. Matthias has also provided me
+with some code too, and it would be useful to compare the two. Right
+now the dipole force calculated from my simulation seems small, but I
+need to make sure I get the scaling right and that there are no bugs
+in the code.
 </p>
 </div>
 </div>
@@ -833,7 +882,7 @@ improvements to bandwidth and stability.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-31 14:20:06 BST</p>
+<p class="date">Date: 2013-07-31 14:46:30 BST</p>
 <p class="author">Author: N. Seymour-Smith</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

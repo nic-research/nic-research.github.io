@@ -43,7 +43,7 @@ state machine that follows the states and transitions shown below:
 [[file:img/measurement_automation.png]]
 
 It's not yet clear whether or not the /crystal cleaning/ state can be
-used to also eject non-N2/Ca ions that contaminate the crystal. If so,
+used to also eject non-N_{2}/Ca ions that contaminate the crystal. If so,
 then for the most part the /crystal cleaning/ can replace the /eject
 ions/ (except in the case where we've loaded too many ions).
 
@@ -67,6 +67,27 @@ At one point, I tried running the FFT with a python script on an old
 set of data, but it was painfully slow. It might not be fair to test
 it without also testing the c-code, and on the computer we aim to
 analyse on, but as a preliminary estimation, python is too slow.
+
+** Simulations
+*** Hanle experiment 						       :logs:
+Kevin has tried to take a quick look at the parameter space I advised
+in the notes of [[file:~/Documents/logs/2013/06/jun13.org::*Friday%2021st][Friday 21st]], but had no luck in seeing another
+fluorescence feature with varying B-field, or a change in the
+frequency response.
+
+However, noting his recent findings on the stability of the wavemeter
+lock (minimum 20 MHz fast drift), it's hard to say whether or not
+we're really stable enough to pick out that parameter space. I think
+it might be worthwhile looking at the experiment again in Amy's trap,
+with the laser locked to the atom in Kevin's trap. 
+
+*** Heat-engine experiment
+I managed to write some code which I feel should incorporate the
+dipole force into my 1D simulation. Matthias has also provided me
+with some code too, and it would be useful to compare the two. Right
+now the dipole force calculated from my simulation seems small, but I
+need to make sure I get the scaling right and that there are no bugs
+in the code.
 
 * Monday 1st
 ** N_{2} photoionisation
