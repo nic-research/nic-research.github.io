@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Research notes: July 2013"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-01 15:39:49 BST"/>
+<meta name="generated" content="2013-07-31 14:20:06 BST"/>
 <meta name="author" content="N. Seymour-Smith"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -142,51 +142,65 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Monday 1st</a>
+<li><a href="#sec-1">Wednesday 31st</a>
 <ul>
-<li><a href="#sec-1-1">N2 photoionisation</a>
+<li><a href="#sec-1-1">N<sub>2</sub> photoionisation</a>
 <ul>
-<li><a href="#sec-1-1-1">Wavelength table</a></li>
+<li><a href="#sec-1-1-1">Fitting made by Chris Rennick</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Measurement automation</a>
+<ul>
+<li><a href="#sec-1-2-1">Current status</a></li>
+<li><a href="#sec-1-2-2">Autocorrelation calculation</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-2">To do: Molecule lab</a>
+<li><a href="#sec-2">Monday 1st</a>
 <ul>
-<li><a href="#sec-2-1">Photoionisation of N2</a>
+<li><a href="#sec-2-1">N<sub>2</sub> photoionisation</a>
 <ul>
-<li><a href="#sec-2-1-1">Explain photoionisation process</a></li>
-<li><a href="#sec-2-1-2">Replace damaged optical elements in laser</a></li>
-<li><a href="#sec-2-1-3">Build power supply for discriminator preamp</a></li>
-<li><a href="#sec-2-1-4">Re-take spectra with better S-N</a></li>
-</ul>
-</li>
-<li><a href="#sec-2-2">Work on DACs for the new SCL</a>
-<ul>
-<li><a href="#sec-2-2-1">Building boards</a></li>
-<li><a href="#sec-2-2-2">Programming</a></li>
-</ul>
-</li>
-<li><a href="#sec-2-3">Code an automation program for experiments</a>
-<ul>
-<li><a href="#sec-2-3-1">Fast autocorrelation calculation</a></li>
-<li><a href="#sec-2-3-2">Plan out experiment process</a></li>
-<li><a href="#sec-2-3-3">Describe phonon laser trick in notes</a></li>
-</ul>
-</li>
-<li><a href="#sec-2-4">Simulations</a>
-<ul>
-<li><a href="#sec-2-4-1">N2 PI spectrum simulation</a></li>
-<li><a href="#sec-2-4-2">Single ion `heat-engine' effect</a></li>
-<li><a href="#sec-2-4-3">Hanle dip/b-field map simulation</a></li>
-<li><a href="#sec-2-4-4">One or two calcium ions</a></li>
+<li><a href="#sec-2-1-1">Wavelength table</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-3">To do: General</a>
+<li><a href="#sec-3">To do: Molecule lab</a>
 <ul>
-<li><a href="#sec-3-1">Pseudopotential calculations for Oxford</a></li>
-<li><a href="#sec-3-2">Find submissions for ITCM-Sussex.com</a></li>
-<li><a href="#sec-3-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
+<li><a href="#sec-3-1">Photoionisation of N2</a>
+<ul>
+<li><a href="#sec-3-1-1">Explain photoionisation process</a></li>
+<li><a href="#sec-3-1-2">Replace damaged optical elements in laser</a></li>
+<li><a href="#sec-3-1-3">Build power supply for discriminator preamp</a></li>
+<li><a href="#sec-3-1-4">Re-take spectra with better S-N</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">Work on DACs for the new SCL</a>
+<ul>
+<li><a href="#sec-3-2-1">Building boards</a></li>
+<li><a href="#sec-3-2-2">Programming</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-3">Code an automation program for experiments</a>
+<ul>
+<li><a href="#sec-3-3-1">Fast autocorrelation calculation</a></li>
+<li><a href="#sec-3-3-2">Plan out experiment process</a></li>
+<li><a href="#sec-3-3-3">Describe phonon laser trick in notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-4">Simulations</a>
+<ul>
+<li><a href="#sec-3-4-1">N2 PI spectrum simulation</a></li>
+<li><a href="#sec-3-4-2">Single ion `heat-engine' effect</a></li>
+<li><a href="#sec-3-4-3">Hanle dip/b-field map simulation</a></li>
+<li><a href="#sec-3-4-4">One or two calcium ions</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">To do: General</a>
+<ul>
+<li><a href="#sec-4-1">Pseudopotential calculations for Oxford</a></li>
+<li><a href="#sec-4-2">Find submissions for ITCM-Sussex.com</a></li>
+<li><a href="#sec-4-3">Ask Hiroki for a look at the code for cavity mode prop.</a></li>
 </ul>
 </li>
 </ul>
@@ -194,22 +208,129 @@
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Monday 1st</h2>
+<h2 id="sec-1">Wednesday 31st</h2>
 <div class="outline-text-2" id="text-1">
 
 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">N2 photoionisation</h3>
+<h3 id="sec-1-1">N<sub>2</sub> photoionisation</h3>
 <div class="outline-text-3" id="text-1-1">
 
 
 </div>
 
 <div id="outline-container-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1">Wavelength table &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h4>
+<h4 id="sec-1-1-1">Fitting made by Chris Rennick &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Analysis">Analysis</span></span></h4>
 <div class="outline-text-4" id="text-1-1-1">
+
+<p>During our collaboration meeting on the 24<sup>th</sup> Chris brought up a
+program for simulating molecular spectra called PGOPHER
+(<a href="http://pgopher.chm.bris.ac.uk/">http://pgopher.chm.bris.ac.uk/</a>). He said it's hard to configure and
+get up and running, but once done it's fairly easy to tweak and change
+spectra to match different sets of data. 
+</p>
+<p>
+Using the N<sub>2</sub> constants from the NIST chemistry webbook, Chris fit
+our data very nicely, as shown below:
+</p>
+<p>
+<a href="N2PI/chris_fits/plot.pdf">N2PI/chris<sub>fits</sub>/plot.pdf</a>
+</p>
+<p>
+I haven't yet determined what makes the difference between our model,
+but it bears looking into. At first glance the transition assignments
+are the same as ours (the P<sub>2</sub> transition of our model fits the P<sub>2</sub>
+transition of the PGOPHER model), but according to Chris the spectra
+are offset by approximately 0.03 nm (-13 cm<sup>-1</sup>). 
+</p>
+<p>
+I believe that the rotational constants of the model for the excited
+state are calculated, so I wonder if there's a chance that we could
+publish the measured constants according to our data.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Measurement automation</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">Current status &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>The automation software is nearly complete. I've designed it as a
+state machine that follows the states and transitions shown below:
+</p>
+<p>
+<img src="img/measurement_automation.png"  alt="img/measurement_automation.png" />
+</p>
+<p>
+It's not yet clear whether or not the <i>crystal cleaning</i> state can be
+used to also eject non-N2/Ca ions that contaminate the crystal. If so,
+then for the most part the <i>crystal cleaning</i> can replace the <i>eject ions</i> (except in the case where we've loaded too many ions).
+</p>
+<p>
+The parts of the software that still need programming are the parts
+that control lasers and other hardware, as we don't yet know the exact
+layout, but there are placeholder VIs in those places that can be
+swapped out when required. The other part that has not quite been
+finished is the autocorrelation calculation. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">Autocorrelation calculation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<p>The autocorrelation calculation will probably be made using a
+variation of Wolfgang's original code for that purpose. The variation
+is Hiroki's, where he has factored Wolfgang's single, multi-purpose
+function into many smaller functions that achieve different parts of
+the correlation process.
+</p>
+<p>
+Right now the FFT is calculated using a LabVIEW VI, but it might be
+necessary to use a c dll for speed. 
+</p>
+<p>
+At one point, I tried running the FFT with a python script on an old
+set of data, but it was painfully slow. It might not be fair to test
+it without also testing the c-code, and on the computer we aim to
+analyse on, but as a preliminary estimation, python is too slow.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Monday 1st</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">N<sub>2</sub> photoionisation</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Wavelength table &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h4>
+<div class="outline-text-4" id="text-2-1-1">
 
 <p>For lab use, here is a table of the N<sub>2</sub> photoionisation transition
 wavelengths alongside the best dataset we obtained so far:
@@ -238,8 +359,10 @@ wavelengths alongside the best dataset we obtained so far:
 </tbody>
 </table>
 
-Link to diagram:
-<a href="N2PI/scripts/n2_scan18.png"><img src="/N2PI/scripts/n2_scan18.png" alt="n2_scan18.png"/></a>
+
+<p>
+<img src="N2PI/scripts/n2_scan18.png"  alt="N2PI/scripts/n2_scan18.png" />
+</p>
 
 </div>
 </div>
@@ -247,23 +370,23 @@ Link to diagram:
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">To do: Molecule lab</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">To do: Molecule lab</h2>
+<div class="outline-text-2" id="text-3">
 
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="done HOLD">HOLD</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="done HOLD">HOLD</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
 
 
 </div>
 
-<div id="outline-container-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1"><span class="todo TODO">TODO</span> Explain photoionisation process</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="todo TODO">TODO</span> Explain photoionisation process</h4>
+<div class="outline-text-4" id="text-3-1-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-01 Mon</span></span>
@@ -272,13 +395,19 @@ Link to diagram:
 
 <p>Draw up diagram with our options, write-up including selection rules
 (see Matthias).
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Some notes are in my logbook - need to write those up.
 </p></div>
 
 </div>
 
-<div id="outline-container-2-1-2" class="outline-4">
-<h4 id="sec-2-1-2"><span class="done HOLD">HOLD</span> Replace damaged optical elements in laser</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2"><span class="done HOLD">HOLD</span> Replace damaged optical elements in laser</h4>
+<div class="outline-text-4" id="text-3-1-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
@@ -290,33 +419,41 @@ Link to diagram:
 
 </div>
 
-<div id="outline-container-2-1-3" class="outline-4">
-<h4 id="sec-2-1-3"><span class="done HOLD">HOLD</span> Build power supply for discriminator preamp</h4>
-<div class="outline-text-4" id="text-2-1-3">
+<div id="outline-container-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3"><span class="done DONE">DONE</span> Build power supply for discriminator preamp</h4>
+<div class="outline-text-4" id="text-3-1-3">
 
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span> 
+</li>
+</ul>
+
+<p>Jack did this a couple of weeks ago, need to check whether or not that
+has made a significant difference to the drift, but will likely do
+this when we have fixed up the optical elements.
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-4" class="outline-4">
+<h4 id="sec-3-1-4"><span class="done HOLD">HOLD</span> Re-take spectra with better S-N</h4>
+<div class="outline-text-4" id="text-3-1-4">
+
+</div>
 </div>
 
 </div>
 
-<div id="outline-container-2-1-4" class="outline-4">
-<h4 id="sec-2-1-4"><span class="done HOLD">HOLD</span> Re-take spectra with better S-N</h4>
-<div class="outline-text-4" id="text-2-1-4">
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="done HOLD">HOLD</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="done HOLD">HOLD</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
 
 
 </div>
 
-<div id="outline-container-2-2-1" class="outline-4">
-<h4 id="sec-2-2-1"><span class="done HOLD">HOLD</span> Building boards</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1"><span class="done HOLD">HOLD</span> Building boards</h4>
+<div class="outline-text-4" id="text-3-2-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
@@ -357,16 +494,16 @@ I/Os:
 
 </div>
 
-<div id="outline-container-2-2-2" class="outline-4">
-<h4 id="sec-2-2-2"><span class="done HOLD">HOLD</span> Programming</h4>
-<div class="outline-text-4" id="text-2-2-2">
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2"><span class="done HOLD">HOLD</span> Programming</h4>
+<div class="outline-text-4" id="text-3-2-2">
 
 <ul>
-<li id="sec-2-2-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+<li id="sec-3-2-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-2-2-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+<li id="sec-3-2-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
 
 </li>
 </ul>
@@ -375,23 +512,23 @@ I/Os:
 
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-3-3">
 
 
 </div>
 
-<div id="outline-container-2-3-1" class="outline-4">
-<h4 id="sec-2-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation</h4>
-<div class="outline-text-4" id="text-2-3-1">
+<div id="outline-container-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation</h4>
+<div class="outline-text-4" id="text-3-3-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
 </li>
 </ul>
 
-<p>[ ] Try using CUDA for a fast autocorrelation calculation |
+<p>[X] Try using CUDA for a fast autocorrelation calculation 
 </p><ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
 </li>
@@ -399,13 +536,21 @@ I/Os:
 
 <p>Maybe first just try using Wolfgang's code. It might just be fast
 enough on its own.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Hiroki has refactored Wolfgang's code into sub-functions and I'm now
+using his DLL. I tried running a few tests with python but it's really
+way too slow for large datasets.
 </p></div>
 
 </div>
 
-<div id="outline-container-2-3-2" class="outline-4">
-<h4 id="sec-2-3-2"><span class="done HOLD">HOLD</span> Plan out experiment process</h4>
-<div class="outline-text-4" id="text-2-3-2">
+<div id="outline-container-3-3-2" class="outline-4">
+<h4 id="sec-3-3-2"><span class="done DONE">DONE</span> Plan out experiment process</h4>
+<div class="outline-text-4" id="text-3-3-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
@@ -415,13 +560,21 @@ enough on its own.
 <p>Waiting on Keving to collect some data on `phonon-laser' type
 amplification of the dipole force before we can decide on the exact
 experimental procedure. 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>This is more or less irrelevant. I've built the automation program
+around a design that doesn't much care what the measurement process
+is, which is really the only  main variable. 
 </p></div>
 
 </div>
 
-<div id="outline-container-2-3-3" class="outline-4">
-<h4 id="sec-2-3-3"><span class="done HOLD">HOLD</span> Describe phonon laser trick in notes</h4>
-<div class="outline-text-4" id="text-2-3-3">
+<div id="outline-container-3-3-3" class="outline-4">
+<h4 id="sec-3-3-3"><span class="done CNCL">CNCL</span> Describe phonon laser trick in notes</h4>
+<div class="outline-text-4" id="text-3-3-3">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-15 Wed</span></span>
@@ -436,21 +589,27 @@ experimental procedure.
 
 <p>Only really required if it turns out to be usable. Waiting on Kevin's
 results. 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Not needed until the paper is written.
 </p></div>
 </div>
 
 </div>
 
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-3-4">
 
 
 </div>
 
-<div id="outline-container-2-4-1" class="outline-4">
-<h4 id="sec-2-4-1"><span class="todo TODO">TODO</span> N2 PI spectrum simulation</h4>
-<div class="outline-text-4" id="text-2-4-1">
+<div id="outline-container-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1"><span class="done DONE">DONE</span> N2 PI spectrum simulation</h4>
+<div class="outline-text-4" id="text-3-4-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
@@ -459,13 +618,20 @@ results.
 
 <p>Not currently matching for high rotational levels - contact Anthony
 McCaffery or Tim Softley for advice?
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Chris Rennick has plotted these out for us nicely, see the log entry
+for today.
 </p></div>
 
 </div>
 
-<div id="outline-container-2-4-2" class="outline-4">
-<h4 id="sec-2-4-2"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
-<div class="outline-text-4" id="text-2-4-2">
+<div id="outline-container-3-4-2" class="outline-4">
+<h4 id="sec-3-4-2"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
+<div class="outline-text-4" id="text-3-4-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
@@ -476,16 +642,33 @@ McCaffery or Tim Softley for advice?
 excitation from the laser pressure - Perhaps the ion only feels force
 from the laser when it is at the edges of its oscillation (no Doppler
 shift).
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Still working on this, but got the dipole force nearly in
+properly. Need to compare ways of calculating dipole force to make
+sure they agree. If we don't see the effect with a 1D model, then
+maybe we need to think about a 3D model (which Matthias reckons is the
+only model that should fit). 
 </p></div>
 
 </div>
 
-<div id="outline-container-2-4-3" class="outline-4">
-<h4 id="sec-2-4-3"><span class="todo TODO">TODO</span> Hanle dip/b-field map simulation</h4>
-<div class="outline-text-4" id="text-2-4-3">
+<div id="outline-container-3-4-3" class="outline-4">
+<h4 id="sec-3-4-3"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
+<div class="outline-text-4" id="text-3-4-3">
 
 <ul>
-<li id="sec-2-4-3-1"><span class="todo TODO">TODO</span> Fluorescence as a function of B-field for different light pol.<br/>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Waiting on Kevin to make some measurements to see if they match my
+simulations. 
+</p><ul>
+<li id="sec-3-4-3-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
 </li>
@@ -505,9 +688,9 @@ directions to give independent B-field direction data.
 
 </div>
 
-<div id="outline-container-2-4-4" class="outline-4">
-<h4 id="sec-2-4-4"><span class="done HOLD">HOLD</span> One or two calcium ions</h4>
-<div class="outline-text-4" id="text-2-4-4">
+<div id="outline-container-3-4-4" class="outline-4">
+<h4 id="sec-3-4-4"><span class="done HOLD">HOLD</span> One or two calcium ions</h4>
+<div class="outline-text-4" id="text-3-4-4">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
@@ -531,16 +714,16 @@ more work is done there.
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">To do: General</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">To do: General</h2>
+<div class="outline-text-2" id="text-4">
 
 
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="done HOLD">HOLD</span> Pseudopotential calculations for Oxford</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="done DONE">DONE</span> Pseudopotential calculations for Oxford</h3>
+<div class="outline-text-3" id="text-4-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-07 Fri</span></span>
@@ -548,13 +731,19 @@ more work is done there.
 </ul>
 
 <p>Sent to Laura, awaiting feedback on usage.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Laura and Chris used these succesfully.
 </p></div>
 
 </div>
 
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="done HOLD">HOLD</span> Find submissions for ITCM-Sussex.com</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="done HOLD">HOLD</span> Find submissions for ITCM-Sussex.com</h3>
+<div class="outline-text-3" id="text-4-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-13 Tue</span></span>
@@ -627,9 +816,9 @@ improvements to bandwidth and stability.
 
 </div>
 
-<div id="outline-container-3-3" class="outline-3">
-<h3 id="sec-3-3"><span class="done HOLD">HOLD</span> Ask Hiroki for a look at the code for cavity mode prop.</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="done HOLD">HOLD</span> Ask Hiroki for a look at the code for cavity mode prop.</h3>
+<div class="outline-text-3" id="text-4-3">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2012-11-06 Tue</span></span>  
@@ -644,7 +833,7 @@ improvements to bandwidth and stability.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-01 15:39:49 BST</p>
+<p class="date">Date: 2013-07-31 14:20:06 BST</p>
 <p class="author">Author: N. Seymour-Smith</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

@@ -11,8 +11,65 @@
 <hr>
 #+END_HTML
 
+* Wednesday 31st
+** N_{2} photoionisation
+*** Fitting made by Chris Rennick				   :Analysis:
+During our collaboration meeting on the 24^{th} Chris brought up a
+program for simulating molecular spectra called PGOPHER
+(http://pgopher.chm.bris.ac.uk/). He said it's hard to configure and
+get up and running, but once done it's fairly easy to tweak and change
+spectra to match different sets of data. 
+
+Using the N_{2} constants from the NIST chemistry webbook, Chris fit
+our data very nicely, as shown below:
+
+[[file:N2PI/chris_fits/plot.pdf][file:N2PI/chris_fits/plot.pdf]]
+
+I haven't yet determined what makes the difference between our model,
+but it bears looking into. At first glance the transition assignments
+are the same as ours (the P_{2} transition of our model fits the P_{2}
+transition of the PGOPHER model), but according to Chris the spectra
+are offset by approximately 0.03 nm (-13 cm^{-1}). 
+
+I believe that the rotational constants of the model for the excited
+state are calculated, so I wonder if there's a chance that we could
+publish the measured constants according to our data.
+
+** Measurement automation
+*** Current status						       :logs:
+The automation software is nearly complete. I've designed it as a
+state machine that follows the states and transitions shown below:
+
+[[file:img/measurement_automation.png]]
+
+It's not yet clear whether or not the /crystal cleaning/ state can be
+used to also eject non-N2/Ca ions that contaminate the crystal. If so,
+then for the most part the /crystal cleaning/ can replace the /eject
+ions/ (except in the case where we've loaded too many ions).
+
+The parts of the software that still need programming are the parts
+that control lasers and other hardware, as we don't yet know the exact
+layout, but there are placeholder VIs in those places that can be
+swapped out when required. The other part that has not quite been
+finished is the autocorrelation calculation. 
+
+*** Autocorrelation calculation					       :logs:
+The autocorrelation calculation will probably be made using a
+variation of Wolfgang's original code for that purpose. The variation
+is Hiroki's, where he has factored Wolfgang's single, multi-purpose
+function into many smaller functions that achieve different parts of
+the correlation process.
+
+Right now the FFT is calculated using a LabVIEW VI, but it might be
+necessary to use a c dll for speed. 
+
+At one point, I tried running the FFT with a python script on an old
+set of data, but it was painfully slow. It might not be fair to test
+it without also testing the c-code, and on the computer we aim to
+analyse on, but as a preliminary estimation, python is too slow.
+
 * Monday 1st
-** N2 photoionisation
+** N_{2} photoionisation
 *** Wavelength table						       :logs:
 For lab use, here is a table of the N_2 photoionisation transition
 wavelengths alongside the best dataset we obtained so far:
@@ -33,8 +90,9 @@ wavelengths alongside the best dataset we obtained so far:
 | $P_4$     |     237.110 |              474.22 |
 | $O_4$     |     237.135 |              474.27 |
 #+TBLFM: $3=2*$2
-Link to diagram:
-[[file:N2PI/scripts/n2_scan18.png][file:/N2PI/scripts/n2_scan18.png]]
+
+[[file:N2PI/scripts/n2_scan18.png][file:N2PI/scripts/n2_scan18.png]]
+
 
 * To do: Molecule lab 
 ** HOLD Photoionisation of N2					    :Nic:Amy:
@@ -42,10 +100,16 @@ Link to diagram:
 - <2013-07-01 Mon>
 Draw up diagram with our options, write-up including selection rules
 (see Matthias).
+- <2013-07-31 Wed>
+Some notes are in my logbook - need to write those up.
 *** HOLD Replace damaged optical elements in laser
 - <2013-06-21 Fri>
 Waiting on parts
-*** HOLD Build power supply for discriminator preamp
+*** DONE Build power supply for discriminator preamp
+- <2013-07-31 Wed> 
+Jack did this a couple of weeks ago, need to check whether or not that
+has made a significant difference to the drift, but will likely do
+this when we have fixed up the optical elements.
 *** HOLD Re-take spectra with better S-N
 ** HOLD Work on DACs for the new SCL				  :Nic:Kevin:
 *** HOLD Building boards
@@ -70,34 +134,56 @@ I/Os:
 ** TODO [#B] Code an automation program for experiments		  :Nic:Kevin:
 *** TODO [#B] Fast autocorrelation calculation
 - <2013-04-09 Tue>
-[ ] Try using CUDA for a fast autocorrelation calculation |
+[X] Try using CUDA for a fast autocorrelation calculation 
 - <2013-04-09 Tue>
 Maybe first just try using Wolfgang's code. It might just be fast
 enough on its own.
-*** HOLD [#C] Plan out experiment process
+- <2013-07-31 Wed>
+Hiroki has refactored Wolfgang's code into sub-functions and I'm now
+using his DLL. I tried running a few tests with python but it's really
+way too slow for large datasets.
+*** DONE Plan out experiment process
 - <2013-05-30 Thu>
 Waiting on Keving to collect some data on `phonon-laser' type
 amplification of the dipole force before we can decide on the exact
 experimental procedure. 
-*** HOLD [#C] Describe phonon laser trick in notes
+- <2013-07-31 Wed>
+This is more or less irrelevant. I've built the automation program
+around a design that doesn't much care what the measurement process
+is, which is really the only  main variable. 
+*** CNCL Describe phonon laser trick in notes
 - <2013-05-15 Wed>
 Check if I already have.
 - <2013-06-10 Mon>
 Only really required if it turns out to be usable. Waiting on Kevin's
 results. 
+- <2013-07-31 Wed>
+Not needed until the paper is written.
 ** TODO [#C] Simulations						:Nic:
-*** TODO [#C] N2 PI spectrum simulation
+*** DONE N2 PI spectrum simulation
 - <2013-06-21 Fri>
 Not currently matching for high rotational levels - contact Anthony
 McCaffery or Tim Softley for advice?
+- <2013-07-31 Wed>
+Chris Rennick has plotted these out for us nicely, see the log entry
+for today.
 *** TODO [#B] Single ion `heat-engine' effect
 - <2013-05-30 Thu>
 Does the oscillation have something to do with a kind of `parametric'
 excitation from the laser pressure - Perhaps the ion only feels force
 from the laser when it is at the edges of its oscillation (no Doppler
 shift).
-*** TODO [#B] Hanle dip/b-field map simulation
-**** TODO [#C] Fluorescence as a function of B-field for different light pol.
+- <2013-07-31 Wed>
+Still working on this, but got the dipole force nearly in
+properly. Need to compare ways of calculating dipole force to make
+sure they agree. If we don't see the effect with a 1D model, then
+maybe we need to think about a 3D model (which Matthias reckons is the
+only model that should fit). 
+*** HOLD [#B] Hanle dip/b-field map simulation
+- <2013-07-31 Wed>
+Waiting on Kevin to make some measurements to see if they match my
+simulations. 
+**** HOLD [#C] Fluorescence as a function of B-field for different light pol.
 - <2013-06-21 Fri>
 Done for now, need to talk about Matthias about results seen.
 - <2013-07-01 Mon>
@@ -113,9 +199,11 @@ we're going to try and take works well. This idea is on hold until
 more work is done there.
 
 * To do: General
-** HOLD Pseudopotential calculations for Oxford
+** DONE Pseudopotential calculations for Oxford
 - <2013-06-07 Fri>
 Sent to Laura, awaiting feedback on usage.
+- <2013-07-31 Wed>
+Laura and Chris used these succesfully.
 ** HOLD Find submissions for ITCM-Sussex.com
 - <2012-11-13 Tue>
 Matthias has reminded us to look through the old website for these.
@@ -202,7 +290,10 @@ Theory club is offset by +4.
 <2013-07-01 Mon>
 Happy with the current webpage I'm outputting using just CSS.
 ** TODO Illustrate hydrogen wavefunctions in POV-ray
-- <2013-05-24 Fri>
+- <2013-07-31 Wed>
+Not working nicely, haven't figured out how to render a good image
+yet, let alone ways to use absorptive media to represent the negative
+wavefunction. 
 ** DONE Move ISA
 - <2013-04-24 Wed>
 Check Guardian article on cooperative banks
