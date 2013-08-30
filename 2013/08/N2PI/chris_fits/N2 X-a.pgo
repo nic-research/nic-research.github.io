@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Mixture Version="Pgopher 6.0.113 22 Jul 2009 18:32" ShowFortrat="True">
+  <Species Name="Species" Jmax="100">
+    <LinearMolecule Name="N2" Symmetric="True" SymWt="2">
+      <LinearManifold Name="X" Initial="True">
+        <Linear Name="v=0">
+          <Parameter Name="Origin" Value="1175.704"/>
+          <Parameter Name="B" Value="1.98958"/>
+          <Parameter Name="D" Value="5.76E-6"/>
+        </Linear>
+      </LinearManifold>
+      <LinearManifold Name="a">
+        <Linear Name="v=10" Lambda="Pi">
+          <Parameter Name="Origin" Value="85534.2828"/>
+          <Parameter Name="B" Value="1.4254"/>
+          <Parameter Name="D" Value="5.89E-6"/>
+        </Linear>
+      </LinearManifold>
+      <TransitionMoments Bra="a" Ket="X">
+        <SphericalTransitionMoment Rank="4" Bra="v=10" Ket="v=0"/>
+      </TransitionMoments>
+    </LinearMolecule>
+  </Species>
+  <Parameter Name="Gaussian" Value="0.9"/>
+  <Parameter Name="Foffset" Value="-13.239"/>
+  <Parameter Name="Temperature" Value="100"/>
+  <Parameter Name="Fmin" Value="84315.6757838265"/>
+  <Parameter Name="Fmax" Value="84393.7659308848"/>
+  <FormSettings Name="ConstantsWindow" ActiveObject="LinearMolecule: Species - LinearMolecule"/>
+  <FormSettings Name="OverlayWindow" ActiveObject="ExperimentalPlot: n2_scan19.ovr - n2_scan19.ovr"/>
+  <FormSettings Name="LevelWindow">
+    <Parameter Name="Ymax" Value="90379.72"/>
+    <Parameter Name="Ymin" Value="-3072.11"/>
+  </FormSettings>
+  <FormSettings Name="StatesWindow" Symmetry="e"/>
+</Mixture>

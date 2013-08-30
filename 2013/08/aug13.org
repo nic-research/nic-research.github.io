@@ -1,0 +1,228 @@
+#+TITLE: Research notes: July 2013
+#+AUTHOR: N. Seymour-Smith
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL HOLD
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+
+
+* Friday 30th
+** Autocorrelation DLLs						       :logs:
+I finished adapting Wolfgang and Hiroki's version of the
+autocorrelation dlls for our purposes. 
+
+Wolfgang's original was an all-in-one function that took a binary or
+ascii list file from the hard-disk, and processed it to give a
+cross-correlation and the FFT of that. In order to get an
+autocorrelation one would have to pass the same signal to both inputs
+of the cross-correlation.
+
+Hiroki's DLL split apart that code into separate functions that read
+the file, extracted the header and data for processing, and evaluated
+the cross-correlation by a couple of different means. Also included is
+a wrapper function that calls these in sequence to achieve the same
+result as Wolfgang's (except without the FFT, since it was not needed
+for Hiroki's purposes).
+
+My DLL was required to take data straight from memory and process an
+autocorrelation and FFT to extract the frequency and amplitude of
+oscillation of a signal. This doesn't require processing the header or
+the data from file (since I already have header information from
+settings in the calling VI), and therefore I stripped those from my
+DLL. Furthermore, I made my code less general (a good idea?), by
+making it an explicit auto-correlation function with only one signal
+input. In principle this should save us time copying the data arrays
+over for the second input. 
+
+One issue with this is that Wolfgang's original correlation code
+relies on the data being in list-file format (i.e. a list of
+timestamps), whereas live data from the p7888 comes in as a histogram
+of arrival times. FastComTec have a dll that we could use to access
+list data directly from the card, but they won't give it to us unless
+we buy an unrelated SDK. However I have written a dll in c++ that
+takes in a spectrum and spits out a list file for that purpose, and
+rolled that into the vi that processes the autocorrelation and
+FFT. There is an issue here with very long measurement times (up to
+1~s expected by Kevin) and memory-size and efficiency of processing
+the spectrum to a list file, but as long as we keep the binwidth
+relatively high, we should still be okay.
+
+The DLLs are included in [[file:automation_dlls][this]] link.
+
+** The plan							       :logs:
+Having completed the autocorrelation component of the automation, and
+the general body of the infrastructure. All that remains is to
+incorporate application-specific VIs such as Ca+ loading, N2+ loading,
+state-detection and crystal cleaning. From what I understand Amy and
+Kevin have already written VIs for Ca+ and N2+ loading, which can be
+dropped into the automation software. They are also now working on
+crystal cleaning, and it's not too far off. 
+
+Since I'm leaving soon, I need to be handing over my knowledge of the
+automation VI to Amy. As such, I will be testing it to make sure the
+core functionality is there from next week, on Kevin's trap. Once the
+bugs are ironed out, I'll be working with Amy so that she knows the
+ins and outs and can make her own adjustments when necessary. 
+
+I will also be speaking with Will and Amy about the programming for
+the dlls so that they can build their own and make adjustments. 
+
+Lastly, Matthias wants me to make a general overview of the core
+skills required in the lab so that he can be sure we plan out
+handovers like this in the future.
+
+* To do: Molecule lab 
+** TODO Interferometer							:Nic:
+*** TODO Re-optimise around trap
+*** TODO Check chromatic abberation
+** TODO Photoionisation of N2					    :Nic:Amy:
+*** TODO Explain photoionisation process
+- <2013-07-01 Mon>
+Draw up diagram with our options, write-up including selection rules
+(see Matthias).
+- <2013-07-31 Wed>
+Some notes are in my logbook - need to write those up.
+*** DONE Replace damaged optical elements in laser
+- <2013-06-21 Fri>
+Waiting on parts
+- <2013-08-06 Tue>
+Parts arrived last week. They will be replaced next time the dye is
+changed. This is more or less handed over to Amy however.
+*** TODO Re-take spectra with better S-N
+** CNCL Work on DACs for the new SCL				  :Nic:Kevin:
+- <2013-08-28 Wed>
+Not going to get time to do these before I leave, I think.
+*** CNCL Building boards
+- <2013-01-25 Fri> Matthias has the plans:
+Pester him for them.
+- <2013-01-31 Thu> Received:
+Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+- <2013-02-04 Mon> Matthias is making the boards:
+Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+- <2013-02-04 Mon> Pins used:
+Check with Matthias that his design has incorporated these pins as
+I/Os:
++ Port D: RD8 (peak detect input), RD5 (CN_interrupt)
++ U2RX pins, unless he's already designed these away
+*** CNCL Programming
+**** TODO Write SPI library for PIC comms with computer
+**** TODO Write SPI library for PIC comms with DAC
+
+** TODO [#B] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO [#A] Fast autocorrelation calculation
+- <2013-04-09 Tue>
+[X] Try using CUDA for a fast autocorrelation calculation 
+- <2013-04-09 Tue>
+Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+- <2013-07-31 Wed>
+Hiroki has refactored Wolfgang's code into sub-functions and I'm now
+using his DLL. I tried running a few tests with python but it's really
+way too slow for large datasets.
+- <2013-08-28 Wed>
+I've managed to make this work for a test data set in ascii using my
+own dll extracted from Wolfgang and Hiroki's code. It should speed up
+once I make it use binary data.
+*** CNCL Describe phonon laser trick in notes
+- <2013-05-15 Wed>
+Check if I already have.
+- <2013-06-10 Mon>
+Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+- <2013-07-31 Wed>
+Not needed until the paper is written.
+** TODO [#C] Simulations						:Nic:
+*** TODO [#B] Single ion `heat-engine' effect
+- <2013-05-30 Thu>
+Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+- <2013-07-31 Wed>
+Still working on this, but got the dipole force nearly in
+properly. Need to compare ways of calculating dipole force to make
+sure they agree. If we don't see the effect with a 1D model, then
+maybe we need to think about a 3D model (which Matthias reckons is the
+only model that should fit). 
+- <2013-08-30 Fri>
+Matthias and I have agreed that I should refactor this general
+simulation code so that it is clean and legible, then hand it over to
+one of the students before I go. We've decided this should be Will. I
+will find the time to do this, probably after handing over the
+automation software to Amy.
+
+*** HOLD [#B] Hanle dip/b-field map simulation
+- <2013-07-31 Wed>
+Waiting on Kevin to make some measurements to see if they match my
+simulations. 
+**** HOLD [#C] Fluorescence as a function of B-field for different light pol.
+- <2013-06-21 Fri>
+Done for now, need to talk about Matthias about results seen.
+- <2013-07-01 Mon>
+Need to find a way of combining maps from different polarisations and
+directions to give independent B-field direction data.
+*** HOLD [#C] One or two calcium ions
+- <2013-03-22 Fri>
+Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+- <2013-05-28 Tue>
+This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+
+* To do: General
+** Ideas
+*** Lighting rigs and pulse generators
+Can the pulse generator Matthias designed be used for programming
+lighting rigs? Ask Gaz.
+** TODO [#B] Job application research				   :noexport:
+*** DONE Drewsen group
+*** TODO Innsbruck group
+*** TODO Munich group
+* Meetings							   :noexport:
+* Journal & Theory club						   :noexport:
+** Rota
+- Nic
+- Stephen
+- Amy
+- Hiroki
+- Jack
+- Michael
+- Kevin
+- Markus
+Theory club is offset by +4.
+** Papers to look at
+*** DONE [12-10-2012]  Cold molecular reactions with quadrupole guide
+*** TODO Brian Odom's manuscript
+*** TODO Koehl's Dipole trap + ion trap
+*** TODO Wielitsch's MOT + ion trap
+*** TODO <2012-11-06 Tue> Michael Koehl's latest on arXiv (last Friday)
+** General papers
+** Theory subjects
+*** TODO Applications for data analysis and simulation
+** Books
+- Molecular Quantum Mechanics, Aleins, Friedman
+
+* To do, non-work						   :noexport:
+** TODO Illustrate hydrogen wavefunctions in POV-ray
+- <2013-07-31 Wed>
+Not working nicely, haven't figured out how to render a good image
+yet, let alone ways to use absorptive media to represent the negative
+wavefunction. 
+** TODO Purchase 
+- Atomic physics text book
+- Thermodynamics text book
+- Quantum optics text book
+** TODO Dekatron
+- [ ] 555 timer input
+
+* Appendix							   :noexport:

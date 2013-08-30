@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Research notes: July 2013</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Research notes: July 2013"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-08-30 16:57:51 BST"/>
+<meta name="author" content="N. Seymour-Smith"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Research notes: July 2013</h1>
+
+
+<hr>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Friday 30th</a>
+<ul>
+<li><a href="#sec-1-1">Autocorrelation DLLs</a></li>
+<li><a href="#sec-1-2">The plan</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">To do: Molecule lab</a>
+<ul>
+<li><a href="#sec-2-1">Interferometer</a>
+<ul>
+<li><a href="#sec-2-1-1">Re-optimise around trap</a></li>
+<li><a href="#sec-2-1-2">Check chromatic abberation</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">Photoionisation of N2</a>
+<ul>
+<li><a href="#sec-2-2-1">Explain photoionisation process</a></li>
+<li><a href="#sec-2-2-2">Replace damaged optical elements in laser</a></li>
+<li><a href="#sec-2-2-3">Re-take spectra with better S-N</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">Work on DACs for the new SCL</a>
+<ul>
+<li><a href="#sec-2-3-1">Building boards</a></li>
+<li><a href="#sec-2-3-2">Programming</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-4">Code an automation program for experiments</a>
+<ul>
+<li><a href="#sec-2-4-1">Fast autocorrelation calculation</a></li>
+<li><a href="#sec-2-4-2">Describe phonon laser trick in notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-5">Simulations</a>
+<ul>
+<li><a href="#sec-2-5-1">Single ion `heat-engine' effect</a></li>
+<li><a href="#sec-2-5-2">Hanle dip/b-field map simulation</a></li>
+<li><a href="#sec-2-5-3">One or two calcium ions</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">To do: General</a>
+<ul>
+<li><a href="#sec-3-1">Ideas</a>
+<ul>
+<li><a href="#sec-3-1-1">Lighting rigs and pulse generators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Friday 30th</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Autocorrelation DLLs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>I finished adapting Wolfgang and Hiroki's version of the
+autocorrelation dlls for our purposes. 
+</p>
+<p>
+Wolfgang's original was an all-in-one function that took a binary or
+ascii list file from the hard-disk, and processed it to give a
+cross-correlation and the FFT of that. In order to get an
+autocorrelation one would have to pass the same signal to both inputs
+of the cross-correlation.
+</p>
+<p>
+Hiroki's DLL split apart that code into separate functions that read
+the file, extracted the header and data for processing, and evaluated
+the cross-correlation by a couple of different means. Also included is
+a wrapper function that calls these in sequence to achieve the same
+result as Wolfgang's (except without the FFT, since it was not needed
+for Hiroki's purposes).
+</p>
+<p>
+My DLL was required to take data straight from memory and process an
+autocorrelation and FFT to extract the frequency and amplitude of
+oscillation of a signal. This doesn't require processing the header or
+the data from file (since I already have header information from
+settings in the calling VI), and therefore I stripped those from my
+DLL. Furthermore, I made my code less general (a good idea?), by
+making it an explicit auto-correlation function with only one signal
+input. In principle this should save us time copying the data arrays
+over for the second input. 
+</p>
+<p>
+One issue with this is that Wolfgang's original correlation code
+relies on the data being in list-file format (i.e. a list of
+timestamps), whereas live data from the p7888 comes in as a histogram
+of arrival times. FastComTec have a dll that we could use to access
+list data directly from the card, but they won't give it to us unless
+we buy an unrelated SDK. However I have written a dll in c++ that
+takes in a spectrum and spits out a list file for that purpose, and
+rolled that into the vi that processes the autocorrelation and
+FFT. There is an issue here with very long measurement times (up to
+1~s expected by Kevin) and memory-size and efficiency of processing
+the spectrum to a list file, but as long as we keep the binwidth
+relatively high, we should still be okay.
+</p>
+<p>
+The DLLs are included in <a href="automation_dlls">this</a> link.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">The plan &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>Having completed the autocorrelation component of the automation, and
+the general body of the infrastructure. All that remains is to
+incorporate application-specific VIs such as Ca+ loading, N2+ loading,
+state-detection and crystal cleaning. From what I understand Amy and
+Kevin have already written VIs for Ca+ and N2+ loading, which can be
+dropped into the automation software. They are also now working on
+crystal cleaning, and it's not too far off. 
+</p>
+<p>
+Since I'm leaving soon, I need to be handing over my knowledge of the
+automation VI to Amy. As such, I will be testing it to make sure the
+core functionality is there from next week, on Kevin's trap. Once the
+bugs are ironed out, I'll be working with Amy so that she knows the
+ins and outs and can make her own adjustments when necessary. 
+</p>
+<p>
+I will also be speaking with Will and Amy about the programming for
+the dlls so that they can build their own and make adjustments. 
+</p>
+<p>
+Lastly, Matthias wants me to make a general overview of the core
+skills required in the lab so that he can be sure we plan out
+handovers like this in the future.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">To do: Molecule lab</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="todo TODO">TODO</span> Interferometer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="todo TODO">TODO</span> Re-optimise around trap</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2"><span class="todo TODO">TODO</span> Check chromatic abberation</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="todo TODO">TODO</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="todo TODO">TODO</span> Explain photoionisation process</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-01 Mon</span></span>
+</li>
+</ul>
+
+<p>Draw up diagram with our options, write-up including selection rules
+(see Matthias).
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Some notes are in my logbook - need to write those up.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="done DONE">DONE</span> Replace damaged optical elements in laser</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
+</li>
+</ul>
+
+<p>Waiting on parts
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-08-06 Tue</span></span>
+</li>
+</ul>
+
+<p>Parts arrived last week. They will be replaced next time the dye is
+changed. This is more or less handed over to Amy however.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3"><span class="todo TODO">TODO</span> Re-take spectra with better S-N</h4>
+<div class="outline-text-4" id="text-2-2-3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="done CNCL">CNCL</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-2-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-08-28 Wed</span></span>
+</li>
+</ul>
+
+<p>Not going to get time to do these before I leave, I think.
+</p>
+</div>
+
+<div id="outline-container-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="done CNCL">CNCL</span> Building boards</h4>
+<div class="outline-text-4" id="text-2-3-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
+</li>
+</ul>
+
+<p>Pester him for them.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-31 Thu</span></span> Received:
+</li>
+</ul>
+
+<p>Matthias sent them ages ago, but I didn't spot them in my mail. He's
+still yet to order the actual DACs though, so there's still time. I
+could make the boards however, in preparation.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Matthias is making the boards:
+</li>
+</ul>
+
+<p>Matthias is making the boards, I think it'll just be up to me to
+program the whole thing.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Pins used:
+</li>
+</ul>
+
+<p>Check with Matthias that his design has incorporated these pins as
+I/Os:
+</p><ul>
+<li>Port D: RD8 (peak detect input), RD5 (CN<sub>interrupt</sub>)
+</li>
+<li>U2RX pins, unless he's already designed these away
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="done CNCL">CNCL</span> Programming</h4>
+<div class="outline-text-4" id="text-2-3-2">
+
+<ul>
+<li id="sec-2-3-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-2-3-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-2-4">
+
+
+</div>
+
+<div id="outline-container-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation</h4>
+<div class="outline-text-4" id="text-2-4-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>[X] Try using CUDA for a fast autocorrelation calculation 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
+</li>
+</ul>
+
+<p>Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Hiroki has refactored Wolfgang's code into sub-functions and I'm now
+using his DLL. I tried running a few tests with python but it's really
+way too slow for large datasets.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-08-28 Wed</span></span>
+</li>
+</ul>
+
+<p>I've managed to make this work for a test data set in ascii using my
+own dll extracted from Wolfgang and Hiroki's code. It should speed up
+once I make it use binary data.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2"><span class="done CNCL">CNCL</span> Describe phonon laser trick in notes</h4>
+<div class="outline-text-4" id="text-2-4-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-15 Wed</span></span>
+</li>
+</ul>
+
+<p>Check if I already have.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-10 Mon</span></span>
+</li>
+</ul>
+
+<p>Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Not needed until the paper is written.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-2-5">
+
+
+</div>
+
+<div id="outline-container-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
+<div class="outline-text-4" id="text-2-5-1">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
+</li>
+</ul>
+
+<p>Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Still working on this, but got the dipole force nearly in
+properly. Need to compare ways of calculating dipole force to make
+sure they agree. If we don't see the effect with a 1D model, then
+maybe we need to think about a 3D model (which Matthias reckons is the
+only model that should fit). 
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-08-30 Fri</span></span>
+</li>
+</ul>
+
+<p>Matthias and I have agreed that I should refactor this general
+simulation code so that it is clean and legible, then hand it over to
+one of the students before I go. We've decided this should be Will. I
+will find the time to do this, probably after handing over the
+automation software to Amy.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-5-2" class="outline-4">
+<h4 id="sec-2-5-2"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
+<div class="outline-text-4" id="text-2-5-2">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
+</li>
+</ul>
+
+<p>Waiting on Kevin to make some measurements to see if they match my
+simulations. 
+</p><ul>
+<li id="sec-2-5-2-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
+</li>
+</ul>
+
+<p>Done for now, need to talk about Matthias about results seen.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-01 Mon</span></span>
+</li>
+</ul>
+
+<p>Need to find a way of combining maps from different polarisations and
+directions to give independent B-field direction data.
+</p></li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2-5-3" class="outline-4">
+<h4 id="sec-2-5-3"><span class="done HOLD">HOLD</span> One or two calcium ions</h4>
+<div class="outline-text-4" id="text-2-5-3">
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
+</li>
+</ul>
+
+<p>Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-28 Tue</span></span>
+</li>
+</ul>
+
+<p>This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">To do: General</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Ideas</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Lighting rigs and pulse generators</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>Can the pulse generator Matthias designed be used for programming
+lighting rigs? Ask Gaz.
+</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-08-30 16:57:51 BST</p>
+<p class="author">Author: N. Seymour-Smith</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
