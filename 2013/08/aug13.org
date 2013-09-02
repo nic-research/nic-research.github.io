@@ -179,7 +179,7 @@ This question is not important if the `phonon-laser'-like approach
 we're going to try and take works well. This idea is on hold until
 more work is done there.
 
-* To do: General
+* To do: General						   :noexport:
 ** Ideas
 *** Lighting rigs and pulse generators
 Can the pulse generator Matthias designed be used for programming
