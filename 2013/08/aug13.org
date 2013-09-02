@@ -53,7 +53,7 @@ FFT. There is an issue here with very long measurement times (up to
 the spectrum to a list file, but as long as we keep the binwidth
 relatively high, we should still be okay.
 
-The DLLs are included in [[file:automation_dlls][this]] link.
+The DLLs can be found [[https://github.com/nic-research/nic-research.github.io/tree/master/2013/08/automation_dlls][here]].
 
 ** The plan							       :logs:
 Having completed the autocorrelation component of the automation, and
