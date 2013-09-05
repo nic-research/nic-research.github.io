@@ -1,0 +1,173 @@
+#+TITLE: Research notes: September 2013
+#+AUTHOR: N. Seymour-Smith
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL HOLD
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+
+
+* Thursday 5th
+** General simulations rewrite					       :logs:
+As per the plan (only entry in August), I have cleaned up all my
+Matlab simulations for spectra and molecular dynamics. Simulations
+that use the quantum optics toolbox now all use external scripts to
+compose the various components of the Liouvillian that are
+relevant. Putting together the final Liouvillian is left in the main
+body of code, as is any actual MD or simple-harmonic motion
+simulations, since that is the real meat of any of these codes. 
+
+The old molecular dynamics codes have been cleaned up and
+redundant/obsolete versions moved into labelled folders. Also, most
+simulations have been separated into scripts labelled with either
+"_MD" or "_SHO", which denote whether the mechanics are regular
+newtonian molecular dynamics or simple-harmonic oscillator,
+respectively. 
+
+** Inconsistency in Heat Engine simulation solved, still no oscillation :logs:
+At some point I probably wrote a log stating that there was an
+inconsistency in the population of the excited state during my
+heat-engine simulation when compared with my simple spectroscopy
+simulation. I found the inconsistency was in how I calculated the Rabi
+frequency of the repumper laser. This has now been fixed across all
+simulations, and results are consistent. 
+
+This has allowed me to use the spectroscopy simulation to pick good
+parameters for the heat-engine simulation, and determine that there is
+indeed very little, or no, contribution to the ion motion coming from
+the dipole force in the 1D regime. 
+
+The next step is to add a second dimension to the simulation, which
+shouldn't be too difficult, but might have to be done over the next
+week at the conference.
+
+* To do: Molecule lab 
+** TODO Interferometer							:Nic:
+*** TODO Re-optimise around trap
+*** TODO Check chromatic abberation
+** TODO Photoionisation of N2					    :Nic:Amy:
+*** TODO Explain photoionisation process
+- <2013-07-01 Mon>
+Draw up diagram with our options, write-up including selection rules
+(see Matthias).
+- <2013-07-31 Wed>
+Some notes are in my logbook - need to write those up.
+*** DONE Replace damaged optical elements in laser
+- <2013-06-21 Fri>
+Waiting on parts
+- <2013-08-06 Tue>
+Parts arrived last week. They will be replaced next time the dye is
+changed. This is more or less handed over to Amy however.
+*** TODO Re-take spectra with better S-N
+** TODO [#B] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO [#A] Fast autocorrelation calculation
+- <2013-04-09 Tue>
+[X] Try using CUDA for a fast autocorrelation calculation 
+- <2013-04-09 Tue>
+Maybe first just try using Wolfgang's code. It might just be fast
+enough on its own.
+- <2013-07-31 Wed>
+Hiroki has refactored Wolfgang's code into sub-functions and I'm now
+using his DLL. I tried running a few tests with python but it's really
+way too slow for large datasets.
+- <2013-08-28 Wed>
+I've managed to make this work for a test data set in ascii using my
+own dll extracted from Wolfgang and Hiroki's code. It should speed up
+once I make it use binary data.
+*** CNCL Describe phonon laser trick in notes
+- <2013-05-15 Wed>
+Check if I already have.
+- <2013-06-10 Mon>
+Only really required if it turns out to be usable. Waiting on Kevin's
+results. 
+- <2013-07-31 Wed>
+Not needed until the paper is written.
+** TODO [#C] Simulations						:Nic:
+*** TODO [#B] Single ion `heat-engine' effect
+- <2013-05-30 Thu>
+Does the oscillation have something to do with a kind of `parametric'
+excitation from the laser pressure - Perhaps the ion only feels force
+from the laser when it is at the edges of its oscillation (no Doppler
+shift).
+- <2013-07-31 Wed>
+Still working on this, but got the dipole force nearly in
+properly. Need to compare ways of calculating dipole force to make
+sure they agree. If we don't see the effect with a 1D model, then
+maybe we need to think about a 3D model (which Matthias reckons is the
+only model that should fit). 
+- <2013-08-30 Fri>
+Matthias and I have agreed that I should refactor this general
+simulation code so that it is clean and legible, then hand it over to
+one of the students before I go. We've decided this should be Will. I
+will find the time to do this, probably after handing over the
+automation software to Amy.
+- <2013-09-05 Thu>
+Code has been refactored and cleaned up along with the rest. Time to
+add a second dimension the simulation and see if that gives us the
+effect we see in the trap.
+
+*** HOLD [#B] Hanle dip/b-field map simulation
+- <2013-07-31 Wed>
+Waiting on Kevin to make some measurements to see if they match my
+simulations. 
+**** HOLD [#C] Fluorescence as a function of B-field for different light pol.
+- <2013-06-21 Fri>
+Done for now, need to talk about Matthias about results seen.
+- <2013-07-01 Mon>
+Need to find a way of combining maps from different polarisations and
+directions to give independent B-field direction data.
+*** CNCL [#C] One or two calcium ions
+- <2013-03-22 Fri>
+Although an extra ion will reduce the acceleration of the crystal due
+to the dipole force, is the increase in signal a good trade-off?
+- <2013-05-28 Tue>
+This question is not important if the `phonon-laser'-like approach
+we're going to try and take works well. This idea is on hold until
+more work is done there.
+- <2013-09-05 Thu>
+Not going to be time for this, and probably not neccessary.
+
+* To do: General						   :noexport:
+* Meetings							   :noexport:
+** Journal & Theory Club Rota
+==========ROTA===========
+Markus
+Jack
+Nic
+Ezra
+Sahar
+Stephen
+Kevin
+Hiroki
+Amy
+Will
+Matthias (only biscuits)
+===========END===========
+* To do, non-work						   :noexport:
+** HOLD Illustrate hydrogen wavefunctions in POV-ray
+- <2013-07-31 Wed>
+Not working nicely, haven't figured out how to render a good image
+yet, let alone ways to use absorptive media to represent the negative
+wavefunction. 
+** Ideas
+*** Lighting rigs and pulse generators
+Can the pulse generator Matthias designed be used for programming
+lighting rigs? Ask Gaz.
+*** Use binary light encoding on phone displays to interface with hardware
+
+** TODO Purchase 
+- Atomic physics text book
+- Thermodynamics text book
+- Quantum optics text book
+** TODO Dekatron
+- [ ] 555 timer input
+
+** TODO Phone-plugin for mobile/VOIP
+** TODO Contact with Tom's employer for work
+** TODO Speak with Matthias about approach to product
+* Appendix 							   :noexport:

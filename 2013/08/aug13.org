@@ -1,4 +1,4 @@
-#+TITLE: Research notes: July 2013
+#+TITLE: Research notes: August 2013
 #+AUTHOR: N. Seymour-Smith
 #Org-mode options here:
 #+TODO: TODO | DONE CNCL HOLD

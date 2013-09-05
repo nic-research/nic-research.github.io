@@ -3,11 +3,11 @@
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Research notes: August 2013</title>
+<title>Research notes: September 2013</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="Research notes: August 2013"/>
+<meta name="title" content="Research notes: September 2013"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-09-02 14:55:23 BST"/>
+<meta name="generated" content="2013-09-05 14:38:29 BST"/>
 <meta name="author" content="N. Seymour-Smith"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -92,7 +92,7 @@
 </div>
 
 <div id="content">
-<h1 class="title">Research notes: August 2013</h1>
+<h1 class="title">Research notes: September 2013</h1>
 
 
 <hr>
@@ -103,10 +103,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Friday 30th</a>
+<li><a href="#sec-1">Thursday 5th</a>
 <ul>
-<li><a href="#sec-1-1">Autocorrelation DLLs</a></li>
-<li><a href="#sec-1-2">The plan</a></li>
+<li><a href="#sec-1-1">General simulations rewrite</a></li>
+<li><a href="#sec-1-2">Inconsistency in Heat Engine simulation solved, still no oscillation</a></li>
 </ul>
 </li>
 <li><a href="#sec-2">To do: Molecule lab</a>
@@ -124,23 +124,17 @@
 <li><a href="#sec-2-2-3">Re-take spectra with better S-N</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-3">Work on DACs for the new SCL</a>
+<li><a href="#sec-2-3">Code an automation program for experiments</a>
 <ul>
-<li><a href="#sec-2-3-1">Building boards</a></li>
-<li><a href="#sec-2-3-2">Programming</a></li>
+<li><a href="#sec-2-3-1">Fast autocorrelation calculation</a></li>
+<li><a href="#sec-2-3-2">Describe phonon laser trick in notes</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-4">Code an automation program for experiments</a>
+<li><a href="#sec-2-4">Simulations</a>
 <ul>
-<li><a href="#sec-2-4-1">Fast autocorrelation calculation</a></li>
-<li><a href="#sec-2-4-2">Describe phonon laser trick in notes</a></li>
-</ul>
-</li>
-<li><a href="#sec-2-5">Simulations</a>
-<ul>
-<li><a href="#sec-2-5-1">Single ion `heat-engine' effect</a></li>
-<li><a href="#sec-2-5-2">Hanle dip/b-field map simulation</a></li>
-<li><a href="#sec-2-5-3">One or two calcium ions</a></li>
+<li><a href="#sec-2-4-1">Single ion `heat-engine' effect</a></li>
+<li><a href="#sec-2-4-2">Hanle dip/b-field map simulation</a></li>
+<li><a href="#sec-2-4-3">One or two calcium ions</a></li>
 </ul>
 </li>
 </ul>
@@ -150,93 +144,57 @@
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Friday 30th</h2>
+<h2 id="sec-1">Thursday 5th</h2>
 <div class="outline-text-2" id="text-1">
 
 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Autocorrelation DLLs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<h3 id="sec-1-1">General simulations rewrite &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>I finished adapting Wolfgang and Hiroki's version of the
-autocorrelation dlls for our purposes. 
+<p>As per the plan (only entry in August), I have cleaned up all my
+Matlab simulations for spectra and molecular dynamics. Simulations
+that use the quantum optics toolbox now all use external scripts to
+compose the various components of the Liouvillian that are
+relevant. Putting together the final Liouvillian is left in the main
+body of code, as is any actual MD or simple-harmonic motion
+simulations, since that is the real meat of any of these codes. 
 </p>
 <p>
-Wolfgang's original was an all-in-one function that took a binary or
-ascii list file from the hard-disk, and processed it to give a
-cross-correlation and the FFT of that. In order to get an
-autocorrelation one would have to pass the same signal to both inputs
-of the cross-correlation.
-</p>
-<p>
-Hiroki's DLL split apart that code into separate functions that read
-the file, extracted the header and data for processing, and evaluated
-the cross-correlation by a couple of different means. Also included is
-a wrapper function that calls these in sequence to achieve the same
-result as Wolfgang's (except without the FFT, since it was not needed
-for Hiroki's purposes).
-</p>
-<p>
-My DLL was required to take data straight from memory and process an
-autocorrelation and FFT to extract the frequency and amplitude of
-oscillation of a signal. This doesn't require processing the header or
-the data from file (since I already have header information from
-settings in the calling VI), and therefore I stripped those from my
-DLL. Furthermore, I made my code less general (a good idea?), by
-making it an explicit auto-correlation function with only one signal
-input. In principle this should save us time copying the data arrays
-over for the second input. 
-</p>
-<p>
-One issue with this is that Wolfgang's original correlation code
-relies on the data being in list-file format (i.e. a list of
-timestamps), whereas live data from the p7888 comes in as a histogram
-of arrival times. FastComTec have a dll that we could use to access
-list data directly from the card, but they won't give it to us unless
-we buy an unrelated SDK. However I have written a dll in c++ that
-takes in a spectrum and spits out a list file for that purpose, and
-rolled that into the vi that processes the autocorrelation and
-FFT. There is an issue here with very long measurement times (up to
-1~s expected by Kevin) and memory-size and efficiency of processing
-the spectrum to a list file, but as long as we keep the binwidth
-relatively high, we should still be okay.
-</p>
-<p>
-The DLLs can be found <a href="https://github.com/nic-research/nic-research.github.io/tree/master/2013/08/automation_dlls">here</a>.
+The old molecular dynamics codes have been cleaned up and
+redundant/obsolete versions moved into labelled folders. Also, most
+simulations have been separated into scripts labelled with either
+"<sub>MD</sub>" or "<sub>SHO</sub>", which denote whether the mechanics are regular
+newtonian molecular dynamics or simple-harmonic oscillator,
+respectively. 
 </p>
 </div>
 
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">The plan &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<h3 id="sec-1-2">Inconsistency in Heat Engine simulation solved, still no oscillation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>Having completed the autocorrelation component of the automation, and
-the general body of the infrastructure. All that remains is to
-incorporate application-specific VIs such as Ca+ loading, N2+ loading,
-state-detection and crystal cleaning. From what I understand Amy and
-Kevin have already written VIs for Ca+ and N2+ loading, which can be
-dropped into the automation software. They are also now working on
-crystal cleaning, and it's not too far off. 
+<p>At some point I probably wrote a log stating that there was an
+inconsistency in the population of the excited state during my
+heat-engine simulation when compared with my simple spectroscopy
+simulation. I found the inconsistency was in how I calculated the Rabi
+frequency of the repumper laser. This has now been fixed across all
+simulations, and results are consistent. 
 </p>
 <p>
-Since I'm leaving soon, I need to be handing over my knowledge of the
-automation VI to Amy. As such, I will be testing it to make sure the
-core functionality is there from next week, on Kevin's trap. Once the
-bugs are ironed out, I'll be working with Amy so that she knows the
-ins and outs and can make her own adjustments when necessary. 
+This has allowed me to use the spectroscopy simulation to pick good
+parameters for the heat-engine simulation, and determine that there is
+indeed very little, or no, contribution to the ion motion coming from
+the dipole force in the 1D regime. 
 </p>
 <p>
-I will also be speaking with Will and Amy about the programming for
-the dlls so that they can build their own and make adjustments. 
-</p>
-<p>
-Lastly, Matthias wants me to make a general overview of the core
-skills required in the lab so that he can be sure we plan out
-handovers like this in the future.
+The next step is to add a second dimension to the simulation, which
+shouldn't be too difficult, but might have to be done over the next
+week at the conference.
 </p>
 </div>
 </div>
@@ -333,89 +291,15 @@ changed. This is more or less handed over to Amy however.
 </div>
 
 <div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="done CNCL">CNCL</span> Work on DACs for the new SCL &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<h3 id="sec-2-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
 <div class="outline-text-3" id="text-2-3">
 
-<ul>
-<li><span class="timestamp-wrapper"> <span class="timestamp">2013-08-28 Wed</span></span>
-</li>
-</ul>
 
-<p>Not going to get time to do these before I leave, I think.
-</p>
 </div>
 
 <div id="outline-container-2-3-1" class="outline-4">
-<h4 id="sec-2-3-1"><span class="done CNCL">CNCL</span> Building boards</h4>
+<h4 id="sec-2-3-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation</h4>
 <div class="outline-text-4" id="text-2-3-1">
-
-<ul>
-<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-25 Fri</span></span> Matthias has the plans:
-</li>
-</ul>
-
-<p>Pester him for them.
-</p><ul>
-<li><span class="timestamp-wrapper"> <span class="timestamp">2013-01-31 Thu</span></span> Received:
-</li>
-</ul>
-
-<p>Matthias sent them ages ago, but I didn't spot them in my mail. He's
-still yet to order the actual DACs though, so there's still time. I
-could make the boards however, in preparation.
-</p><ul>
-<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Matthias is making the boards:
-</li>
-</ul>
-
-<p>Matthias is making the boards, I think it'll just be up to me to
-program the whole thing.
-</p><ul>
-<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-04 Mon</span></span> Pins used:
-</li>
-</ul>
-
-<p>Check with Matthias that his design has incorporated these pins as
-I/Os:
-</p><ul>
-<li>Port D: RD8 (peak detect input), RD5 (CN<sub>interrupt</sub>)
-</li>
-<li>U2RX pins, unless he's already designed these away
-</li>
-</ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-2-3-2" class="outline-4">
-<h4 id="sec-2-3-2"><span class="done CNCL">CNCL</span> Programming</h4>
-<div class="outline-text-4" id="text-2-3-2">
-
-<ul>
-<li id="sec-2-3-2-1"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with computer<br/>
-</li>
-</ul>
-<ul>
-<li id="sec-2-3-2-2"><span class="todo TODO">TODO</span> Write SPI library for PIC comms with DAC<br/>
-
-</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
-<div class="outline-text-3" id="text-2-4">
-
-
-</div>
-
-<div id="outline-container-2-4-1" class="outline-4">
-<h4 id="sec-2-4-1"><span class="todo TODO">TODO</span> Fast autocorrelation calculation</h4>
-<div class="outline-text-4" id="text-2-4-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-04-09 Tue</span></span>
@@ -450,9 +334,9 @@ once I make it use binary data.
 
 </div>
 
-<div id="outline-container-2-4-2" class="outline-4">
-<h4 id="sec-2-4-2"><span class="done CNCL">CNCL</span> Describe phonon laser trick in notes</h4>
-<div class="outline-text-4" id="text-2-4-2">
+<div id="outline-container-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="done CNCL">CNCL</span> Describe phonon laser trick in notes</h4>
+<div class="outline-text-4" id="text-2-3-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-15 Wed</span></span>
@@ -478,16 +362,16 @@ results.
 
 </div>
 
-<div id="outline-container-2-5" class="outline-3">
-<h3 id="sec-2-5"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-2-4">
 
 
 </div>
 
-<div id="outline-container-2-5-1" class="outline-4">
-<h4 id="sec-2-5-1"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
-<div class="outline-text-4" id="text-2-5-1">
+<div id="outline-container-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
+<div class="outline-text-4" id="text-2-4-1">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-05-30 Thu</span></span>
@@ -518,14 +402,22 @@ simulation code so that it is clean and legible, then hand it over to
 one of the students before I go. We've decided this should be Will. I
 will find the time to do this, probably after handing over the
 automation software to Amy.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-09-05 Thu</span></span>
+</li>
+</ul>
+
+<p>Code has been refactored and cleaned up along with the rest. Time to
+add a second dimension the simulation and see if that gives us the
+effect we see in the trap.
 </p>
 </div>
 
 </div>
 
-<div id="outline-container-2-5-2" class="outline-4">
-<h4 id="sec-2-5-2"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
-<div class="outline-text-4" id="text-2-5-2">
+<div id="outline-container-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
+<div class="outline-text-4" id="text-2-4-2">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-31 Wed</span></span>
@@ -535,7 +427,7 @@ automation software to Amy.
 <p>Waiting on Kevin to make some measurements to see if they match my
 simulations. 
 </p><ul>
-<li id="sec-2-5-2-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
+<li id="sec-2-4-2-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
 </li>
@@ -555,9 +447,9 @@ directions to give independent B-field direction data.
 
 </div>
 
-<div id="outline-container-2-5-3" class="outline-4">
-<h4 id="sec-2-5-3"><span class="done HOLD">HOLD</span> One or two calcium ions</h4>
-<div class="outline-text-4" id="text-2-5-3">
+<div id="outline-container-2-4-3" class="outline-4">
+<h4 id="sec-2-4-3"><span class="done CNCL">CNCL</span> One or two calcium ions</h4>
+<div class="outline-text-4" id="text-2-4-3">
 
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-22 Fri</span></span>
@@ -574,6 +466,12 @@ to the dipole force, is the increase in signal a good trade-off?
 <p>This question is not important if the `phonon-laser'-like approach
 we're going to try and take works well. This idea is on hold until
 more work is done there.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-09-05 Thu</span></span>
+</li>
+</ul>
+
+<p>Not going to be time for this, and probably not neccessary.
 </p>
 </div>
 </div>
@@ -582,7 +480,7 @@ more work is done there.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-09-02 14:55:23 BST</p>
+<p class="date">Date: 2013-09-05 14:38:29 BST</p>
 <p class="author">Author: N. Seymour-Smith</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
