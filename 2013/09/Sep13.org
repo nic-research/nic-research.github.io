@@ -12,6 +12,123 @@
 #+END_HTML
 
 
+* Monday 23rd
+** Heat engine: Some success 					       :logs:
+As decided in the notes of the 5th of September, and suggested by
+Matthias, I have added a second dimension to the heat engine
+simulation. It was Matthias' opinion that there should be no
+oscillation without the second dimension, and indeed I could not find
+any self-starting oscillation under reasonable circumstances.
+
+After adding the second dimension and playing around with parameters,
+I did find that we get a self-starting oscillation of comparable
+amplitude to what we see in the experiment. The big caveat is that in
+order to see it, I had to artificially `amplify' the magnitude of the
+dipole force by x1000. I've had Matthias look over the code and he
+can't see an error in my calculation of the dipole force, so the
+source of this discrepancy is thus far a mystery. I think it might be
+helpful to get precise laser parameters for the experiment, in case
+this helps due to the different scaling of dipole force and radiation
+heating with the intensity and laser focus.
+
+** Heat engine: Properties 					       :logs:
+One set of parameters for the heat-engine effect are at the following
+link: [[file:test_params_XY.m][test_params_XY.m]]. These values are taken from those approximate
+values recorded by Kevin while observing the heat-engine effect.
+
+The relevant parameters for one test case are:
+
+#+BEGIN_SRC MATLAB
+% Axes and Angles:   
+% x = trap axis       (endcap-endcap)
+% y = cavity axis     (horizontal and perp. to x)
+% z = vertical axis   (up direction)
+
+% Trap frequency [axial; vertical] 
+omega = [240e3*2*pi; 1E6*2*pi]; 
+
+% Laser direction
+alpha = 85*deg;   % angle with trap axis in horizontal plane
+beta  = 0*deg;    % angle out of horizontal plane
+
+% Laser powers and spot sizes (SI)
+P_1 = 1E-4;
+waist1_0 = 50E-6;
+
+P_3 = 0; % Incoherent pumping used instead! (simulate 2-stage repumping)
+waist3_0 = 145E-6;
+
+%Position of focus of lasers on the trap axis (x)
+waist1_x = waist1_0/sin(alpha);
+waist1_y = waist1_0/cos(alpha);
+x_0 = -waist1_x*(4/4);  
+
+% Laser detunings (units of Gamma)
+Delta1 = -0.5;
+Delta3 = +10;
+
+% incoherent pumping 
+GammaPump1 = 0;
+GammaPump3 = 0.53;
+#+END_SRC
+
+This generates an oscillation, from standing, of order 100 um after
+around 1 ms. It should be noted that because the script must calculate
+the density matrix twice per loop (for two different positions to give
+the dipole-energy gradient), it is quite slow - every ms simulated
+takes approximately 10 minutes.
+
+The position of the focus of the laser in the above case is at the
+point of largest dipole force. When the laser is pointed more directly
+at the ion for a weaker force, the coherent oscillation diminishes, as
+expected and as confirmed by Kevin experimentally. However, in both
+cases there appears to be /some/ oscillation in both x and y
+directions, but with very small amplitude (probably undetectable in
+the experiment). 
+
+As the detuning is decreased from \Delta = -0.5 \Gamma to \Delta =
+0, the amplitude of coherent x-motion does not appear to change
+drastically. The time before the oscillation starts however, appears
+to be slightly longer for smaller detuning. I need to check with Kevin
+whether or not this is consistent with the experiment, as I was under
+the impression that the oscillation was somehow `improved' with
+smaller detuning.
+
+** Heat-engine y-temperature
+Matthias' explanation of the heat engine (as far as I understand it):
+
+1. A near-saturated ion is cooled by the laser beam and localised at a
+   point of high dipole force.
+
+2. The dipole force pushes the ion towards the higher-intensity region
+   of the laser beam, causing further saturation and less efficient
+   cooling. 
+
+3. The ion subsequently heats in the x and y directions, reducing the
+   average amplitude of the dipole force (that is the bit that I'm not
+   so sure is correct or clear).
+
+4. With a smaller dipole force on the ion, it moves back towards the
+   equilibrium position where the intensity is lower and the ion is
+   cooled again. From here the cycle repeats.
+
+Given this explanation, if we can calculate the temperature of the ion
+over time, it should oscillate with the frequency of the coherent
+motion. This is easiest to do in the y-direction, since we don't
+expect that there is such a large oscillation in that direction, and
+can take all motion contribution to temperature.
+
+Sure enough, if we take the temperature over time we can see an
+oscillation at the frequency of the x-motion. It is not clearly
+visible by eye, but with an FFT we see sidebands on the coherent
+y-motion at the \omega_x. Also, as the detuning is decreased from -0.5
+\Gamma to 0, we see the y-oscillation and the sidebands grow, and
+eventually we see a peak at the fundamental frequency \omega_x, rise
+out of the noise.
+
+I'll be talking to Matthias about further analysis in the meeting
+tomorrow, hopefully.
+
 * Thursday 5th
 ** General simulations rewrite					       :logs:
 As per the plan (only entry in August), I have cleaned up all my
@@ -47,10 +164,10 @@ shouldn't be too difficult, but might have to be done over the next
 week at the conference.
 
 * To do: Molecule lab 
-** TODO Interferometer							:Nic:
+** TODO [#C] Interferometer						:Nic:
 *** TODO Re-optimise around trap
 *** TODO Check chromatic abberation
-** TODO Photoionisation of N2					    :Nic:Amy:
+** TODO [#C] Photoionisation of N2				    :Nic:Amy:
 *** TODO Explain photoionisation process
 - <2013-07-01 Mon>
 Draw up diagram with our options, write-up including selection rules
@@ -64,8 +181,16 @@ Waiting on parts
 Parts arrived last week. They will be replaced next time the dye is
 changed. This is more or less handed over to Amy however.
 *** TODO Re-take spectra with better S-N
-** TODO [#B] Code an automation program for experiments		  :Nic:Kevin:
-*** TODO [#A] Fast autocorrelation calculation
+** TODO [#A] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO [#A] Incorporate Amy and Kevin's automation programs
+- <2013-09-23 Mon>
+Amy has e-mailed me the automation programs for loading Ca+,
+N2+ and for crystal cleaning. Need to work those into my automation vi.
+*** DONE Fast autocorrelation calculation
+- <2013-09-23 Mon>
+Had this done a while back, don't know why this entry hadn't been
+updated. will look for an entry on it and refer there, or if not
+found, write a new one.
 - <2013-04-09 Tue>
 [X] Try using CUDA for a fast autocorrelation calculation 
 - <2013-04-09 Tue>
@@ -88,7 +213,13 @@ results.
 - <2013-07-31 Wed>
 Not needed until the paper is written.
 ** TODO [#C] Simulations						:Nic:
-*** TODO [#B] Single ion `heat-engine' effect
+*** HOLD [#C] Single ion `heat-engine' effect
+- <2013-09-23 Mon>
+After refactoring we see the oscillation, but it's difficult to get a
+handle on the exact cause (and to confirm it's what Matthias says it
+is). I've programmed tools for analysis that someone else can look at
+after I've left. Automation of the molecule experiment is more
+important right now.
 - <2013-05-30 Thu>
 Does the oscillation have something to do with a kind of `parametric'
 excitation from the laser pressure - Perhaps the ion only feels force
