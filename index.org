@@ -11,6 +11,7 @@
 #+END_HTML
 
 * 2013 logs
+** [[file:2013/10/oct13.org][October]]
 ** [[file:2013/09/Sep13.html][September]]
 ** [[file:2013/08/aug13.html][August]]
 ** [[file:2013/07/jul13.html][July]]

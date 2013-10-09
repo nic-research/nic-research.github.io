@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Research notes: October 2013</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Research notes: October 2013"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-10-09 10:06:30 BST"/>
+<meta name="author" content="N. Seymour-Smith"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Research notes: October 2013</h1>
+
+
+<hr>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Wednesday 9th (First entry of October)</a>
+<ul>
+<li><a href="#sec-1-1">Heat engine: mistake spotted</a></li>
+<li><a href="#sec-1-2">Heat engine: correct layout</a></li>
+<li><a href="#sec-1-3">Measurement automation</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Wednesday 25th (Last entry of September)</a>
+<ul>
+<li><a href="#sec-2-1">Heat engine: Next steps</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">To do: Molecule lab</a>
+<ul>
+<li><a href="#sec-3-1">Interferometer</a>
+<ul>
+<li><a href="#sec-3-1-1">Re-optimise around trap</a></li>
+<li><a href="#sec-3-1-2">Check chromatic abberation</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">Photoionisation of N2</a>
+<ul>
+<li><a href="#sec-3-2-1">Explain photoionisation process</a></li>
+<li><a href="#sec-3-2-2">Re-take spectra with better S-N</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-3">Code an automation program for experiments</a>
+<ul>
+<li><a href="#sec-3-3-1">Test automation program</a></li>
+<li><a href="#sec-3-3-2">Incorporate Amy and Kevin's automation programs</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-4">Simulations</a>
+<ul>
+<li><a href="#sec-3-4-1">Single ion `heat-engine' effect</a></li>
+<li><a href="#sec-3-4-2">Hanle dip/b-field map simulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Wednesday 9th (First entry of October)</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Heat engine: mistake spotted &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>The last few entries of September made mention that in order to see an
+oscillation effect I had to multiply the dipole force by x1000. This
+obviously indicated a mistake somewhere in the simulation, but I
+couldn't spot where.
+</p>
+<p>
+It turns out the mistake was not in the physics, but in the `layout'
+of the simulation. I misunderstood the fundamental mechanism of the
+effect until Matthias explained it to me in detail: The basic idea is
+that if we have a tightly focussed laser pointing on the horizontal
+plane, mostly perpendicular to the trap axis, then the dipole force in
+the <i>z-direction</i> (vertical) provides a modification to the radial
+pseudo-potential in that direction. This modification in the
+trap-depth is dependent on the ion's position on the axis due to the
+gaussian profile of the beam. If the ion is close to saturation whilst
+at the beam centre then it will be heated, and pushed away from the
+centre as its wavefunction spreads and samples higher potentials
+towards the centre. As it moves away it becomes less saturated, is
+cooled more efficiently, and tries to return to its equilibrium
+position in the centre of the beam. This is analagous to the Otto
+cycle shown in PRL 109, 203006 (2012). 
+</p>
+<p>
+My mistake was that I thought the dipole force in the axial direction
+provided the oscillation motion, and so only regarded that, whilst
+including heating dynamics in the other horizontal direction (y).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Heat engine: correct layout &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>I have modified the simulation now so that it takes into account both
+the trap axis and vertical direction, and the dipole force in both
+directions (though the force in the axial direction should be largely
+irrelevant). At first testing, I haven't managed to generate the
+oscillatory motion observed in the experiment, but I am still playing
+around with the specifics of the layout e.g. position of the laser and
+parameters. 
+</p>
+<p>
+Hiroki has suggested that I simplify the physics down to a two level
+system until I can see the effect. This is a good suggestion since any
+simulation takes a long time currently, which is not useful when
+messing around with parameters.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Measurement automation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>Measurement automation programming in LabVIEW has mostly been
+completed. I have vis for controlling the oven switching, N2 loading
+via the pulse generator, and trap stability switching (for crystal
+cleaning and ejection) via a four-way digital switch. The task that
+remains is to actually test it.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Wednesday 25th (Last entry of September)</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Heat engine: Next steps &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>The meeting has highlighted the important points to tackle with this
+simulation.
+</p>
+<p>
+First and most obvious is that the dipole force is x1000 too weak in
+my simulation. The approach to this problem will be to show Hiroki the
+code and see if he can spot the error, as I have not been able to up
+until now.
+</p>
+<p>
+Next, my simulations don't show a strong dependence of the amplitude
+of the motion on the detuning. The experiment shows that as detuning
+decreases, the amplitude of motion increases. I think that this might
+be an issue with the fact that I have only been changing the frequency
+on a relatively small scale. Considering that experimental data was
+taken with the wavemeter lock, it's possible that the detuning was
+much larger to start with than my -0.5 &Gamma;. Therefore I should try
+larger detunings.
+</p>
+<p>
+Last major issue is that I haven't looked in depth at the amplitude
+dependence on power of the laser. This should be fairly easy to
+do alongside plots of the dependence on detuning and position of the
+beam. 
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">To do: Molecule lab</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="todo TODO">TODO</span> Interferometer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="todo TODO">TODO</span> Re-optimise around trap</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2"><span class="todo TODO">TODO</span> Check chromatic abberation</h4>
+<div class="outline-text-4" id="text-3-1-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="todo TODO">TODO</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1"><span class="done HOLD">HOLD</span> Explain photoionisation process</h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2"><span class="done HOLD">HOLD</span> Re-take spectra with better S-N</h4>
+<div class="outline-text-4" id="text-3-2-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-3-3">
+
+
+</div>
+
+<div id="outline-container-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1"><span class="todo TODO">TODO</span> Test automation program</h4>
+<div class="outline-text-4" id="text-3-3-1">
+
+<p>Entered: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-09 Wed</span></span>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3-2" class="outline-4">
+<h4 id="sec-3-3-2"><span class="done DONE">DONE</span> Incorporate Amy and Kevin's automation programs</h4>
+<div class="outline-text-4" id="text-3-3-2">
+
+<p>Completed: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-09 Wed</span></span>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-3-4">
+
+
+</div>
+
+<div id="outline-container-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
+<div class="outline-text-4" id="text-3-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-3-4-2" class="outline-4">
+<h4 id="sec-3-4-2"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
+<div class="outline-text-4" id="text-3-4-2">
+
+<ul>
+<li id="sec-3-4-2-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
+</li>
+</ul>
+
+<p>Done for now, need to talk about Matthias about results seen.
+</p><ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-07-01 Mon</span></span>
+</li>
+</ul>
+
+<p>Need to find a way of combining maps from different polarisations and
+directions to give independent B-field direction data.
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-10-09 10:06:30 BST</p>
+<p class="author">Author: N. Seymour-Smith</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

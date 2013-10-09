@@ -62,37 +62,59 @@ http://orgmode.org/manual/Setting-tags.html#Setting-tags
 * Git
 ** General
 "git config --global alias.co checkout" - example alias: checkout->co
+
 ** Initialisation
 "git init" - Initialise a local repository in current directory
+
 ** Tracking and staging files
 "git add <file>" - tracks a file with git, stages changes
+
 "git add -u" - stages changes in modified files
+
 "git add -A" - tracks and stages all files (even previously unadded)
+
 "git reset HEAD <file>" - unstages a change
+
 "git checkout -- <file>" - unmodify file (based on latest snapshot)
+
 ** Committing locally
 "git commit -m "<message>" - commit staged changes with supplied
 message
+
 "git commit --amend" - amend the previous commit (with e.g. a newley
 staged file)
+
 "git log" - shows commit history
+
 ** Remote repositories
 "git clone [url]" - Set up a new repository based on the one at url
+
 "git remote add [shortname] [url]" - Add a repository at url
+
 "git fetch [shortname]" - Get the changes from that repo
+
 "git pull [shortname]" - Get the changes and automatically merge with
 local repo
+
 "git remote show [shortname]" - info on remote repo
+
 "git remote rename [old] [new]" - rename repo
+
 "git remote rm [name]" - remove remote repo
+
 ** Committing remotely
 "git push origin master" - push to remote server
+
 "git push -u origin --all" - same as above?
+
 ** Tags
 "git tag -a v[X.X] -m 'my version X.X'" - tag the latest commit with
 version and message (-a is for annotated tag)
+
 "git tag -a v[X.Y] -m 'my version X.Y' [commit hash]" - Tags a
 previous commit denoted by its hash
+
 "git push [repo name] [tagname]" - push tag to repo (normal push
 does not do this by default)
+
 "git push [repo name] --tags - push all tags to repo

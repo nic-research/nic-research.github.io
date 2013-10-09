@@ -1,0 +1,141 @@
+#+TITLE: Research notes: October 2013
+#+AUTHOR: N. Seymour-Smith
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL HOLD
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:3 num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+
+
+* Wednesday 9th (First entry of October)
+** Heat engine: mistake spotted					       :logs:
+The last few entries of September made mention that in order to see an
+oscillation effect I had to multiply the dipole force by x1000. This
+obviously indicated a mistake somewhere in the simulation, but I
+couldn't spot where.
+
+It turns out the mistake was not in the physics, but in the `layout'
+of the simulation. I misunderstood the fundamental mechanism of the
+effect until Matthias explained it to me in detail: The basic idea is
+that if we have a tightly focussed laser pointing on the horizontal
+plane, mostly perpendicular to the trap axis, then the dipole force in
+the /z-direction/ (vertical) provides a modification to the radial
+pseudo-potential in that direction. This modification in the
+trap-depth is dependent on the ion's position on the axis due to the
+gaussian profile of the beam. If the ion is close to saturation whilst
+at the beam centre then it will be heated, and pushed away from the
+centre as its wavefunction spreads and samples higher potentials
+towards the centre. As it moves away it becomes less saturated, is
+cooled more efficiently, and tries to return to its equilibrium
+position in the centre of the beam. This is analagous to the Otto
+cycle shown in PRL 109, 203006 (2012). 
+
+My mistake was that I thought the dipole force in the axial direction
+provided the oscillation motion, and so only regarded that, whilst
+including heating dynamics in the other horizontal direction (y).
+
+** Heat engine: correct layout					       :logs:
+I have modified the simulation now so that it takes into account both
+the trap axis and vertical direction, and the dipole force in both
+directions (though the force in the axial direction should be largely
+irrelevant). At first testing, I haven't managed to generate the
+oscillatory motion observed in the experiment, but I am still playing
+around with the specifics of the layout e.g. position of the laser and
+parameters. 
+
+Hiroki has suggested that I simplify the physics down to a two level
+system until I can see the effect. This is a good suggestion since any
+simulation takes a long time currently, which is not useful when
+messing around with parameters.
+
+** Measurement automation					       :logs:
+Measurement automation programming in LabVIEW has mostly been
+completed. I have vis for controlling the oven switching, N2 loading
+via the pulse generator, and trap stability switching (for crystal
+cleaning and ejection) via a four-way digital switch. The task that
+remains is to actually test it.
+
+* Wednesday 25th (Last entry of September)
+** Heat engine: Next steps 					       :logs:
+The meeting has highlighted the important points to tackle with this
+simulation.
+
+First and most obvious is that the dipole force is x1000 too weak in
+my simulation. The approach to this problem will be to show Hiroki the
+code and see if he can spot the error, as I have not been able to up
+until now.
+
+Next, my simulations don't show a strong dependence of the amplitude
+of the motion on the detuning. The experiment shows that as detuning
+decreases, the amplitude of motion increases. I think that this might
+be an issue with the fact that I have only been changing the frequency
+on a relatively small scale. Considering that experimental data was
+taken with the wavemeter lock, it's possible that the detuning was
+much larger to start with than my -0.5 \Gamma. Therefore I should try
+larger detunings.
+
+Last major issue is that I haven't looked in depth at the amplitude
+dependence on power of the laser. This should be fairly easy to
+do alongside plots of the dependence on detuning and position of the
+beam. 
+
+* To do: Molecule lab 
+** TODO [#C] Interferometer						:Nic:
+*** TODO Re-optimise around trap
+*** TODO Check chromatic abberation
+** TODO [#C] Photoionisation of N2				    :Nic:Amy:
+*** HOLD Explain photoionisation process
+*** HOLD Re-take spectra with better S-N
+** TODO [#B] Code an automation program for experiments		  :Nic:Kevin:
+*** TODO [#B] Test automation program
+Entered: <2013-10-09 Wed>
+*** DONE Incorporate Amy and Kevin's automation programs
+Completed: <2013-10-09 Wed>
+** TODO [#C] Simulations						:Nic:
+*** TODO [#C] Single ion `heat-engine' effect
+*** HOLD Hanle dip/b-field map simulation
+**** HOLD [#C] Fluorescence as a function of B-field for different light pol.
+- <2013-06-21 Fri>
+Done for now, need to talk about Matthias about results seen.
+- <2013-07-01 Mon>
+Need to find a way of combining maps from different polarisations and
+directions to give independent B-field direction data.
+* To do: General						   :noexport:
+* Meetings							   :noexport:
+** Journal & Theory Club Rota
+==========ROTA===========
+Markus
+Jack
+Nic
+Ezra
+Sahar
+Stephen
+Kevin
+Hiroki
+Amy
+Will
+Matthias (only biscuits)
+===========END===========
+* To do, non-work						   :noexport:
+** Ideas
+*** Lighting rigs and pulse generators
+Can the pulse generator Matthias designed be used for programming
+lighting rigs? Ask Gaz.
+*** Use binary light encoding on phone displays to interface with hardware
+
+** TODO Purchase 
+- Atomic physics text book
+- Thermodynamics text book
+- Quantum optics text book
+** TODO Dekatron
+- [ ] 555 timer input
+
+** TODO Phone-plugin for mobile/VOIP
+** TODO Contact with Tom's employer for work
+** DONE Speak with Matthias about approach to product
+* Appendix 							   :noexport:

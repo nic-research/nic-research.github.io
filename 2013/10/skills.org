@@ -1,0 +1,32 @@
+#+TITLE: Molecule lab equipment and skills
+#Org-mode options here:
+#+TODO: TODO | DONE CNCL HOLD
+#+STARTUP: hidestars
+#Export options here:
+#+OPTIONS: toc:nil num:nil ^:t
+#+STYLE: <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+
+#+BEGIN_HTML
+<hr>
+#+END_HTML
+
+
+** Dye laser							   :Amy:Jack:
+
+** Beam-line operation							:Amy:
+
+** State-detection automation					      :Kevin:
+
+** C++ libraries for p7888 etc.					     :Hiroki:
+
+** Interferometer							:Amy:
+
+** Scanning cavity lock mkII					      :Kevin:
+
+** Microcontroller programming					   :Matthias:
+
+** Ca+ frequency reference trap					      :Kevin:
+
+** Micromotion compensation					  :Amy:Kevin:
+
+** Matlab simulations						     :Hiroki:

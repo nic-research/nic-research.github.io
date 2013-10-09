@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Handy command syntaxes and emacs sequences"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-12 14:21:36 BST"/>
+<meta name="generated" content="2013-09-25 12:04:58 BST"/>
 <meta name="author" content="Nicolas"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -333,7 +333,8 @@ C-c C-q     (org-set-tags-command)
 <div class="outline-text-3" id="text-3-1">
 
 <p>"git config &ndash;global alias.co checkout" - example alias: checkout-&gt;co
-</p></div>
+</p>
+</div>
 
 </div>
 
@@ -342,7 +343,8 @@ C-c C-q     (org-set-tags-command)
 <div class="outline-text-3" id="text-3-2">
 
 <p>"git init" - Initialise a local repository in current directory
-</p></div>
+</p>
+</div>
 
 </div>
 
@@ -351,11 +353,20 @@ C-c C-q     (org-set-tags-command)
 <div class="outline-text-3" id="text-3-3">
 
 <p>"git add &lt;file&gt;" - tracks a file with git, stages changes
+</p>
+<p>
 "git add -u" - stages changes in modified files
+</p>
+<p>
 "git add -A" - tracks and stages all files (even previously unadded)
+</p>
+<p>
 "git reset HEAD &lt;file&gt;" - unstages a change
+</p>
+<p>
 "git checkout &ndash; &lt;file&gt;" - unmodify file (based on latest snapshot)
-</p></div>
+</p>
+</div>
 
 </div>
 
@@ -365,10 +376,15 @@ C-c C-q     (org-set-tags-command)
 
 <p>"git commit -m "&lt;message&gt;" - commit staged changes with supplied
 message
+</p>
+<p>
 "git commit &ndash;amend" - amend the previous commit (with e.g. a newley
 staged file)
+</p>
+<p>
 "git log" - shows commit history
-</p></div>
+</p>
+</div>
 
 </div>
 
@@ -377,14 +393,27 @@ staged file)
 <div class="outline-text-3" id="text-3-5">
 
 <p>"git clone [url]" - Set up a new repository based on the one at url
+</p>
+<p>
 "git remote add [shortname] [url]" - Add a repository at url
+</p>
+<p>
 "git fetch [shortname]" - Get the changes from that repo
+</p>
+<p>
 "git pull [shortname]" - Get the changes and automatically merge with
 local repo
+</p>
+<p>
 "git remote show [shortname]" - info on remote repo
+</p>
+<p>
 "git remote rename [old] [new]" - rename repo
+</p>
+<p>
 "git remote rm [name]" - remove remote repo
-</p></div>
+</p>
+</div>
 
 </div>
 
@@ -393,8 +422,11 @@ local repo
 <div class="outline-text-3" id="text-3-6">
 
 <p>"git push origin master" - push to remote server
+</p>
+<p>
 "git push -u origin &ndash;all" - same as above?
-</p></div>
+</p>
+</div>
 
 </div>
 
@@ -404,10 +436,16 @@ local repo
 
 <p>"git tag -a v[X.X] -m 'my version X.X'" - tag the latest commit with
 version and message (-a is for annotated tag)
+</p>
+<p>
 "git tag -a v[X.Y] -m 'my version X.Y' [commit hash]" - Tags a
 previous commit denoted by its hash
+</p>
+<p>
 "git push [repo name] [tagname]" - push tag to repo (normal push
 does not do this by default)
+</p>
+<p>
 "git push [repo name] &ndash;tags - push all tags to repo
 </p></div>
 </div>
@@ -415,7 +453,7 @@ does not do this by default)
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-06-12 14:21:36 BST</p>
+<p class="date">Date: 2013-09-25 12:04:58 BST</p>
 <p class="author">Author: Nicolas</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

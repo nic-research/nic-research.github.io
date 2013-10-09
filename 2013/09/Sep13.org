@@ -12,6 +12,30 @@
 #+END_HTML
 
 
+* Wednesday 25th
+** Heat engine: Next steps 					       :logs:
+The meeting has highlighted the important points to tackle with this
+simulation.
+
+First and most obvious is that the dipole force is x1000 too weak in
+my simulation. The approach to this problem will be to show Hiroki the
+code and see if he can spot the error, as I have not been able to up
+until now.
+
+Next, my simulations don't show a strong dependence of the amplitude
+of the motion on the detuning. The experiment shows that as detuning
+decreases, the amplitude of motion increases. I think that this might
+be an issue with the fact that I have only been changing the frequency
+on a relatively small scale. Considering that experimental data was
+taken with the wavemeter lock, it's possible that the detuning was
+much larger to start with than my -0.5 \Gamma. Therefore I should try
+larger detunings.
+
+Last major issue is that I haven't looked in depth at the amplitude
+dependence on power of the laser. This should be fairly easy to
+do alongside plots of the dependence on detuning and position of the
+beam. 
+
 * Monday 23rd
 ** Heat engine: Some success 					       :logs:
 As decided in the notes of the 5th of September, and suggested by
@@ -44,7 +68,7 @@ The relevant parameters for one test case are:
 % y = cavity axis     (horizontal and perp. to x)
 % z = vertical axis   (up direction)
 
-% Trap frequency [axial; vertical] 
+% Trap frequency [trap-axis; y-direction] 
 omega = [240e3*2*pi; 1E6*2*pi]; 
 
 % Laser direction

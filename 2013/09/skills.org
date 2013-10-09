@@ -1,5 +1,4 @@
-#+TITLE: Core Lab Skills
-#+AUTHOR: N. Seymour-Smith
+#+TITLE: Molecule lab equipment and skills
 #Org-mode options here:
 #+TODO: TODO | DONE CNCL HOLD
 #+STARTUP: hidestars
@@ -12,82 +11,22 @@
 #+END_HTML
 
 
-* Optics
-** Diode lasers								:All:
-*** Optical feedback
-*** Rough tuning
+* Dye laser 							   :Amy:Jack:
 
-** Pulsed lasers						   :Jack:Amy:
-*** Usage and safety
-*** Changing dye
-*** Power optimisation
+* Beam-line operation							:Amy:
 
-** CO2 laser							:Jack:Hiroki:
-*** Usage and Safety
+* State-detection automation					      :Kevin:
 
-** Analog and digital feedback		
-*** Wavemeter control							:All:
-*** Scanning cavity lock control		:Stephen:Markus:Hiroki:Kevin:
-*** Pound-Drever-Hall lock control		      :Stephen:Markus:Hiroki:
-*** Polarisation spectroscopy control		      :Stephen:Markus:Hiroki:
-*** `Atomic clock' locking control				  :Kevin:Amy:
-*** Doubling cavity optimisation		      :Stephen:Markus:Hiroki:
-*** Analog PID tuning				:Stephen:Markus:Hiroki:Kevin:
-*** Digital PID tuning				:Stephen:Markus:Hiroki:Kevin:
-*** Microcontroller digital processing
+* C++ libraries for p7888 etc. 					     :Hiroki:
 
-** Other table-top optics 		
-*** Beam-walking							:All:
-*** Fibre-coupling							:All:
-*** AOMs and EOMs							:All:
-*** PM fibre-optimisation						:All:
-*** Optical cavities and coupling		      :Stephen:Markus:Hiroki:
-*** Polarisation optics							:All:
-*** Gaussian optics for planning					:All:
+* Interferometer							:Amy:
 
-#+BEGIN_HTML
-<hr>
-#+END_HTML
+* Scanning cavity lock mkII					      :Kevin:
 
-* Hardware & Mechanical
-** Vacuum								:All:
-*** Pumping down
-*** Baking, temperature tolerances
-*** Leak testing
-*** Breaking vacuum
-*** TMPs, sublimation and ion pumps
+* Microcontroller programming					   :Matthias:
 
-** Workshop								:All:
-*** Pillar drill (lg/sml)
-*** Milling machine
-*** Lathe
+* Ca+ frequency reference trap					      :Kevin:
 
-#+BEGIN_HTML
-<hr>
-#+END_HTML
+* Micromotion compensation					  :Amy:Kevin:
 
-* Electronics
-*** Eagle					      :Hiroki:Amy:Kevin:Will:
-*** PCB etching					      :Hiroki:Amy:Kevin:will:
-*** RF electronics
-*** Photodiodes
-*** Switching electronics (transistors, TTL &c.)
-*** DAC and ADC
-*** PID boards
-
-#+BEGIN_HTML
-<hr>
-#+END_HTML
-
-* Software
-*** EAGLE							 :Amy:Hiroki:
-*** Solidworks							:Hiroki:Ezra:
-*** Matlab							:Jack:Hiroki:
-*** Quantum optics toolbox in Matlab				     :Hiroki:
-*** Femlab							     :Hiroki:
-*** Origin								:All:
-*** LabVIEW								:All:
-*** Microcontrollers
-*** C/C++ for micro-controllers					     :Hiroki:
-*** C/C++ for DLLs and hardware					     :Hiroki:
-
+* Matlab simulations						     :Hiroki:
