@@ -11,6 +11,41 @@
 <hr>
 #+END_HTML
 
+* Tuesday 15th
+** Heat engine 3d						       :logs:
+The data I got back from the 2d simulation in the correct layout was
+inconclusive. I could see oscillatory behaviour, but in the wrong
+direction (y instead of x). The way I had approximated the intensity
+distribution of the laser beam meant that it was not possible to go
+back to the test case where we know exactly what's happening (i.e. 1D
+cooling or amplification).
+
+The solution to this is to model the laser beam properly in 3d, and
+since it's not that much extra work from there we can model the whole
+system in 3d. The approach I took to modelling the laser beam was a
+bit crazy though, and is quite slow. Basically I use Matlab's symoblic
+algebra routines to calculate planes orthogonal to the beam in order
+to work out the intensity at the ion. This is obviously going to be
+quite slow, and thus makes it difficult to mess around with parameters
+for a proper investigation. 
+
+Instead the approach I should be taking is simply to model the laser
+beam intensity and the dipole force as a function of (x,y,z). I
+initially took this approach but decided that it would be complicated
+to transform a simple cylindrical gaussian when considering rotation
+on the two axes and translation. Really though, it's not that
+complicated, and just requires the two functions in the laser beam's
+coordinate system to be transformed using standard rotation and
+translation matrices. 
+
+** Handover tasks 						       :logs:
+I have to hand over the work I've been doing to different people. I'm
+going to get Will to look over the PIC programming book before
+speaking to him, as that will be more efficient. I will find some time
+over the next couple of days to speak with Jack and Stephen about c++
+dlls used in the automation experiments. Hiroki already mostly knows
+everything about the Matlab simulations. Cavity lab stuff is mostly
+taken care of among Stephen, Markus and Hiroki.
 
 * Wednesday 9th (First entry of October)
 ** Heat engine: mistake spotted					       :logs:

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Research notes: October 2013"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-10-09 10:06:30 BST"/>
+<meta name="generated" content="2013-10-15 11:22:23 BST"/>
 <meta name="author" content="N. Seymour-Smith"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -98,47 +98,52 @@
 <hr>
 
 
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Wednesday 9th (First entry of October)</a>
+<li><a href="#sec-1">Tuesday 15th</a>
 <ul>
-<li><a href="#sec-1-1">Heat engine: mistake spotted</a></li>
-<li><a href="#sec-1-2">Heat engine: correct layout</a></li>
-<li><a href="#sec-1-3">Measurement automation</a></li>
+<li><a href="#sec-1-1">Heat engine 3d</a></li>
+<li><a href="#sec-1-2">Handover tasks</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">Wednesday 25th (Last entry of September)</a>
+<li><a href="#sec-2">Wednesday 9th (First entry of October)</a>
 <ul>
-<li><a href="#sec-2-1">Heat engine: Next steps</a></li>
+<li><a href="#sec-2-1">Heat engine: mistake spotted</a></li>
+<li><a href="#sec-2-2">Heat engine: correct layout</a></li>
+<li><a href="#sec-2-3">Measurement automation</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">To do: Molecule lab</a>
+<li><a href="#sec-3">Wednesday 25th (Last entry of September)</a>
 <ul>
-<li><a href="#sec-3-1">Interferometer</a>
-<ul>
-<li><a href="#sec-3-1-1">Re-optimise around trap</a></li>
-<li><a href="#sec-3-1-2">Check chromatic abberation</a></li>
+<li><a href="#sec-3-1">Heat engine: Next steps</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-2">Photoionisation of N2</a>
+<li><a href="#sec-4">To do: Molecule lab</a>
 <ul>
-<li><a href="#sec-3-2-1">Explain photoionisation process</a></li>
-<li><a href="#sec-3-2-2">Re-take spectra with better S-N</a></li>
+<li><a href="#sec-4-1">Interferometer</a>
+<ul>
+<li><a href="#sec-4-1-1">Re-optimise around trap</a></li>
+<li><a href="#sec-4-1-2">Check chromatic abberation</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-3">Code an automation program for experiments</a>
+<li><a href="#sec-4-2">Photoionisation of N2</a>
 <ul>
-<li><a href="#sec-3-3-1">Test automation program</a></li>
-<li><a href="#sec-3-3-2">Incorporate Amy and Kevin's automation programs</a></li>
+<li><a href="#sec-4-2-1">Explain photoionisation process</a></li>
+<li><a href="#sec-4-2-2">Re-take spectra with better S-N</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-4">Simulations</a>
+<li><a href="#sec-4-3">Code an automation program for experiments</a>
 <ul>
-<li><a href="#sec-3-4-1">Single ion `heat-engine' effect</a></li>
-<li><a href="#sec-3-4-2">Hanle dip/b-field map simulation</a></li>
+<li><a href="#sec-4-3-1">Test automation program</a></li>
+<li><a href="#sec-4-3-2">Incorporate Amy and Kevin's automation programs</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-4">Simulations</a>
+<ul>
+<li><a href="#sec-4-4-1">Single ion `heat-engine' effect</a></li>
+<li><a href="#sec-4-4-2">Hanle dip/b-field map simulation</a></li>
 </ul>
 </li>
 </ul>
@@ -148,15 +153,74 @@
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Wednesday 9th (First entry of October)</h2>
+<h2 id="sec-1">Tuesday 15th</h2>
 <div class="outline-text-2" id="text-1">
 
 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Heat engine: mistake spotted &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<h3 id="sec-1-1">Heat engine 3d &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
 <div class="outline-text-3" id="text-1-1">
+
+<p>The data I got back from the 2d simulation in the correct layout was
+inconclusive. I could see oscillatory behaviour, but in the wrong
+direction (y instead of x). The way I had approximated the intensity
+distribution of the laser beam meant that it was not possible to go
+back to the test case where we know exactly what's happening (i.e. 1D
+cooling or amplification).
+</p>
+<p>
+The solution to this is to model the laser beam properly in 3d, and
+since it's not that much extra work from there we can model the whole
+system in 3d. The approach I took to modelling the laser beam was a
+bit crazy though, and is quite slow. Basically I use Matlab's symoblic
+algebra routines to calculate planes orthogonal to the beam in order
+to work out the intensity at the ion. This is obviously going to be
+quite slow, and thus makes it difficult to mess around with parameters
+for a proper investigation. 
+</p>
+<p>
+Instead the approach I should be taking is simply to model the laser
+beam intensity and the dipole force as a function of (x,y,z). I
+initially took this approach but decided that it would be complicated
+to transform a simple cylindrical gaussian when considering rotation
+on the two axes and translation. Really though, it's not that
+complicated, and just requires the two functions in the laser beam's
+coordinate system to be transformed using standard rotation and
+translation matrices. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Handover tasks &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>I have to hand over the work I've been doing to different people. I'm
+going to get Will to look over the PIC programming book before
+speaking to him, as that will be more efficient. I will find some time
+over the next couple of days to speak with Jack and Stephen about c++
+dlls used in the automation experiments. Hiroki already mostly knows
+everything about the Matlab simulations. Cavity lab stuff is mostly
+taken care of among Stephen, Markus and Hiroki.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Wednesday 9th (First entry of October)</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Heat engine: mistake spotted &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
 
 <p>The last few entries of September made mention that in order to see an
 oscillation effect I had to multiply the dipole force by x1000. This
@@ -189,9 +253,9 @@ including heating dynamics in the other horizontal direction (y).
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Heat engine: correct layout &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Heat engine: correct layout &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-2-2">
 
 <p>I have modified the simulation now so that it takes into account both
 the trap axis and vertical direction, and the dipole force in both
@@ -211,9 +275,9 @@ messing around with parameters.
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Measurement automation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Measurement automation &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-2-3">
 
 <p>Measurement automation programming in LabVIEW has mostly been
 completed. I have vis for controlling the oven switching, N2 loading
@@ -226,16 +290,16 @@ remains is to actually test it.
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Wednesday 25th (Last entry of September)</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Wednesday 25th (Last entry of September)</h2>
+<div class="outline-text-2" id="text-3">
 
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">Heat engine: Next steps &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Heat engine: Next steps &nbsp;&nbsp;&nbsp;<span class="tag"><span class="logs">logs</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
 
 <p>The meeting has highlighted the important points to tackle with this
 simulation.
@@ -267,80 +331,80 @@ beam.
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">To do: Molecule lab</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">To do: Molecule lab</h2>
+<div class="outline-text-2" id="text-4">
 
 
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="todo TODO">TODO</span> Interferometer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="todo TODO">TODO</span> Interferometer &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
 
 
 </div>
 
-<div id="outline-container-3-1-1" class="outline-4">
-<h4 id="sec-3-1-1"><span class="todo TODO">TODO</span> Re-optimise around trap</h4>
-<div class="outline-text-4" id="text-3-1-1">
-
-</div>
-
-</div>
-
-<div id="outline-container-3-1-2" class="outline-4">
-<h4 id="sec-3-1-2"><span class="todo TODO">TODO</span> Check chromatic abberation</h4>
-<div class="outline-text-4" id="text-3-1-2">
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="todo TODO">TODO</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
-<div class="outline-text-3" id="text-3-2">
-
-
-</div>
-
-<div id="outline-container-3-2-1" class="outline-4">
-<h4 id="sec-3-2-1"><span class="done HOLD">HOLD</span> Explain photoionisation process</h4>
-<div class="outline-text-4" id="text-3-2-1">
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="todo TODO">TODO</span> Re-optimise around trap</h4>
+<div class="outline-text-4" id="text-4-1-1">
 
 </div>
 
 </div>
 
-<div id="outline-container-3-2-2" class="outline-4">
-<h4 id="sec-3-2-2"><span class="done HOLD">HOLD</span> Re-take spectra with better S-N</h4>
-<div class="outline-text-4" id="text-3-2-2">
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="todo TODO">TODO</span> Check chromatic abberation</h4>
+<div class="outline-text-4" id="text-4-1-2">
 
 </div>
 </div>
 
 </div>
 
-<div id="outline-container-3-3" class="outline-3">
-<h3 id="sec-3-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="todo TODO">TODO</span> Photoionisation of N2 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Amy">Amy</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
 
 
 </div>
 
-<div id="outline-container-3-3-1" class="outline-4">
-<h4 id="sec-3-3-1"><span class="todo TODO">TODO</span> Test automation program</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="done HOLD">HOLD</span> Explain photoionisation process</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="done HOLD">HOLD</span> Re-take spectra with better S-N</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="todo TODO">TODO</span> Code an automation program for experiments &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span>&nbsp;<span class="Kevin">Kevin</span></span></h3>
+<div class="outline-text-3" id="text-4-3">
+
+
+</div>
+
+<div id="outline-container-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="todo TODO">TODO</span> Test automation program</h4>
+<div class="outline-text-4" id="text-4-3-1">
 
 <p>Entered: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-09 Wed</span></span>
 </p></div>
 
 </div>
 
-<div id="outline-container-3-3-2" class="outline-4">
-<h4 id="sec-3-3-2"><span class="done DONE">DONE</span> Incorporate Amy and Kevin's automation programs</h4>
-<div class="outline-text-4" id="text-3-3-2">
+<div id="outline-container-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="done DONE">DONE</span> Incorporate Amy and Kevin's automation programs</h4>
+<div class="outline-text-4" id="text-4-3-2">
 
 <p>Completed: <span class="timestamp-wrapper"> <span class="timestamp">2013-10-09 Wed</span></span>
 </p></div>
@@ -348,27 +412,27 @@ beam.
 
 </div>
 
-<div id="outline-container-3-4" class="outline-3">
-<h3 id="sec-3-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="todo TODO">TODO</span> Simulations &nbsp;&nbsp;&nbsp;<span class="tag"><span class="Nic">Nic</span></span></h3>
+<div class="outline-text-3" id="text-4-4">
 
 
 </div>
 
-<div id="outline-container-3-4-1" class="outline-4">
-<h4 id="sec-3-4-1"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
-<div class="outline-text-4" id="text-3-4-1">
+<div id="outline-container-4-4-1" class="outline-4">
+<h4 id="sec-4-4-1"><span class="todo TODO">TODO</span> Single ion `heat-engine' effect</h4>
+<div class="outline-text-4" id="text-4-4-1">
 
 </div>
 
 </div>
 
-<div id="outline-container-3-4-2" class="outline-4">
-<h4 id="sec-3-4-2"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
-<div class="outline-text-4" id="text-3-4-2">
+<div id="outline-container-4-4-2" class="outline-4">
+<h4 id="sec-4-4-2"><span class="done HOLD">HOLD</span> Hanle dip/b-field map simulation</h4>
+<div class="outline-text-4" id="text-4-4-2">
 
 <ul>
-<li id="sec-3-4-2-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
+<li id="sec-4-4-2-1"><span class="done HOLD">HOLD</span> Fluorescence as a function of B-field for different light pol.<br/>
 <ul>
 <li><span class="timestamp-wrapper"> <span class="timestamp">2013-06-21 Fri</span></span>
 </li>
@@ -391,7 +455,7 @@ directions to give independent B-field direction data.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-10-09 10:06:30 BST</p>
+<p class="date">Date: 2013-10-15 11:22:23 BST</p>
 <p class="author">Author: N. Seymour-Smith</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
